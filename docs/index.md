@@ -2,8 +2,6 @@
 
 It's a long way to go.
 
-So forge ahead.
-
 ## Why am I using English?
 
-Cuz I wanna.
+English courses are not necessary for Turing Class. To make up for that, I'm considering using English for my notes.
