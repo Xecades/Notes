@@ -1,6 +1,6 @@
-# MacOS Command Collection
+# macOS Command Collection
 
-Here is a collection of useful tools for MacOS.
+Here is a collection of useful command-line tools for macOS.
 
 ## General
 
@@ -20,26 +20,27 @@ Here is a collection of useful tools for MacOS.
 
 ## Productivity
 
--   `ffmpeg`: Video convertion tool.
+-   `ffmpeg`: Video and audio converter.
 
 ---
 
 ## CTF
 
--   `binwalk`: Analyse binary files for embedded files and executable code.
+-   `binwalk`: Analyze binary files for embedded files and executable code.
+-   `foremost`: Recover files using their headers, footers and data structures.
 -   `hashcat`: Password recovery tool.
 -   `zip2hash`: Part of John the Ripper. Converts a zip file to a hash.
--   `foremost`: Recover files using their headers, footers and data structures.
 -   `ciphey`: Automated decryption tool.
 -   `hexyl`: Command-line Hex viewer.
 -   `nmap`: Port scanner.
+-   `StegSolve.jar`: Steganography solver.
 
 ---
 
 ## Miscellaneous
 
--   `lolcat`: Colorful cat.
+-   `lolcat`: Colorful `cat`.
 -   `cowsay`: Let's see what a cow says.
 -   `fortune`: Fortune cookie.
--   `neofetch`: Show system info. It looks "neo".
+-   `neofetch`: Show system info.
 -   `nyancat`: Nyan cat in the terminal.
