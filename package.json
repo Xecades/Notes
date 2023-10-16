@@ -1,8 +1,0 @@
-{
-    "name": "xecades-notes",
-    "version": "1.0.0",
-    "scripts": {
-        "dev": "mkdocs serve",
-        "build": "mkdocs build"
-    }
-}
