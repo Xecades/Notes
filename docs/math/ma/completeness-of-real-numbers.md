@@ -22,7 +22,7 @@ Every bounded sequence of $\mathbb{R}$ has a convergent subsequence.
 
 A sequence of $\mathbb{R}$ is convergent if and only if it is a fundamental sequence.
 
-> **Fundamental sequence**: A sequence $\{x_n\}$ is called a fundamental sequence if for all $\varepsilon > 0$, exists $N\in\mathbb{N}^\star$ so that $|x_{n+p} - x_n| < \varepsilon$ for all $n>N$ and $p\in\mathbb{N}^\star$. It is also called a Cauchy sequence.
+> **Fundamental sequence**: A sequence $\{x_n\}$ is called a fundamental sequence if for all $\varepsilon > 0$, exists $N\in\mathbb{N}^\star$ so that $|x_{n+p} - x_n| < \varepsilon$ for all $n>N$ and $p\in\mathbb{N}^\star$. Fundamental sequence is also called Cauchy sequence.
 
 ---
 
