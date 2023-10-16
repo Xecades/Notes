@@ -21,7 +21,6 @@ Here is a collection of useful tools for MacOS.
 ## Productivity
 
 -   `ffmpeg`: Video convertion tool.
--
 
 ---
 
@@ -44,4 +43,3 @@ Here is a collection of useful tools for MacOS.
 -   `fortune`: Fortune cookie.
 -   `neofetch`: Show system info. It looks "neo".
 -   `nyancat`: Nyan cat in the terminal.
--
