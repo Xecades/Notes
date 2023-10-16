@@ -13,8 +13,9 @@ Here is a collection of useful command-line tools for macOS.
 -   `j`: Jump to a directory. A zsh plugin.
 -   `trans`: Translate text to Chinese in the terminal. `trans :en`, translate to English.
 -   `nnn`: File manager.
--   `br`: Broot, tree view file manager.
+-   `br`: Broot, a tree view file manager.
 -   `tree`: Show directory structure.
+-   `pbcopy` / `pbpaste`: Copy / paste to / from clipboard. Built-in.
 
 ---
 
