@@ -10,24 +10,17 @@ theme:
     - navigation.sections
     - toc.follow
     - navigation.top
+    - search.suggest
   palette:
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
+    - scheme: slate
       primary: black
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: Switch to light mode 
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
   font:
     text: "PT Serif"
     code: "JetBrains Mono"
@@ -37,6 +30,9 @@ extra_css:
 
 plugins:
   - search
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: timeago
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -50,6 +46,9 @@ extra_javascript:
 nav:
   - Home:
     - index.md
+  - Computer Science:
+    - C / C++:
+      - Cheatsheet: cs/c/c-language-cheatsheet.md
   - Math:
     - Mathematical Analysis:
       - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md

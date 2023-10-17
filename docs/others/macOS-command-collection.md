@@ -17,13 +17,9 @@ Here is a collection of useful command-line tools for macOS.
 -   `tree`: Show directory structure.
 -   `pbcopy` / `pbpaste`: Copy / paste to / from clipboard. Built-in.
 
----
-
 ## Productivity
 
 -   `ffmpeg`: Video and audio converter.
-
----
 
 ## CTF
 
@@ -35,8 +31,6 @@ Here is a collection of useful command-line tools for macOS.
 -   `hexyl`: Command-line Hex viewer.
 -   `nmap`: Port scanner.
 -   `StegSolve.jar`: Steganography solver.
-
----
 
 ## Miscellaneous
 

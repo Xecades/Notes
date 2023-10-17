@@ -4,19 +4,13 @@
 
 Every nonempty subset of $\mathbb{R}$ having an upper bound has a least upper bound, or supremum.
 
----
-
 ## Monotone convergence theorem
 
 If a sequence of $\mathbb{R}$ is monotone and bounded, then it converges.
 
----
-
 ## Bolzano-Weierstrass theorem
 
 Every bounded sequence of $\mathbb{R}$ has a convergent subsequence.
-
----
 
 ## Cauchy criterion
 
@@ -24,13 +18,9 @@ A sequence of $\mathbb{R}$ is convergent if and only if it is a fundamental sequ
 
 > **Fundamental sequence**: A sequence $\{x_n\}$ is called a fundamental sequence if for all $\varepsilon > 0$, exists $N\in\mathbb{N}^\star$ so that $|x_{n+p} - x_n| < \varepsilon$ for all $n>N$ and $p\in\mathbb{N}^\star$. Fundamental sequence is also called Cauchy sequence.
 
----
-
 ## Nested interval theorem
 
 For a sequence of **closed** intervals $\{[a_n,b_n]\}$, if $[a_{n+1},b_{n+1}]\subset[a_n,b_n]$ for all $n\in\mathbb{N}^\star$ and $\lim\limits_{n\to\infty}{|a_n-b_n|}=0$, then exists exactly one $\xi\in\mathbb{R}$ so that $\xi\in[a_n,b_n]$ for all $n\in\mathbb{N}^\star$.
-
----
 
 ## Heine-Borel theorem
 
