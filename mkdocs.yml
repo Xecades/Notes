@@ -12,15 +12,15 @@ theme:
     - navigation.top
     - search.suggest
   palette:
-    - scheme: default
-      toggle:
-        icon: fontawesome/solid/moon
-        name: Switch to dark mode
     - scheme: slate
       primary: black
       toggle:
-        icon: fontawesome/solid/sun
+        icon: material/lightbulb
         name: Switch to light mode
+    - scheme: default
+      toggle:
+        icon: material/lightbulb-off
+        name: Switch to dark mode
   font:
     text: "PT Serif"
     code: "JetBrains Mono"
