@@ -15,11 +15,11 @@ theme:
     - scheme: slate
       primary: black
       toggle:
-        icon: material/brightness-4
-        name: Switch to light mode 
+        icon: fontawesome/solid/sun
+        name: Switch to light mode
     - scheme: default
       toggle:
-        icon: material/brightness-7
+        icon: fontawesome/solid/moon
         name: Switch to dark mode
   font:
     text: "PT Serif"
@@ -48,7 +48,7 @@ nav:
     - index.md
   - Computer Science:
     - C / C++:
-      - Cheatsheet: cs/c/c-language-cheatsheet.md
+      - Cheatsheet: cs/c-cpp/c-language-cheatsheet.md
   - Math:
     - Mathematical Analysis:
       - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md
