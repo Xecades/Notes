@@ -18,3 +18,7 @@ I'm currently an undergraduate student of Zhejiang University, China. You can re
 ## Why am I using English?
 
 (It is said that) English courses are not required for [Turing Class](http://www.cs.zju.edu.cn/turingclass_en/). To make up for that, I'm considering using English for my notes.
+
+## Privacy
+
+This site is hosted on [GitHub Pages](https://pages.github.com/), which is a static site hosting service. GitHub Pages *does* collect [IP address](https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection), but I don't have access to it. I'm using [Google Analytics](https://analytics.google.com/) to collect statistics of visitors. The only two cookies the site generates are from Google Analytics. If you don't want to be tracked, you can use an ad blocker to block it. The only third-party plugin used in this site is [MathJax](https://www.mathjax.org/), which is used to render math notations. I have no idea how to harvest data from MathJax. If you have any other concerns, you can check the source code from [GitHub](https://github.com/Xecades/Notes).

@@ -2,7 +2,7 @@
 
 ## Least upper bound property
 
-Every nonempty subset of $\mathbb{R}$ having an upper bound has a least upper bound, or supremum.
+Every nonempty subset of $\mathbb{R}$ having an upper bound has a least upper bound.
 
 ## Monotone convergence theorem
 
@@ -16,7 +16,7 @@ Every bounded sequence of $\mathbb{R}$ has a convergent subsequence.
 
 A sequence of $\mathbb{R}$ is convergent if and only if it is a fundamental sequence.
 
-> **Fundamental sequence**: A sequence $\{x_n\}$ is called a fundamental sequence if for all $\varepsilon > 0$, exists $N\in\mathbb{N}^\star$ so that $|x_{n+p} - x_n| < \varepsilon$ for all $n>N$ and $p\in\mathbb{N}^\star$. Fundamental sequence is also called Cauchy sequence.
+> **Fundamental sequence**: A sequence $\{x_n\}$ is called a fundamental sequence if for all $\varepsilon > 0$, exists $N\in\mathbb{N}^\star$ so that $|x_{n+p} - x_n| < \varepsilon$ for all $n>N$ and $p\in\mathbb{N}^\star$. Fundamental sequence is also known as Cauchy sequence.
 
 ## Nested interval theorem
 
@@ -26,4 +26,4 @@ For a sequence of **closed** intervals $\{[a_n,b_n]\}$, if $[a_{n+1},b_{n+1}]\su
 
 If $H$ is an infinite **open** cover of **closed** interval $[a, b]$, then exists a finite subset $H_0\subset H$ so that $H_0$ is an **open** cover of $[a,b]$.
 
-> Or: If $H = \{(a_\alpha, b_\alpha) | \alpha \in \Lambda\}$ that satisfies $\bigcup\limits_{\alpha\in\Lambda}{(a_\alpha, b_\alpha)} \supset [a, b]$, then exists a finite subset $H_0\subset H$ so that $\bigcup\limits_{(a_\alpha, b_\alpha)\in H_0}{(a_\alpha, b_\alpha)} \supset [a, b]$.
+> Or: If $H = \{(a_\alpha, b_\alpha) | \alpha \in \Lambda\}$ which satisfies $\bigcup\limits_{\alpha\in\Lambda}{(a_\alpha, b_\alpha)} \supset [a, b]$, then exists a finite subset $H_0\subset H$ so that $\bigcup\limits_{(a_\alpha, b_\alpha)\in H_0}{(a_\alpha, b_\alpha)} \supset [a, b]$.
