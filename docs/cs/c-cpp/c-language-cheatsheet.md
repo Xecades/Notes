@@ -63,7 +63,7 @@ printf("%d", n);        // 5
 
 ### Others
 
-For further information, refer to [wikipedia](https://en.wikipedia.org/wiki/Printf).
+For further information, refer to [Wikipedia](https://en.wikipedia.org/wiki/Printf).
 
 Here are some common examples:
 
