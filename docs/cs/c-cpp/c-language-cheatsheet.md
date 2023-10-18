@@ -8,7 +8,7 @@ Refer to [cppreference](https://en.cppreference.com/w/c/language/operator_preced
 
 The syntax of a format placeholder is
 
-```
+```c
 %[parameter][flags][width][.precision][length]type
 ```
 
@@ -18,7 +18,7 @@ The syntax of a format placeholder is
 
 | Type | Description |
 | :--: | -- |
-| `%` | Prints %. |
+| `%` | Prints `%`. |
 | `d` | Decimal `signed int`. |
 | `u` | Decimal `unsigned int`. |
 | `o` | Octal `unsigned int`. |
@@ -75,6 +75,6 @@ printf("[%+5d]", 123);        // [ +123]
 printf("[%*d]", 5, 123);      // [  123] (dynamic width)
 printf("[%.1f]", 123.456);    // [123.5]
 printf("[%10f]", 123.456);    // [123.456000] (10 characters in total)
-printf("[%10.5f]", 123.456);  // [ 123.45600] (5 percision, 10 characters)
-printf("[%010.5f]", 123.456); // [0123.45600] (5 percision, 10 characters)
+printf("[%10.5f]", 123.456);  // [ 123.45600] (5 precision, 10 characters)
+printf("[%010.5f]", 123.456); // [0123.45600] (5 precision, 10 characters)
 ```
