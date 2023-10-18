@@ -535,6 +535,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#format-string" class="md-nav__link">
+    Format String
+  </a>
+  
+    <nav class="md-nav" aria-label="Format String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    Others
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -771,6 +798,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#format-string" class="md-nav__link">
+    Format String
+  </a>
+  
+    <nav class="md-nav" aria-label="Format String">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type" class="md-nav__link">
+    Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    Others
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -789,13 +843,120 @@
 <h1 id="c-language-cheatsheet">C Language Cheatsheet</h1>
 <h2 id="operator-precedence">Operator Precedence</h2>
 <p>Refer to <a href="https://en.cppreference.com/w/c/language/operator_precedence">cppreference</a>.</p>
+<h2 id="format-string">Format String</h2>
+<p>The syntax of a format placeholder is</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>%[parameter][flags][width][.precision][length]type
+</span></code></pre></div>
+<p>* Square brackets indicate optional parts of the placeholder.</p>
+<h3 id="type">Type</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><code>%</code></td>
+<td>Prints %.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>d</code></td>
+<td>Decimal <code>signed int</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>u</code></td>
+<td>Decimal <code>unsigned int</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>o</code></td>
+<td>Octal <code>unsigned int</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>x</code>, <code>X</code></td>
+<td>Hexadecimal <code>unsigned int</code>. <code>x</code> for lower-case and <code>X</code> for upper-case.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>f</code></td>
+<td>Float-point types in fixed-point notation.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>e</code>, <code>E</code></td>
+<td>Float-point types in exponential notation: <code>d.ddde±dd</code>. <code>e</code> for lower-case "e" and <code>E</code> for upper-case.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>g</code>, <code>G</code></td>
+<td>Float-point types in either fixed-point or exponential notation, whichever is more appropriate for its magnitude. <code>g</code> for lower-case and <code>G</code> for upper-case.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>a</code>, <code>A</code></td>
+<td>Float-point in hexadecimal notation, starting with <code>0x</code> or <code>0X</code>. <code>a</code> for lower-case and <code>A</code> for upper-case.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>s</code></td>
+<td><code>null</code>-terminated string.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>c</code></td>
+<td><code>char</code>.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>p</code></td>
+<td><code>void*</code> in an implementation-defined format.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><code>n</code></td>
+<td>Print nothing, but writes the number of characters written so far into an integer pointer parameter.</td>
+</tr>
+</tbody>
+</table>
+<p>Examples:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%%&quot;</span><span class="p">);</span><span class="w">           </span><span class="c1">// %</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">      </span><span class="c1">// 123</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">-123</span><span class="p">);</span><span class="w">     </span><span class="c1">// -123</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">      </span><span class="c1">// 123</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%u&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">-123</span><span class="p">);</span><span class="w">     </span><span class="c1">// 4294967173</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%o&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">      </span><span class="c1">// 173</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%x&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">      </span><span class="c1">// 7b</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%X&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">      </span><span class="c1">// 7B</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%f&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">  </span><span class="c1">// 123.456000</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%e&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1.234560e+02</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%E&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">  </span><span class="c1">// 1.234560E+02</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%g&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">  </span><span class="c1">// 123.456</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%G&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">  </span><span class="c1">// 123.456</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%a&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0x1.edd2f1a9fbe77p+6</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%A&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">  </span><span class="c1">// 0X1.EDD2F1A9FBE77P+6</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// Hello</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%c&quot;</span><span class="p">,</span><span class="w"> </span><span class="sc">&#39;H&#39;</span><span class="p">);</span><span class="w">      </span><span class="c1">// H</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">123</span><span class="p">;</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%p&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">a</span><span class="p">);</span><span class="w">       </span><span class="c1">// 0x16d79b3d8</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello%n&quot;</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">n</span><span class="p">);</span><span class="w">  </span><span class="c1">// Hello</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">n</span><span class="p">);</span><span class="w">        </span><span class="c1">// 5</span>
+</span></code></pre></div>
+<h3 id="others">Others</h3>
+<p>For further information, refer to <a href="https://en.wikipedia.org/wiki/Printf">wikipedia</a>.</p>
+<p>Here are some common examples:</p>
+<div class="language-c highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%5d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">         </span><span class="c1">// [  123]</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%-5d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">        </span><span class="c1">// [123  ]</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%05d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">        </span><span class="c1">// [00123]</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%+5d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">        </span><span class="c1">// [ +123]</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%*d]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">123</span><span class="p">);</span><span class="w">      </span><span class="c1">// [  123] (dynamic width)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%.1f]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">    </span><span class="c1">// [123.5]</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%10f]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">    </span><span class="c1">// [123.456000] (10 characters in total)</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%10.5f]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w">  </span><span class="c1">// [ 123.45600] (5 percision, 10 characters)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">printf</span><span class="p">(</span><span class="s">&quot;[%010.5f]&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">123.456</span><span class="p">);</span><span class="w"> </span><span class="c1">// [0123.45600] (5 percision, 10 characters)</span>
+</span></code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-17T13:55:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-17</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-18T11:27:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-18</span>
       
         <br>
         Created:
@@ -854,7 +1015,7 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.follow", "navigation.top", "search.suggest"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.sections", "toc.follow", "navigation.top", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
       <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
