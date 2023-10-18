@@ -18,7 +18,3 @@ I'm currently an undergraduate student of Zhejiang University, China. You can re
 ## Why am I using English?
 
 (It is said that) English courses are not required for [Turing Class](http://www.cs.zju.edu.cn/turingclass_en/). To make up for that, I'm considering using English for my notes.
-
-## Why do I write these notes?
-
-Needless to say, I write for knowledge. More importantly, I write to fight against *fragmented mindset* caused by social media.

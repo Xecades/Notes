@@ -42,9 +42,25 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - toc:
+      permalink: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - pymdownx.superfences
+
+copyright: Copyright &copy; 2023 Xecades
+
+extra:
+  social:
+    - icon: fontawesome/brands/github 
+      link: https://github.com/Xecades
+    - icon: fontawesome/solid/envelope
+      link: "mailto:i@xecades.xyz"
+    - icon: fontawesome/brands/telegram
+      link: https://t.me/Xecades
+  analytics:
+    provider: google
+    property: G-SZXL7N0Q4X
 
 extra_javascript:
   - assets/js/mathjax.js
