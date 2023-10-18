@@ -6,6 +6,7 @@ Here is a collection of useful command-line tools for macOS.
 
 -   `exa`: Modern replacement for `ls`.
 -   `bat`: Modern replacement for `cat`.
+-   `fd`: Modern replacement for `find`.
 -   `lazygit`: Terminal UI for `git`.
 -   `nvim`: Neovim, modern replacement for `vim`.
 -   `lvim`: Out-of-the-box Neovim config.
