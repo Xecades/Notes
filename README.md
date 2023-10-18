@@ -1,7 +1,5 @@
-## Notes
+## Xecades' Notes
 
-My notes for various topics.
+Here is the source code of my notes.
 
-Still under development.
-
-[note.xecades.xyz](https://note.xecades.xyz/)
+Refer to [note.xecades.xyz](https://note.xecades.xyz/).

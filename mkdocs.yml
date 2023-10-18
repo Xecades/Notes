@@ -35,6 +35,9 @@ plugins:
       enable_creation_date: true
       type: timeago
 
+repo_url: https://github.com/Xecades/Notes
+repo_name: Xecades/Notes
+
 markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
