@@ -2,4 +2,4 @@
 
 Here is the source code of my notes.
 
-Refer to [note.xecades.xyz](https://note.xecades.xyz/).
+Please refer to [note.xecades.xyz](https://note.xecades.xyz/) for further information.
