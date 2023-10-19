@@ -72,7 +72,8 @@ extra_javascript:
 
 nav:
   - Home:
-    - index.md
+    - Overview: index.md
+    - Comment: comment.md
   - Computer Science:
     - C / C++:
       - Cheatsheet: cs/c-cpp/c-language-cheatsheet.md
@@ -80,4 +81,5 @@ nav:
     - Mathematical Analysis:
       - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md
   - Others:
+    - Learning Plan: others/learning-plan.md
     - macOS Command Collection: others/macOS-command-collection.md
