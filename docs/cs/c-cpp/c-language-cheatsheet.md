@@ -35,30 +35,32 @@ The syntax of a format placeholder is
 Examples:
 
 ```c
-printf("%%");           // %
-printf("%d", 123);      // 123
-printf("%d", -123);     // -123
-printf("%u", 123);      // 123
-printf("%u", -123);     // 4294967173
-printf("%o", 123);      // 173
-printf("%x", 123);      // 7b
-printf("%X", 123);      // 7B
-printf("%f", 123.456);  // 123.456000
-printf("%e", 123.456);  // 1.234560e+02
-printf("%E", 123.456);  // 1.234560E+02
-printf("%g", 123.456);  // 123.456
-printf("%G", 123.456);  // 123.456
-printf("%a", 123.456);  // 0x1.edd2f1a9fbe77p+6
-printf("%A", 123.456);  // 0X1.EDD2F1A9FBE77P+6
-printf("%s", "Hello");  // Hello
-printf("%c", 'H');      // H
+printf("%%");                // %
+printf("%d", 123);           // 123
+printf("%d", -123);          // -123
+printf("%u", 123);           // 123
+printf("%u", -123);          // 4294967173
+printf("%o", 123);           // 173
+printf("%x", 123);           // 7b
+printf("%X", 123);           // 7B
+printf("%f", 123.456);       // 123.456000
+printf("%e", 123.456);       // 1.234560e+02
+printf("%E", 123.456);       // 1.234560E+02
+printf("%g", 123.456);       // 123.456
+printf("%G", 123.456);       // 123.456
+printf("%g", 123456789.123); // 1.23457e+08
+printf("%G", 123456789.123); // 1.23457E+08
+printf("%a", 123.456);       // 0x1.edd2f1a9fbe77p+6
+printf("%A", 123.456);       // 0X1.EDD2F1A9FBE77P+6
+printf("%s", "Hello");       // Hello
+printf("%c", 'H');           // H
 
 int a = 123;
-printf("%p", &a);       // 0x16d79b3d8
+printf("%p", &a);            // 0x16d79b3d8
 
 int n;
-printf("Hello%n", &n);  // Hello
-printf("%d", n);        // 5
+printf("Hello%n", &n);       // Hello
+printf("%d", n);             // 5
 ```
 
 ### Others
