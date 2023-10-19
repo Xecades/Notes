@@ -10,13 +10,13 @@ Here is a collection of useful command-line tools for macOS.
 -   `lazygit`: Terminal UI for `git`.
 -   `nvim`: Neovim, modern replacement for `vim`.
 -   `lvim`: Out-of-the-box Neovim config.
--   `tldr`: abbr. Too Long, Don't Read. Simplify the man page.
+-   `tldr`: abbr. **T**oo **L**ong, **D**on't **R**ead. Simplify the man page.
 -   `j`: Jump to a directory. A zsh plugin.
--   `trans`: Translate text to Chinese in the terminal. `trans :en`, translate to English.
+-   `trans`: Translate text into Chinese in the terminal. `trans :en`, translate into English.
 -   `nnn`: File manager.
--   `br`: Broot, a tree view file manager.
+-   `br`: Broot, a tree-view file manager.
 -   `tree`: Show directory structure.
--   `pbcopy` / `pbpaste`: Copy / paste to / from clipboard. Built-in.
+-   `pbcopy` / `pbpaste`: Copy / paste to / from clipboard. Built-in command.
 
 ## Productivity
 
@@ -36,7 +36,7 @@ Here is a collection of useful command-line tools for macOS.
 ## Miscellaneous
 
 -   `lolcat`: Colorful `cat`.
--   `cowsay`: Let's see what a cow says.
+-   `cowsay` / `cowthink`: Configurable speaking / thinking cow.
 -   `fortune`: Fortune cookie.
 -   `neofetch`: Show system info.
 -   `nyancat`: Nyan cat in the terminal.
