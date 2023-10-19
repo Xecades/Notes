@@ -2,7 +2,7 @@
 
 *CSAPP* stands for *Computer Systems: A Programmer's Perspective*.
 
-Be aware that the notes here are not linearly organized. And this should **not** be a substitute for the book.
+Be aware that the notes here are not linearly organized. And this should not be a substitute for the book.
 
 ## 1.2 Programs Are Translated by Other Programs into Different Forms
 
