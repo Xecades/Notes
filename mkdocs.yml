@@ -77,6 +77,7 @@ nav:
   - Computer Science:
     - C / C++:
       - Cheatsheet: cs/c-cpp/c-language-cheatsheet.md
+      - CSAPP Notes: cs/c-cpp/csapp-notes.md
   - Math:
     - Mathematical Analysis:
       - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md
