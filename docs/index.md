@@ -1,6 +1,6 @@
 # Overview
 
-Here are my notes on various topics. I am trying to keep them as concise as possible, so that I can review them quickly. The notes are written in Markdown (with $\LaTeX$ embedded). I am using [MkDocs](https://www.mkdocs.org/) to generate the site.
+Here are my notes on various topics. I am trying to keep them as concise as possible, so that I can review them quickly. The notes are written in Markdown (with LaTeX embedded). I am using [MkDocs](https://www.mkdocs.org/) to generate the site.
 
 This site is in general for educational purposes in computer science and mathematics. Not trying to *show off*, but I hope it could help random people on the Internet or myself (when my memory fails me). As a non-native English speaker, I guarantee no perfectness of grammar or expressions, but I will do my best to make them not that *strange*. If you come across any mistakes, feel free to open an issue or pull request, or simply email me.
 

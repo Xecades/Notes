@@ -10,7 +10,7 @@ Here is a collection of useful command-line tools for macOS.
 -   `lazygit`: Terminal UI for `git`.
 -   `nvim`: Neovim, modern replacement for `vim`.
 -   `lvim`: Out-of-the-box Neovim config.
--   `tldr`: abbr. **T**oo **L**ong, **D**on't **R**ead. Simplify the man page.
+-   `tldr`: abbr. Too Long, Don't Read. Simplify the man page.
 -   `j`: Jump to a directory. A zsh plugin.
 -   `trans`: Translate text into Chinese in the terminal. `trans :en`, translate into English.
 -   `nnn`: File manager.
