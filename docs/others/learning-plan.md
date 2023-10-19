@@ -35,6 +35,14 @@ Several languages that I am interested in.
 ### Haskell
 
  - To-do.
+  
+### JavaScript
+
+ - To-do.
+
+### Go
+
+ - To-do.
 
 ---
 
