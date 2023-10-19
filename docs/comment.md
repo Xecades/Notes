@@ -4,4 +4,4 @@ comments: true
 
 # Comment
 
-Leave your words here.
+Leave your comments here.

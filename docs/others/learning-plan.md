@@ -4,7 +4,7 @@ comments: true
 
 # Learning Plan
 
-> A comment system is enabled in this page, leave your comments below in case you have any suggestions.
+> A comment system is enabled in this page, leave your comments below if you have any suggestions.
 
 ---
 
