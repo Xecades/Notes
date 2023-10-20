@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286 207.21">
+  <defs>
+    <style>
+      @media (prefers-color-scheme: dark)
+      {
+          svg {
+              filter: invert(93%) hue-rotate(180deg);
+          } svg[style^="background-color: rgb(255, 255, 255);"] {
+              background-color: transparent !important;
+          }
+          image {
+              filter: invert(100%) hue-rotate(180deg) saturate(1.25);
+          }
+      }
+      .cls-1 {
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+      }
+
+      .cls-1, .cls-3 {
+        stroke-width: .5px;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-6 {
+        stroke: #231815;
+      }
+
+      .cls-7 {
+        font-size: 8.5px;
+      }
+
+      .cls-7, .cls-8, .cls-9, .cls-10 {
+        fill: #231815;
+      }
+
+      .cls-7, .cls-11 {
+        font-family: JetBrainsMono-Regular, 'JetBrains Mono';
+        font-variation-settings: 'wght' 400;
+      }
+
+      .cls-8, .cls-9 {
+        font-size: 8px;
+      }
+
+      .cls-8, .cls-12 {
+        font-family: Helvetica, Helvetica;
+      }
+
+      .cls-2 {
+        stroke-width: 10px;
+      }
+
+      .cls-2, .cls-5 {
+        stroke: #d3d3d4;
+      }
+
+      .cls-4 {
+        stroke-width: .3px;
+      }
+
+      .cls-5 {
+        stroke-width: 6px;
+      }
+
+      .cls-10, .cls-13, .cls-14 {
+        stroke-width: 0px;
+      }
+
+      .cls-13 {
+        fill: #d3d3d4;
+      }
+
+      .cls-14 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <rect class="cls-6" x=".75" y="9.99" width="109.95" height="91.8"/>
+    <rect class="cls-10" x="8.33" y="33.51" width="27.47" height="11.12"/>
+    <rect class="cls-4" x="7.03" y="32.21" width="27.47" height="11.12"/>
+    <rect class="cls-14" x="7.03" y="32.21" width="27.47" height="11.12"/>
+    <rect class="cls-4" x="7.03" y="32.21" width="27.47" height="11.12"/>
+    <rect class="cls-10" x="84.35" y="19.5" width="19.83" height="38.62"/>
+    <rect class="cls-10" x="160.8" y="147.05" width="47.75" height="20"/>
+    <rect class="cls-14" x="159.5" y="145.74" width="47.75" height="20"/>
+    <rect class="cls-4" x="159.5" y="145.74" width="47.75" height="20"/>
+    <rect class="cls-10" x="77.19" y="147.05" width="46.75" height="20"/>
+    <rect class="cls-14" x="75.89" y="145.74" width="46.75" height="20"/>
+    <rect class="cls-4" x="75.89" y="145.74" width="46.75" height="20"/>
+    <rect class="cls-10" x="20.65" y="147.14" width="41.25" height="20"/>
+    <rect class="cls-14" x="19.25" y="145.74" width="41.25" height="20"/>
+    <rect class="cls-4" x="19.25" y="145.74" width="41.25" height="20"/>
+    <path class="cls-6" d="m194.87,185.44c0,2.23-5.09,4.03-11.37,4.03s-11.38-1.8-11.38-4.03,5.09-4.03,11.38-4.03,11.37,1.8,11.37,4.03Z"/>
+    <path class="cls-6" d="m194.83,203c-.46,2.08-5.36,3.71-11.34,3.71s-10.85-1.62-11.33-3.69"/>
+    <line class="cls-6" x1="172.12" y1="203.11" x2="172.12" y2="185.44"/>
+    <line class="cls-6" x1="194.87" y1="203.11" x2="194.87" y2="185.44"/>
+    <rect class="cls-10" x="216.33" y="68.68" width="32.75" height="32.51"/>
+    <rect class="cls-14" x="215.02" y="67.38" width="32.75" height="32.51"/>
+    <rect class="cls-4" x="215.02" y="67.38" width="32.75" height="32.51"/>
+    <rect class="cls-10" x="128.48" y="74.45" width="33" height="20.43"/>
+    <line class="cls-5" x1="5.36" y1="119.99" x2="258.8" y2="119.99"/>
+    <polyline class="cls-13" points="257.97 113.85 257.97 126.24 264.17 120.04 257.97 113.85"/>
+    <line class="cls-5" x1="39.87" y1="120.23" x2="39.87" y2="140.01"/>
+    <polyline class="cls-13" points="46.02 139.18 33.63 139.18 39.82 145.37 46.02 139.18"/>
+    <line class="cls-5" x1="99.35" y1="120.39" x2="99.35" y2="140.17"/>
+    <polyline class="cls-13" points="105.5 139.34 93.11 139.34 99.3 145.54 105.5 139.34"/>
+    <line class="cls-5" x1="183.49" y1="119.89" x2="183.49" y2="139.67"/>
+    <polyline class="cls-13" points="189.63 138.84 177.24 138.84 183.44 145.04 189.63 138.84"/>
+    <line class="cls-5" x1="143.54" y1="117.47" x2="143.54" y2="99.55"/>
+    <polyline class="cls-13" points="137.39 100.38 149.78 100.38 143.59 94.19 137.39 100.38"/>
+    <polyline class="cls-13" points="6.19 126.14 6.19 113.75 0 119.94 6.19 126.14"/>
+    <rect class="cls-14" x="127.18" y="73.15" width="33" height="20.43"/>
+    <rect class="cls-4" x="127.18" y="73.15" width="33" height="20.43"/>
+    <rect class="cls-10" x="8.21" y="74.4" width="67.47" height="20.43"/>
+    <rect class="cls-14" x="6.91" y="73.1" width="67.47" height="20.43"/>
+    <rect class="cls-4" x="6.91" y="73.1" width="67.47" height="20.43"/>
+    <line class="cls-5" x1="63.27" y1="30.78" x2="78.77" y2="30.78"/>
+    <polyline class="cls-13" points="76.66 24.63 76.66 37.02 82.85 30.83 76.66 24.63"/>
+    <rect class="cls-10" x="40.81" y="25.62" width="24.92" height="28"/>
+    <line class="cls-5" x1="52.08" y1="58.02" x2="52.08" y2="67.38"/>
+    <polyline class="cls-13" points="58.23 66.55 45.84 66.55 52.03 72.74 58.23 66.55"/>
+    <polyline class="cls-13" points="45.94 58.85 58.33 58.85 52.14 52.66 45.94 58.85"/>
+    <line class="cls-5" x1="82.83" y1="45.25" x2="68.51" y2="45.25"/>
+    <polyline class="cls-13" points="71.04 51.4 71.04 39.01 64.85 45.2 71.04 51.4"/>
+    <rect class="cls-14" x="39.51" y="24.32" width="24.92" height="28"/>
+    <rect class="cls-4" x="39.51" y="24.32" width="24.92" height="28"/>
+    <line class="cls-4" x1="39.51" y1="46.72" x2="64.43" y2="46.72"/>
+    <line class="cls-4" x1="39.51" y1="41.12" x2="64.43" y2="41.12"/>
+    <line class="cls-4" x1="39.51" y1="35.52" x2="64.43" y2="35.52"/>
+    <line class="cls-4" x1="39.51" y1="29.92" x2="64.43" y2="29.92"/>
+    <rect class="cls-14" x="83.05" y="18.2" width="19.83" height="38.62"/>
+    <rect class="cls-4" x="83.05" y="18.2" width="19.83" height="38.62"/>
+    <rect class="cls-10" x="213.8" y="113.86" width="5" height="15.33"/>
+    <rect class="cls-14" x="212.5" y="112.56" width="5" height="15.33"/>
+    <rect class="cls-4" x="212.5" y="112.56" width="5" height="15.33"/>
+    <rect class="cls-10" x="223.46" y="113.86" width="5" height="15.33"/>
+    <rect class="cls-14" x="222.16" y="112.56" width="5" height="15.33"/>
+    <rect class="cls-4" x="222.16" y="112.56" width="5" height="15.33"/>
+    <rect class="cls-10" x="233.13" y="113.86" width="5" height="15.33"/>
+    <rect class="cls-14" x="231.83" y="112.56" width="5" height="15.33"/>
+    <rect class="cls-4" x="231.83" y="112.56" width="5" height="15.33"/>
+    <line class="cls-1" x1="187.8" y1="74.16" x2="187.8" y2="60.42"/>
+    <polyline class="cls-10" points="185.8 74.07 187.79 77.53 189.79 74.07 185.8 74.07"/>
+    <line class="cls-3" x1="25" y1="180.42" x2="25" y2="169.83"/>
+    <polyline class="cls-10" points="27 170.66 25 167.21 23.01 170.66 27 170.66"/>
+    <line class="cls-3" x1="55" y1="180.42" x2="55" y2="169.83"/>
+    <polyline class="cls-10" points="57 170.66 55.01 167.21 53.01 170.66 57 170.66"/>
+    <line class="cls-3" x1="99.3" y1="177.73" x2="99.3" y2="167.46"/>
+    <polyline class="cls-10" points="97.3 177.39 99.3 180.85 101.29 177.39 97.3 177.39"/>
+    <line class="cls-3" x1="183.42" y1="177.73" x2="183.42" y2="169.83"/>
+    <polyline class="cls-10" points="185.42 170.66 183.42 167.21 181.43 170.66 185.42 170.66"/>
+    <polyline class="cls-10" points="181.42 177.39 183.41 180.85 185.4 177.39 181.42 177.39"/>
+    <line class="cls-1" x1="106.09" y1="75.84" x2="132.3" y2="59.93"/>
+    <polyline class="cls-10" points="105.55 73.82 103.64 77.32 107.62 77.23 105.55 73.82"/>
+    <line class="cls-2" x1="83.62" y1="83.18" x2="121.18" y2="83.18"/>
+    <polyline class="cls-13" points="116.46 72.8 116.46 93.46 126.78 83.13 116.46 72.8"/>
+    <polyline class="cls-13" points="85.01 93.42 85.01 72.77 74.68 83.1 85.01 93.42"/>
+    <line class="cls-2" x1="169.62" y1="83.18" x2="209.18" y2="83.18"/>
+    <polyline class="cls-13" points="204.46 72.8 204.46 93.46 214.78 83.13 204.46 72.8"/>
+    <polyline class="cls-13" points="171.01 93.42 171.01 72.77 160.68 83.1 171.01 93.42"/>
+    <text class="cls-8" transform="translate(.51 6.87)"><tspan x="0" y="0">CPU</tspan></text>
+    <text class="cls-8" transform="translate(30.85 20.43)"><tspan x="0" y="0">Register file</tspan></text>
+    <text class="cls-8" transform="translate(15.28 40.79)"><tspan x="0" y="0">PC</tspan></text>
+    <text class="cls-8" transform="translate(85.52 40.73)"><tspan x="0" y="0">ALU</tspan></text>
+    <text class="cls-8" transform="translate(17.02 86.33)"><tspan x="0" y="0">Bus interface</tspan></text>
+    <text class="cls-8" transform="translate(137.96 81.51)"><tspan x="0" y="0">I/O</tspan></text>
+    <text class="cls-8" transform="translate(132.19 90.51)"><tspan x="0" y="0">bridge</tspan></text>
+    <text class="cls-8" transform="translate(112.57 58.09)"><tspan x="0" y="0">System bus</tspan></text>
+    <text class="cls-8" transform="translate(165.63 58.15)"><tspan x="0" y="0">Memory bus</tspan></text>
+    <text class="cls-8" transform="translate(223.3 81.59)"><tspan x="0" y="0">Main</tspan></text>
+    <text class="cls-8" transform="translate(217.52 90.59)"><tspan x="0" y="0">memory</tspan></text>
+    <text class="cls-8" transform="translate(130.64 131.54)"><tspan x="0" y="0">I/O bus</tspan></text>
+    <text class="cls-8" transform="translate(175.52 154.71)"><tspan x="0" y="0">Disk</tspan></text>
+    <text class="cls-8" transform="translate(166.85 163.71)"><tspan x="0" y="0">controller</tspan></text>
+    <text class="cls-8" transform="translate(213.96 137.98)"><tspan x="0" y="0">Expansion slots for</tspan></text>
+    <text class="cls-8" transform="translate(213.96 146.98)"><tspan x="0" y="0">other devices such</tspan></text>
+    <text class="cls-8" transform="translate(213.96 155.98)"><tspan x="0" y="0">as network adapters</tspan></text>
+    <text class="cls-8" transform="translate(84.96 154.21)"><tspan x="0" y="0">Graphics</tspan></text>
+    <text class="cls-8" transform="translate(87.4 163.21)"><tspan x="0" y="0">adapter</tspan></text>
+    <text class="cls-8" transform="translate(86.69 187.42)"><tspan x="0" y="0">Display</tspan></text>
+    <text class="cls-8" transform="translate(10.9 187.42)"><tspan x="0" y="0">Mouse Keyboard</tspan></text>
+    <text class="cls-8" transform="translate(31.58 154.54)"><tspan x="0" y="0">USB</tspan></text>
+    <text class="cls-8" transform="translate(23.36 163.54)"><tspan x="0" y="0">controller</tspan></text>
+    <text class="cls-8" transform="translate(175.86 200.3)"><tspan x="0" y="0">Disk</tspan></text>
+    <text class="cls-7" transform="translate(201.39 191.45)"><tspan x="0" y="0">hello</tspan></text>
+    <text class="cls-9" transform="translate(223.7 191.45)"><tspan class="cls-11" x="0" y="0"> </tspan><tspan class="cls-12" x="4.8" y="0">executable</tspan></text>
+    <text class="cls-8" transform="translate(208.1 200.45)"><tspan x="0" y="0">stored on disk</tspan></text>
+  </g>
+</svg>

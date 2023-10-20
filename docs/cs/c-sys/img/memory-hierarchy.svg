@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.4 214.07">
+  <defs>
+    <style>
+      @media (prefers-color-scheme: dark)
+      {
+          svg {
+              filter: invert(93%) hue-rotate(180deg);
+          } svg[style^="background-color: rgb(255, 255, 255);"] {
+              background-color: transparent !important;
+          }
+          image {
+              filter: invert(100%) hue-rotate(180deg) saturate(1.25);
+          }
+      }
+      .cls-1 {
+        font-family: Helvetica, Helvetica;
+        font-size: 8px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #231815;
+      }
+
+      .cls-3 {
+        letter-spacing: -.06em;
+      }
+
+      .cls-4 {
+        stroke-width: .5px;
+      }
+
+      .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke: #231815;
+      }
+
+      .cls-7 {
+        letter-spacing: -.07em;
+      }
+
+      .cls-8 {
+        letter-spacing: -.05em;
+      }
+
+      .cls-5 {
+        stroke-width: 1.25px;
+      }
+
+      .cls-9 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2, .cls-10 {
+        stroke-width: 0px;
+      }
+
+      .cls-10 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="_图层_1-2" data-name="图层 1">
+    <line class="cls-5" x1="2.46" y1="87.25" x2="2.46" y2="15.17"/>
+    <polyline class="cls-2" points="4.86 16.83 2.43 7.75 0 16.83 4.86 16.83"/>
+    <line class="cls-5" x1="3.09" y1="112.96" x2="3.09" y2="194.63"/>
+    <polyline class="cls-2" points=".69 192.97 3.12 202.05 5.55 192.97 .69 192.97"/>
+    <polyline class="cls-10" points="264.06 213.57 156.51 1.1 48.34 213.57 264.06 213.57"/>
+    <polygon class="cls-6" points="264.06 213.57 156.51 1.1 48.34 213.57 264.06 213.57"/>
+    <line class="cls-6" x1="63.8" y1="183.22" x2="248.7" y2="183.22"/>
+    <line class="cls-6" x1="79.25" y1="152.87" x2="233.33" y2="152.87"/>
+    <line class="cls-6" x1="94.7" y1="122.51" x2="217.97" y2="122.51"/>
+    <line class="cls-6" x1="110.15" y1="92.16" x2="202.6" y2="92.16"/>
+    <line class="cls-6" x1="125.6" y1="61.81" x2="187.24" y2="61.81"/>
+    <line class="cls-6" x1="141.06" y1="31.46" x2="171.87" y2="31.46"/>
+    <text class="cls-1" transform="translate(192.93 29.08)"><tspan x="0" y="0">CPU registers hold words </tspan></text>
+    <text class="cls-1" transform="translate(192.93 38.08)"><tspan x="0" y="0">retrieved from cache memor</tspan><tspan class="cls-7" x="100.03" y="0">y</tspan><tspan x="103.44" y="0">.</tspan></text>
+    <text class="cls-1" transform="translate(207.53 59.7)"><tspan x="0" y="0">L1 cache holds cache lines </tspan></text>
+    <text class="cls-1" transform="translate(207.53 68.7)"><tspan x="0" y="0">retrieved from L2 cache.</tspan></text>
+    <text class="cls-1" transform="translate(222.17 89.92)"><tspan x="0" y="0">L2 cache holds cache lines</tspan></text>
+    <text class="cls-1" transform="translate(222.17 98.92)"><tspan x="0" y="0">retrieved from L3 cache.</tspan></text>
+    <text class="cls-1" transform="translate(254.03 150.79)"><tspan x="0" y="0">Main memory holds disk blocks </tspan></text>
+    <text class="cls-1" transform="translate(254.03 159.79)"><tspan x="0" y="0">retrieved from local disks.</tspan></text>
+    <text class="cls-1" transform="translate(147.07 28.02)"><tspan x="0" y="0">Regs</tspan></text>
+    <text class="cls-1" transform="translate(140.18 105.94)"><tspan x="0" y="0">L3 cache</tspan></text>
+    <text class="cls-1" transform="translate(273.38 177.15)"><tspan x="0" y="0">Local disks hold files</tspan></text>
+    <text class="cls-1" transform="translate(273.38 186.15)"><tspan x="0" y="0">retrieved from disks on</tspan></text>
+    <text class="cls-1" transform="translate(273.38 195.15)"><tspan x="0" y="0">remote network serve</tspan><tspan class="cls-3" x="76.92" y="0">r</tspan><tspan x="79.14" y="0">.</tspan></text>
+    <text class="cls-1" transform="translate(142.19 114.94)"><tspan x="0" y="0">(SRAM)</tspan></text>
+    <text class="cls-1" transform="translate(140.18 75.58)"><tspan x="0" y="0">L2 cache</tspan></text>
+    <text class="cls-1" transform="translate(142.19 84.58)"><tspan x="0" y="0">(SRAM)</tspan></text>
+    <text class="cls-1" transform="translate(140.18 46.51)"><tspan x="0" y="0">L1 cache</tspan></text>
+    <text class="cls-1" transform="translate(142.19 55.51)"><tspan x="0" y="0">(SRAM)</tspan></text>
+    <text class="cls-1" transform="translate(132.19 136.56)"><tspan x="0" y="0">Main memory</tspan></text>
+    <text class="cls-1" transform="translate(141.98 145.56)"><tspan x="0" y="0">(DRAM)</tspan></text>
+    <text class="cls-1" transform="translate(112.84 166.76)"><tspan x="0" y="0">Local secondary storage</tspan></text>
+    <text class="cls-1" transform="translate(135.3 175.76)"><tspan x="0" y="0">(local disks)</tspan></text>
+    <text class="cls-1" transform="translate(108.39 196.14)"><tspan x="0" y="0">Remote secondary storage</tspan></text>
+    <text class="cls-1" transform="translate(88.69 205.14)"><tspan x="0" y="0">(distributed file systems, </tspan><tspan class="cls-9" x="88.03" y="0">W</tspan><tspan x="95.44" y="0">eb servers)</tspan></text>
+    <text class="cls-1" transform="translate(11.8 30.3)"><tspan x="0" y="0">Smalle</tspan><tspan class="cls-8" x="24.45" y="0">r</tspan><tspan x="26.68" y="0">,</tspan></text>
+    <text class="cls-1" transform="translate(19.58 48.3)"><tspan x="0" y="0">and</tspan></text>
+    <text class="cls-1" transform="translate(15.35 39.3)"><tspan x="0" y="0">faste</tspan><tspan class="cls-8" x="17.34" y="0">r</tspan><tspan x="19.57" y="0">,</tspan></text>
+    <text class="cls-1" transform="translate(13.58 57.3)"><tspan x="0" y="0">costlier</tspan></text>
+    <text class="cls-1" transform="translate(9.13 66.3)"><tspan x="0" y="0">(per byte)</tspan></text>
+    <text class="cls-1" transform="translate(12.9 75.3)"><tspan x="0" y="0">storage</tspan></text>
+    <text class="cls-1" transform="translate(12.68 84.3)"><tspan x="0" y="0">devices</tspan></text>
+    <text class="cls-1" transform="translate(12.78 122.55)"><tspan x="0" y="0">Large</tspan><tspan class="cls-8" x="20.46" y="0">r</tspan><tspan x="22.69" y="0">,</tspan></text>
+    <text class="cls-1" transform="translate(18.56 140.55)"><tspan x="0" y="0">and</tspan></text>
+    <text class="cls-1" transform="translate(12.78 131.55)"><tspan x="0" y="0">slowe</tspan><tspan class="cls-8" x="20.45" y="0">r</tspan><tspan x="22.68" y="0">,</tspan></text>
+    <text class="cls-1" transform="translate(10.78 149.55)"><tspan x="0" y="0">cheaper</tspan></text>
+    <text class="cls-1" transform="translate(8.11 158.55)"><tspan x="0" y="0">(per byte)</tspan></text>
+    <text class="cls-1" transform="translate(11.89 167.55)"><tspan x="0" y="0">storage</tspan></text>
+    <text class="cls-1" transform="translate(11.66 176.55)"><tspan x="0" y="0">devices</tspan></text>
+    <text class="cls-1" transform="translate(134.2 18.36)"><tspan x="0" y="0">L0:</tspan></text>
+    <text class="cls-1" transform="translate(119.26 46.36)"><tspan x="0" y="0">L1:</tspan></text>
+    <text class="cls-1" transform="translate(104.16 77.6)"><tspan x="0" y="0">L2:</tspan></text>
+    <text class="cls-1" transform="translate(89.35 107.36)"><tspan x="0" y="0">L3:</tspan></text>
+    <text class="cls-1" transform="translate(73.4 137.26)"><tspan x="0" y="0">L4:</tspan></text>
+    <text class="cls-1" transform="translate(58.86 166.8)"><tspan x="0" y="0">L5:</tspan></text>
+    <text class="cls-1" transform="translate(43.18 196.72)"><tspan x="0" y="0">L6:</tspan></text>
+    <path class="cls-4" d="m184.69,43.42c.88,0,1.59-.71,1.59-1.59v-8.78s0,0,0,0c0-.88.71-1.59,1.59-1.59-.88,0-1.59-.71-1.59-1.59h0v-8.67c0-.88-.71-1.59-1.59-1.59"/>
+    <path class="cls-4" d="m200.05,73.77c.88,0,1.59-.71,1.59-1.59v-8.78s0,0,0,0c0-.88.71-1.59,1.59-1.59-.88,0-1.59-.71-1.59-1.59h0v-8.67c0-.88-.71-1.59-1.59-1.59"/>
+    <path class="cls-4" d="m214.42,104.12c.88,0,1.59-.71,1.59-1.59v-8.78s0,0,0,0c0-.88.71-1.59,1.59-1.59-.88,0-1.59-.71-1.59-1.59h0v-8.67c0-.88-.71-1.59-1.59-1.59"/>
+    <path class="cls-4" d="m230.78,134.48c.88,0,1.59-.71,1.59-1.59v-8.78s0,0,0,0c0-.88.71-1.59,1.59-1.59-.88,0-1.59-.71-1.59-1.59h0v-8.67c0-.88-.71-1.59-1.59-1.59"/>
+    <text class="cls-1" transform="translate(238.54 120.28)"><tspan x="0" y="0">L3 cache holds cache lines</tspan></text>
+    <text class="cls-1" transform="translate(238.54 129.28)"><tspan x="0" y="0">retrieved from memor</tspan><tspan class="cls-7" x="76.46" y="0">y</tspan><tspan x="79.87" y="0">.</tspan></text>
+    <path class="cls-4" d="m246.15,164.83c.88,0,1.59-.71,1.59-1.59v-8.78s0,0,0,0c0-.88.71-1.59,1.59-1.59-.88,0-1.59-.71-1.59-1.59h0v-8.67c0-.88-.71-1.59-1.59-1.59"/>
+    <path class="cls-4" d="m265.51,198.98c.88,0,1.59-.71,1.59-1.59v-12.58s0,0,0,0c0-.88.71-1.59,1.59-1.59-.88,0-1.59-.71-1.59-1.59h0v-12.47c0-.88-.71-1.59-1.59-1.59"/>
+  </g>
+</svg>

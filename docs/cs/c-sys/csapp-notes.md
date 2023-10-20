@@ -27,12 +27,12 @@ gcc -o hello hello.c
 
 Four phases are performed:
 
+![Compilation System](img/compilation-system.svg)
+
  - **Preprocessing phase**: The preprocessor (`cpp`) turns `hello.c` to `hello.i`. The result `hello.i` is also a C program. In this phase, `#include<stdio.h>` is replaced by the content of `stdio.h`.
  - **Compilation phase**: The compiler (`cc1`) translates text file `hello.i` into text file `hello.s`, which contains an *assembly-language program*.
  - **Assembly phase**: The assembler (`as`) translates `hello.s` into machine-language instructions, packages them in a form known as a *relocatable object program*, and stores the result in the object file `hello.o`.
  - **Linking phase**. Take `printf` function for example. The `printf` function resides in a separate precompiled object file called `printf.o`, which must be merged with `hello.o`. The linker (`ld`) handles this merging. The result is the *executable object file* `hello`.
-
-Whole process: `hello.c` → `hello.i` → `hello.s` → `hello.o` → `hello`.
 
 ---
 
@@ -40,7 +40,7 @@ Whole process: `hello.c` → `hello.i` → `hello.s` → `hello.o` → `hello`.
 
 ### Hardware Organization of a System
 
-![Hardware Organization of a System](img/hardware-organization-of-a-system.png)
+![Hardware Organization of a System](img/hardware-organization-of-a-system.svg)
 
  - **Word**: The natural unit of access for a processor. A word is typically 4 bytes or 8 bytes long. A *bus* transfers a word at a time.
  - **I/O Devices :: Controller / Adapter**: *Controllers* are chip set in the device itself or on the motherboard. An *adapter* is a card that plugs into a slot on the motherboard.
@@ -54,13 +54,15 @@ Whole process: `hello.c` → `hello.i` → `hello.s` → `hello.o` → `hello`.
 
 Memory hierarchy:
 
-![Memory hierarchy](img/memory-hierarchy.png)
+![Memory Hierarchy](img/memory-hierarchy.svg)
 
 ---
 
 ## 1.7 The Operating System Manages the Hardware
 
 The operating system manages the hardware by providing abstractions for the hardware resources.
+
+![OS Abstraction](img/os-abstraction.svg)
 
  - **File**: I/O devices.
  - **Virtual memory**: Main memory and I/O devices.
