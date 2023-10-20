@@ -75,3 +75,46 @@ The operating system manages the hardware by providing abstractions for the hard
 Multiple processes run concurrently on a system.
 
 > **Kernel**: The *kernel* is the portion of the operating system code that is always resident in memory. When an application program requires some action by the operating system, such as to read or write a file, it executes a special system call instruction, transferring control to the kernel. The kernel then performs the requested operation and returns to the application program.
+
+### Threads
+
+Multiple threads run concurrently within a process.
+
+They share the same code and global data.
+
+### Virtual Memory
+
+An abstraction that provides each process with the illusion that it has exclusive use of the main memory.
+
+### Files
+
+Every I/O device, e.g., disks, keyboards, and monitors, is modeled as a file.
+
+---
+
+## 1.9 Important Themes
+
+### Amdahl's Law
+
+Consider a system in which executing some application requires time $T_{\text{old}}$. Suppose some part of the system requires a fraction $\alpha$ of this time, and that we improve its performance by a factor of $k$. The overall execution time would thus be
+
+$$
+\begin{aligned}
+T_{\text{new}}=&(1-\alpha)T_{\text{old}} + \alpha T_{\text{old}}/k\\
+=&T_{\text{old}}[(1-\alpha) + \alpha/k]
+\end{aligned}
+$$
+
+The speedup $S = T_{\text{old}} / T_{\text{new}}$ is
+
+$$S=\frac{1}{(1-\alpha) + \alpha/k}$$
+
+Suppose we significantly improved a part that takes $60%$ of the time by a factor of $3$. The speedup is only $1.67\times$. The overall improvement is not as good as we expected.
+
+Furthermore, suppose we are able to take some part of the system and speed it up to the point at which it takes a negligible amount of time. That is, we set $k$ to $\infty$. The speedup is
+
+$$S_\infty=\frac{1}{1-\alpha}$$
+
+When we set $\alpha$ to $60\%$, the speedup is only $2.5\times$.
+
+**Conclude**: To significantly improve the overall performance of a system, we must improve the speed of a very large fraction of the system.
