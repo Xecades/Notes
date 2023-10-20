@@ -7,9 +7,7 @@ theme:
     logo: material/xml
   features:
     - navigation.tabs
-    - navigation.sections
     - toc.follow
-    - navigation.top
     - search.suggest
     - content.code.copy
   palette:
