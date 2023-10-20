@@ -57,3 +57,11 @@ Several languages that I am interested in.
  - Vim.
  - Docker.
  - CMake.
+ - Regex.
+
+---
+
+## Read source code
+
+ - hexo: [@hexojs :: hexo](https://github.com/hexojs/hexo)
+ - manim: [@3b1b :: manim](https://github.com/3b1b/manim)
