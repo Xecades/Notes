@@ -10,6 +10,10 @@ comments: true
 
 ## Basis
 
+### General
+
+ - *Computer Systems: A Programmer's Perspective*, or *CSAPP* for short.
+
 ### Network
 
  - To-do.
@@ -26,7 +30,7 @@ Several languages that I am interested in.
 
 ### C & C++
 
- - *Computer Systems: A Programmer's Perspective*, or *CSAPP* for short.
+ - To-do.
 
 ### Python
 
