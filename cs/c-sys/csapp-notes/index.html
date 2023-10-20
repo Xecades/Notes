@@ -1067,17 +1067,17 @@
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>gcc<span class="w"> </span>-o<span class="w"> </span>hello<span class="w"> </span>hello.c
 </span></code></pre></div>
 <p>Four phases are performed:</p>
+<p><img alt="Compilation System" src="../img/compilation-system.svg" /></p>
 <ul>
 <li><strong>Preprocessing phase</strong>: The preprocessor (<code>cpp</code>) turns <code>hello.c</code> to <code>hello.i</code>. The result <code>hello.i</code> is also a C program. In this phase, <code>#include&lt;stdio.h&gt;</code> is replaced by the content of <code>stdio.h</code>.</li>
 <li><strong>Compilation phase</strong>: The compiler (<code>cc1</code>) translates text file <code>hello.i</code> into text file <code>hello.s</code>, which contains an <em>assembly-language program</em>.</li>
 <li><strong>Assembly phase</strong>: The assembler (<code>as</code>) translates <code>hello.s</code> into machine-language instructions, packages them in a form known as a <em>relocatable object program</em>, and stores the result in the object file <code>hello.o</code>.</li>
 <li><strong>Linking phase</strong>. Take <code>printf</code> function for example. The <code>printf</code> function resides in a separate precompiled object file called <code>printf.o</code>, which must be merged with <code>hello.o</code>. The linker (<code>ld</code>) handles this merging. The result is the <em>executable object file</em> <code>hello</code>.</li>
 </ul>
-<p>Whole process: <code>hello.c</code> → <code>hello.i</code> → <code>hello.s</code> → <code>hello.o</code> → <code>hello</code>.</p>
 <hr />
 <h2 id="14-processors-read-and-interpret-instructions-stored-in-memory">1.4 Processors Read and Interpret Instructions Stored in Memory<a class="headerlink" href="#14-processors-read-and-interpret-instructions-stored-in-memory" title="Permanent link">&para;</a></h2>
 <h3 id="hardware-organization-of-a-system">Hardware Organization of a System<a class="headerlink" href="#hardware-organization-of-a-system" title="Permanent link">&para;</a></h3>
-<p><img alt="Hardware Organization of a System" src="../img/hardware-organization-of-a-system.png" /></p>
+<p><img alt="Hardware Organization of a System" src="../img/hardware-organization-of-a-system.svg" /></p>
 <ul>
 <li><strong>Word</strong>: The natural unit of access for a processor. A word is typically 4 bytes or 8 bytes long. A <em>bus</em> transfers a word at a time.</li>
 <li><strong>I/O Devices :: Controller / Adapter</strong>: <em>Controllers</em> are chip set in the device itself or on the motherboard. An <em>adapter</em> is a card that plugs into a slot on the motherboard.</li>
@@ -1089,10 +1089,11 @@
 <p>This notion of inserting a smaller, faster storage device (e.g., cache memory) between the processor and a larger, slower device (e.g., main memory) turns out to be a general idea.</p>
 </blockquote>
 <p>Memory hierarchy:</p>
-<p><img alt="Memory hierarchy" src="../img/memory-hierarchy.png" /></p>
+<p><img alt="Memory Hierarchy" src="../img/memory-hierarchy.svg" /></p>
 <hr />
 <h2 id="17-the-operating-system-manages-the-hardware">1.7 The Operating System Manages the Hardware<a class="headerlink" href="#17-the-operating-system-manages-the-hardware" title="Permanent link">&para;</a></h2>
 <p>The operating system manages the hardware by providing abstractions for the hardware resources.</p>
+<p><img alt="OS Abstraction" src="../img/os-abstraction.svg" /></p>
 <ul>
 <li><strong>File</strong>: I/O devices.</li>
 <li><strong>Virtual memory</strong>: Main memory and I/O devices.</li>
@@ -1112,7 +1113,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-19T15:33:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-19</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-20T00:46:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-20</span>
       
         <br>
         Created:
