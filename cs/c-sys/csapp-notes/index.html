@@ -644,6 +644,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#threads" class="md-nav__link">
+    Threads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    Virtual Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-important-themes" class="md-nav__link">
+    1.9 Important Themes
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9 Important Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amdahls-law" class="md-nav__link">
+    Amdahl's Law
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1027,6 +1068,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#threads" class="md-nav__link">
+    Threads
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#virtual-memory" class="md-nav__link">
+    Virtual Memory
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#files" class="md-nav__link">
+    Files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-important-themes" class="md-nav__link">
+    1.9 Important Themes
+  </a>
+  
+    <nav class="md-nav" aria-label="1.9 Important Themes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#amdahls-law" class="md-nav__link">
+    Amdahl's Law
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1107,13 +1189,37 @@
 <blockquote>
 <p><strong>Kernel</strong>: The <em>kernel</em> is the portion of the operating system code that is always resident in memory. When an application program requires some action by the operating system, such as to read or write a file, it executes a special system call instruction, transferring control to the kernel. The kernel then performs the requested operation and returns to the application program.</p>
 </blockquote>
+<h3 id="threads">Threads<a class="headerlink" href="#threads" title="Permanent link">&para;</a></h3>
+<p>Multiple threads run concurrently within a process.</p>
+<p>They share the same code and global data.</p>
+<h3 id="virtual-memory">Virtual Memory<a class="headerlink" href="#virtual-memory" title="Permanent link">&para;</a></h3>
+<p>An abstraction that provides each process with the illusion that it has exclusive use of the main memory.</p>
+<h3 id="files">Files<a class="headerlink" href="#files" title="Permanent link">&para;</a></h3>
+<p>Every I/O device, e.g., disks, keyboards, and monitors, is modeled as a file.</p>
+<hr />
+<h2 id="19-important-themes">1.9 Important Themes<a class="headerlink" href="#19-important-themes" title="Permanent link">&para;</a></h2>
+<h3 id="amdahls-law">Amdahl's Law<a class="headerlink" href="#amdahls-law" title="Permanent link">&para;</a></h3>
+<p>Consider a system in which executing some application requires time <span class="arithmatex">\(T_{\text{old}}\)</span>. Suppose some part of the system requires a fraction <span class="arithmatex">\(\alpha\)</span> of this time, and that we improve its performance by a factor of <span class="arithmatex">\(k\)</span>. The overall execution time would thus be</p>
+<div class="arithmatex">\[
+\begin{aligned}
+T_{\text{new}}=&amp;(1-\alpha)T_{\text{old}} + \alpha T_{\text{old}}/k\\
+=&amp;T_{\text{old}}[(1-\alpha) + \alpha/k]
+\end{aligned}
+\]</div>
+<p>The speedup <span class="arithmatex">\(S = T_{\text{old}} / T_{\text{new}}\)</span> is</p>
+<div class="arithmatex">\[S=\frac{1}{(1-\alpha) + \alpha/k}\]</div>
+<p>Suppose we significantly improved a part that takes <span class="arithmatex">\(60%\)</span> of the time by a factor of <span class="arithmatex">\(3\)</span>. The speedup is only <span class="arithmatex">\(1.67\times\)</span>. The overall improvement is not as good as we expected.</p>
+<p>Furthermore, suppose we are able to take some part of the system and speed it up to the point at which it takes a negligible amount of time. That is, we set <span class="arithmatex">\(k\)</span> to <span class="arithmatex">\(\infty\)</span>. The speedup is</p>
+<div class="arithmatex">\[S_\infty=\frac{1}{1-\alpha}\]</div>
+<p>When we set <span class="arithmatex">\(\alpha\)</span> to <span class="arithmatex">\(60\%\)</span>, the speedup is only <span class="arithmatex">\(2.5\times\)</span>.</p>
+<p><strong>Conclude</strong>: To significantly improve the overall performance of a system, we must improve the speed of a very large fraction of the system.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-20T00:46:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-20</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-10-20T06:59:34+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-10-20</span>
       
         <br>
         Created:
