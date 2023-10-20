@@ -1,3 +1,7 @@
 .md-typeset table:not([class]) {
     font-size: .8rem;
 }
+
+.md-typeset h3 {
+    font-size: 1.4em;
+}
