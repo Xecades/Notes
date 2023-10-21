@@ -43,6 +43,8 @@ markdown_extensions:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - toc:
       permalink: true
   - pymdownx.inlinehilite
@@ -82,4 +84,5 @@ nav:
       - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md
   - Others:
     - Learning Plan: others/learning-plan.md
+    - Things I Should Do Before I Die: others/things-i-should-do.md
     - macOS Command Collection: others/macOS-command-collection.md
