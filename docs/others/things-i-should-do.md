@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Things I Should Do Before I Die
 
 > Every man dies. Not every man really lives.
