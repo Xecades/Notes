@@ -4,7 +4,7 @@ Here is a collection of useful command-line tools for macOS.
 
 ## General
 
--   `exa`: Modern replacement for `ls`.
+-   `eza`: Modern replacement for `ls`.
 -   `bat`: Modern replacement for `cat`.
 -   `fd`: Modern replacement for `find`.
 -   `lazygit`: Terminal UI for `git`.
