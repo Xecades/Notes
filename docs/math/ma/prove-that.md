@@ -33,7 +33,7 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
 ## Continuity
 
 1. Every irrational point of $R(x)$ is continuous, every rational point of $R(x)$ is removable discontinuous, where
-> $$R(x)=\left\{\begin{align}\frac{1}{q}&\quad \text{if}\ x=\frac{p}{q}, \text{with}\ p\in\mathbb{Z}\ \text{and}\ q\in\mathbb{N}\ \text{coprime.}\\0&\quad \text{if}\ x\ \text{is irrational.}\end{align}\right.$$
+> $$R(x)=\left\{\begin{align}\frac{1}{q}&\quad \text{if}\ x=\frac{p}{q}\text{, with}\ p\in\mathbb{Z}\ \text{and}\ q\in\mathbb{N}\ \text{coprime.}\\0&\quad \text{if}\ x\ \text{is irrational.}\end{align}\right.$$
 2. If $u=g(x)$ is continuous at $x_0$, $y=f(u)$ is continuous at $u_0=g(x_0)$, then $f\circ g(x)=f(g(x))$ is continuous at $x_0$.
 3. If $f(x)$ is continuous in closed interval $[a, b]$,
     1. then it is bounded in $[a, b]$.
