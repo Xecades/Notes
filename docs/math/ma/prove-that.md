@@ -18,9 +18,20 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
 3. For convergent sequences $\{x_n\}$ and $\{y_n\}$, if $\lim\limits_{n\to\infty}x_n=a$, $\lim\limits_{n\to\infty}y_n=b$, and $a<b$, then exists $N\in\mathbb{N}^\star$ so that $x_n<y_n$ for all $n>N$.
 4. If $\lim\limits_{n\to\infty}x_n=a$, $\lim\limits_{n\to\infty}y_n=b\neq0$, then $\lim\limits_{n\to\infty}\dfrac{x_n}{y_n}=\dfrac{a}{b}$.
 5. $a_n = \left(1 + \dfrac{1}{n}\right)^n$ and $b_n = \left(1 + \dfrac{1}{n}\right)^{n + 1}$ converges to $e$.
-6. $a_n = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n} - \ln n$ converges to $\gamma$.
-7. Prove with *Nested interval theorem*: $\mathbb{R}$ is uncountable.
-8. Prove the [completeness of the real numbers](completeness-of-real-numbers.md).
+6. $a_n = 1 + \dfrac{1}{2!} + \dfrac{1}{3!} + \cdots + \dfrac{1}{n!}$ converges to $e$.
+7. $a_n = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n} - \ln n$ converges to $\gamma$.
+8. $\lim\limits_{n\to\infty}a_n=A\iff\lim\limits_{n\to\infty}a_{2n-1}=\lim\limits_{n\to\infty}a_{2n}=A$.
+9.  $\{a_n\}$ converges to $a$, if and only if for all non-trivial subsequence $\{a_{n_k}\}$, $\lim\limits_{k\to\infty}a_{n_k}=a$.
+10. $a_n = \sin n$ is divergent.
+11. Prove with *Nested interval theorem*: $\mathbb{R}$ is uncountable.
+12. Refer to [Completeness of the Real Numbers](completeness-of-real-numbers.md), and prove
+    1. *Least upper bound* $\Rightarrow$ *Monotone convergence*.
+    2. *Monotone convergence* $\Rightarrow$ *Nested interval*.
+    3. *Nested interval* $\Rightarrow$ *Bolzano-Weierstrass*.
+    4. *Bolzano-Weierstrass* $\Rightarrow$ *Cauchy criterion*.
+    5. *Cauchy criterion* $\Rightarrow$ *Least upper bound*.
+    6. *Nested interval* $\Rightarrow$ *Least upper bound*.
+    7. *Cauchy criterion* $\Rightarrow$ *Nested interval*.
 
 ---
 
@@ -46,4 +57,6 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
     2. then $\max f(x)$ and $\min f(x)$ exists in $[a, b]$.
     3. and $f(a)\cdot f(b)<0$, then exists $\xi\in(a, b)$ so that $f(\xi)=0$.
     4. then it can reach all values between $\min f(x)$ and $\max f(x)$.
-    5. (*Cantor's theorem*) then it is uniformy continuous in $[a, b]$.
+    5. (*Cantor's theorem*) then it is uniformly continuous in $[a, b]$.
+4. The sufficient and necessary condition for $f(x)$ to be uniformly continuous in $D$ is that for all sequences $\{x_n\}, \{y_n\}\in D^\mathbb{N}$ that satisfies $\lim\limits_{n\to\infty}(x_n-y_n)=0$, $\lim\limits_{n\to\infty}(f(x_n)-f(y_n))=0$.
+5. If $f(x)$ is continuous in finite open interval $(a, b)$, then $f(x)$ is uniformly continuous on $(a, b)$ if and only if $\lim\limits_{x\to a^+}f(x)$ and $\lim\limits_{x\to b^-}f(x)$ exist.

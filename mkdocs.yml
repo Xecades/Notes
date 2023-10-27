@@ -7,6 +7,7 @@ theme:
     logo: material/xml
   features:
     - navigation.tabs
+    - navigation.expand
     - toc.follow
     - search.suggest
     - content.code.copy
@@ -81,8 +82,10 @@ nav:
       - Cheatsheet: cs/c-cpp/c-language-cheatsheet.md
   - Math:
     - Mathematical Analysis:
-      - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md
       - Prove That...: math/ma/prove-that.md
+      - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md
+    - Linear Algebra:
+      - What is...: math/la/what-is.md
   - Others:
     - Learning Plan: others/learning-plan.md
     - Things I Should Do Before I Die: others/things-i-should-do.md
