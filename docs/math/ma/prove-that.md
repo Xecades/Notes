@@ -18,7 +18,7 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
 5. $a_n = \left(1 + \dfrac{1}{n}\right)^n$ and $b_n = \left(1 + \dfrac{1}{n}\right)^{n + 1}$ converges to $e$.
 6. $a_n = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n} - \ln n$ converges to $\gamma$.
 7. Prove with *Nested interval theorem*: $\mathbb{R}$ is uncountable.
-8. Prove the [completeness of the real numbers](../completeness-of-real-numbers).
+8. Prove the [completeness of the real numbers](completeness-of-real-numbers.md).
 
 ## Limit of a function
 
