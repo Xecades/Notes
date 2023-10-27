@@ -9,6 +9,8 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
     - $(A \cap B)^C = A^C \cup B^C$
 2. Any countable union of countable sets is a countable set.
 
+---
+
 ## Limit of a sequence
 
 1. Prove with definition: $\lim\limits_{n\to\infty}{\sqrt[n]{n}} = 1$.
@@ -20,6 +22,8 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
 7. Prove with *Nested interval theorem*: $\mathbb{R}$ is uncountable.
 8. Prove the [completeness of the real numbers](completeness-of-real-numbers.md).
 
+---
+
 ## Limit of a function
 
 1. If $\lim\limits_{x\to a}f(x)=A$, $\lim\limits_{x\to a}g(x)=B$ and $A>B$, then exists $\delta>0$ so that $f(x)>g(x)$ for all $x\in\mathring{U}(x_0, \delta)$.
@@ -29,6 +33,8 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
 5. Prove with *Heine's theorem*: $f(x)=\sin\dfrac{1}{x}$ has no limit as $x\to0$.
 6. (*Cauchy criterion*) Prove with *Heine's theorem*: $\lim\limits_{x\to a}f(x)=A$ if and only if for all $\varepsilon>0$, exists $\delta>0$ so that $|f(x)-f(y)|<\varepsilon$ for all $x,y\in\mathring{U}(x_0, \delta)$.
 7. Prove with definition: $\lim\limits_{x\to\infty}\left(1+\dfrac{1}{x}\right)^x=e$.
+
+---
 
 ## Continuity
 
