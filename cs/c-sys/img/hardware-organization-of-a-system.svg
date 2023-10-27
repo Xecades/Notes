@@ -2,17 +2,6 @@
 <svg id="_图层_2" data-name="图层 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 286 207.21">
   <defs>
     <style>
-      @media (prefers-color-scheme: dark)
-      {
-          svg {
-              filter: invert(93%) hue-rotate(180deg);
-          } svg[style^="background-color: rgb(255, 255, 255);"] {
-              background-color: transparent !important;
-          }
-          image {
-              filter: invert(100%) hue-rotate(180deg) saturate(1.25);
-          }
-      }
       .cls-1 {
         stroke-linecap: round;
       }
