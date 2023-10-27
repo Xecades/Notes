@@ -82,6 +82,7 @@ nav:
   - Math:
     - Mathematical Analysis:
       - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md
+      - Prove That...: math/ma/prove-that.md
   - Others:
     - Learning Plan: others/learning-plan.md
     - Things I Should Do Before I Die: others/things-i-should-do.md
