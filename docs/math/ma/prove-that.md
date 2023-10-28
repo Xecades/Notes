@@ -30,8 +30,8 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
     3. *Nested interval* $\Rightarrow$ *Bolzano-Weierstrass*.
     4. *Bolzano-Weierstrass* $\Rightarrow$ *Cauchy criterion*.
     5. *Cauchy criterion* $\Rightarrow$ *Least upper bound*.
-    6. *Nested interval* $\Rightarrow$ *Least upper bound*.
-    7. *Cauchy criterion* $\Rightarrow$ *Nested interval*.
+    6. *Cauchy criterion* $\Rightarrow$ *Nested interval*.
+    7. *Nested interval* $\Rightarrow$ *Least upper bound*.
 
 ---
 
