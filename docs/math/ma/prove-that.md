@@ -21,7 +21,7 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
 6. $a_n = 1 + \dfrac{1}{1!} + \dfrac{1}{2!} + \cdots + \dfrac{1}{n!}$ converges to $e$.
 7. $a_n = 1 + \dfrac{1}{2} + \dfrac{1}{3} + \cdots + \dfrac{1}{n} - \ln n$ converges to $\gamma$.
 8. $\lim\limits_{n\to\infty}a_n=A\iff\lim\limits_{n\to\infty}a_{2n-1}=\lim\limits_{n\to\infty}a_{2n}=A$.
-9.  $\{a_n\}$ is convergent $\iff$ for all non-trivial subsequence $\{a_{n_k}\}$, $a_{n_k}$ is convergent.
+9.  $\{a_n\}$ is convergent $\iff$ every non-trivial subsequence $\{a_{n_k}\}$ of $\{a_n\}$ converges.
 10. $a_n = \sin n$ is divergent.
 11. Prove with *Nested interval theorem*: $\mathbb{R}$ is uncountable.
 12. Refer to [Completeness of the Real Numbers](completeness-of-real-numbers.md), and prove
