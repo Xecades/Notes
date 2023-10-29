@@ -32,6 +32,8 @@ Here is a collection of useful command-line tools for macOS.
 -   `hexyl`: Command-line Hex viewer.
 -   `nmap`: Port scanner.
 -   `StegSolve.jar`: Steganography solver.
+-   `exiftool`: Read and write meta information in files.
+-   `zsteg`: Steganography detection for PNG and BMP file formats.
 
 ## Miscellaneous
 
