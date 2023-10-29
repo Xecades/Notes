@@ -74,7 +74,6 @@ extra_javascript:
 nav:
   - Home:
     - Overview: index.md
-    - Comment: comment.md
   - Computer Science:
     - Computer System:
       - CSAPP Notes: cs/c-sys/csapp-notes.md
