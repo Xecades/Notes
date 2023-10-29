@@ -1,3 +1,7 @@
+---
+comments: true
+---
+
 # Overview
 
 Here are my notes on various topics. I am trying to keep them as concise as possible, so that I can review them quickly. The notes are written in Markdown (with LaTeX embedded). I am using [MkDocs](https://www.mkdocs.org/) to generate the site.
