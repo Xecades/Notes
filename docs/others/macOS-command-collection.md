@@ -17,6 +17,8 @@ Here is a collection of useful command-line tools for macOS.
  - `br`: Broot, a tree-view file manager.
  - `tree`: Show directory structure.
  - `pbcopy` / `pbpaste`: Copy / paste to / from clipboard. Built-in command.
+ - `btop`: Resource monitor.
+ - `neofetch`: Show system info.
 
 ## Productivity
 
@@ -40,5 +42,4 @@ Here is a collection of useful command-line tools for macOS.
  - `lolcat`: Colorful `cat`.
  - `cowsay` / `cowthink`: Configurable speaking / thinking cow.
  - `fortune`: Fortune cookie.
- - `neofetch`: Show system info.
  - `nyancat`: Nyan cat in the terminal.
