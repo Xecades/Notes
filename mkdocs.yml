@@ -76,7 +76,7 @@ nav:
     - Overview: index.md
   - Computer Science:
     - Computer System:
-      - CSAPP Notes: cs/sys/csapp-notes.md
+      - CSAPP Notes: cs/sys/csapp.md
     - C / C++:
       - Cheatsheet: cs/c-cpp/c-language-cheatsheet.md
   - Math:
