@@ -75,6 +75,9 @@ nav:
   - Home:
     - Overview: index.md
   - Computer Science:
+    - Programming Basis:
+      - Manuals & Standards: cs/basis/manuals-standards.md
+      - MIT Missing Semester: cs/basis/mit-missing-semester.md
     - Computer System:
       - CSAPP Notes: cs/sys/csapp.md
     - C / C++:
