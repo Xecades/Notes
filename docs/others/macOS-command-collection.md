@@ -36,6 +36,7 @@ Here is a collection of useful command-line tools for macOS.
  - `StegSolve.jar`: Steganography solver.
  - `exiftool`: Read and write meta information in files.
  - `zsteg`: Steganography detection for PNG and BMP file formats.
+ - `pngcheck`: PNG file validator and debugger.
 
 ## Miscellaneous
 
