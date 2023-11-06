@@ -514,29 +514,29 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#operators" class="md-nav__link">
     Operators
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#redirection" class="md-nav__link">
     Redirection
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#control-flow" class="md-nav__link">
     Control Flow
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -933,29 +933,29 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#operators" class="md-nav__link">
     Operators
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#redirection" class="md-nav__link">
     Redirection
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#control-flow" class="md-nav__link">
     Control Flow
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -999,7 +999,7 @@
 <li><strong><code class="language-sh highlight"><span class="nv">$$</span></code></strong>: PID of the current script.</li>
 <li><strong><code class="language-sh highlight"><span class="nv">$_</span></code></strong>: Last argument of the last command.</li>
 </ul>
-<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
+<h3 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h3>
 <p><strong>Operator <code>||</code>, <code>&amp;&amp;</code> and <code>;</code></strong>:</p>
 <ul>
 <li><strong><code class="language-sh highlight">foo<span class="w"> </span><span class="o">||</span><span class="w"> </span>bar</code></strong> means "run <code>foo</code>, if it fails, run <code>bar</code>".</li>
@@ -1016,7 +1016,7 @@
 </span></code></pre></div>
 <p><strong>Command substitution</strong>: use <code class="language-sh highlight"><span class="k">$(</span>foo<span class="k">)</span></code> to run <code>foo</code> and use its output as a string. Example: <code class="language-sh highlight"><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="k">)</span></code> iterates over all files.</p>
 <p><strong>Process substitution</strong>: <code class="language-sh highlight">&lt;<span class="o">(</span>foo<span class="o">)</span></code> will run <code>foo</code> and place the output in a temporary file and substitute the <code class="language-sh highlight">&lt;<span class="o">()</span></code> with that file’s name. Example: <code class="language-sh highlight">diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span></code> compares the files of directory <code>foo</code> and <code>bar</code>.</p>
-<h2 id="redirection">Redirection<a class="headerlink" href="#redirection" title="Permanent link">&para;</a></h2>
+<h3 id="redirection">Redirection<a class="headerlink" href="#redirection" title="Permanent link">&para;</a></h3>
 <p><strong>Input</strong>: use <code>&lt;</code> to redirect input from a file.</p>
 <p><strong>Output</strong>: use <code>&gt;</code> to redirect output to a file. Use <code>&gt;&gt;</code> to append to a file.</p>
 <p><strong>Error</strong>: use <code>2&gt;</code> to redirect error to a file.</p>
@@ -1024,7 +1024,7 @@
 <p><strong>Both input and output</strong>: use <code>&lt;&gt;</code> to redirect both input and output to a file.</p>
 <p><strong>Discard</strong>: redirect to <code>/dev/null</code> to discard output/error/input.</p>
 <p><strong>Pipe</strong>: use <code>|</code> to pipe the output of a command to the input of another command.</p>
-<h2 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h2>
+<h3 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h3>
 <p><strong>Under Construction</strong></p>
 
   <hr>
@@ -1032,7 +1032,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-06T03:45:09+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-06T08:14:20+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-06</span>
       
         <br>
         Created:
