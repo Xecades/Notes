@@ -1,5 +1,7 @@
-## Xecades' Notes
+## Xecades :: notes
 
-Here is the source code of my notes.
+The source code of my notes. Developed with [MkDocs](https://www.mkdocs.org/).
 
-Please refer to [note.xecades.xyz](https://note.xecades.xyz/) for further information.
+Refer to [note.xecades.xyz](https://note.xecades.xyz/) for more information.
+
+Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
