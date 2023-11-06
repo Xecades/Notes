@@ -26,7 +26,7 @@
  - **`#!sh $$`**: PID of the current script.
  - **`#!sh $_`**: Last argument of the last command.
 
-## Operators
+### Operators
 
 **Operator `||`, `&&` and `;`**:
 
@@ -49,7 +49,7 @@ false ; echo "This will always run"  # This will always run
 
 **Process substitution**: `#!sh <(foo)` will run `foo` and place the output in a temporary file and substitute the `#!sh <()` with that file’s name. Example: `#!sh diff <(ls foo) <(ls bar)` compares the files of directory `foo` and `bar`.
 
-## Redirection
+### Redirection
 
 **Input**: use `<` to redirect input from a file.
 
@@ -65,6 +65,6 @@ false ; echo "This will always run"  # This will always run
 
 **Pipe**: use `|` to pipe the output of a command to the input of another command.
 
-## Control Flow
+### Control Flow
 
 **Under Construction**
