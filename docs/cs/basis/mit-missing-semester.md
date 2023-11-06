@@ -164,3 +164,31 @@ __check_modified() {
 
 __check_modified "$1"
 ```
+
+---
+
+## Data Wrangling
+
+I don't know how to document this part, so I just note down some useful tools.
+
+ - **`grep`**: search for a pattern in a file.
+ - **`sed`**: stream editor.
+ - **`awk`**: pattern scanning and processing language.
+ - **`sort`**: sort lines of text files.
+ - **`uniq`**: report or omit repeated lines.
+ - **`paste`**: merge lines of files.
+ - **`wc`**: print newline, word, and byte counts for each file.
+ - **`head`**: output the first part of files.
+ - **`tail`**: output the last part of files.
+ - **`xargs`**: build and execute command lines from standard input.
+ - **`bc`**: arbitrary precision calculator language.
+ - **`jq`**: command-line JSON processor.
+ - **`pup`**: command line tool for processing HTML.
+
+**One more thing**: RegEx is extremely handy. Learn it!
+
+---
+
+## Command-line Environment
+
+**Under Construction**
