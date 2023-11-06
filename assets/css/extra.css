@@ -6,6 +6,14 @@
     font-size: 1.4em;
 }
 
+[data-md-color-scheme="slate"] .md-typeset code:not(:has(span)) {
+    /* Selector :has() is not widely applicable. */
+    /* But since this is not a key feature, I just keep it. */
+    /* This style makes inline `code` more visible in dark mode */
+    /* Original: background-color: hsla(var(--md-hue), 15%, 15%, 1); */
+    background-color: hsla(var(--md-hue), 7%, 15%, 1);
+}
+
 [data-md-color-scheme="slate"] img {
     filter: invert(93%) hue-rotate(180deg);
 }
