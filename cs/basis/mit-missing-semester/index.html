@@ -535,6 +535,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    Others
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    Homework
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -954,6 +968,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#others" class="md-nav__link">
+    Others
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#homework" class="md-nav__link">
+    Homework
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -979,7 +1007,7 @@
 
 
 <h1 id="mit-missing-semester">MIT Missing Semester<a class="headerlink" href="#mit-missing-semester" title="Permanent link">&para;</a></h1>
-<p><a href="https://missing.csail.mit.edu/">MIT Missing Semester</a> is a course that teaches the <em>un-taught</em> parts of computer science.</p>
+<p><a href="https://missing.csail.mit.edu/">MIT Missing Semester</a> is a course that teaches the <em>untaught</em> parts of computer science.</p>
 <blockquote>
 <p>Classes teach you all about advanced topics within CS, from operating systems to machine learning, but there’s one critical subject that’s rarely covered, and is instead left to students to figure out on their own: <strong>proficiency with their tools</strong>. We’ll teach you how to master the command-line, use a powerful text editor, use fancy features of version control systems, and much more!</p>
 <p><div align=right>——MIT Missing Semester</div></p>
@@ -987,24 +1015,25 @@
 <hr />
 <h2 id="shell-scripting">Shell Scripting<a class="headerlink" href="#shell-scripting" title="Permanent link">&para;</a></h2>
 <h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
-<p><strong>To define a variable</strong>: use <code class="language-sh highlight"><span class="nv">foo</span><span class="o">=</span>bar</code> instead of <code class="language-sh highlight"><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>bar</code>. The latter tries to run a command named <code>foo</code> with arguments <code>=</code> and <code>bar</code>.</p>
-<p><strong>To use a variable</strong>: use <code class="language-sh highlight"><span class="nv">$foo</span></code>.</p>
-<p><strong>Special variables</strong>: (take <code class="language-sh highlight">./script.sh<span class="w"> </span>foo<span class="w"> </span>bar</code> as an example)</p>
+<p><strong>To define a variable</strong>: use <code>foo=bar</code> instead of <code>foo = bar</code>. The latter tries to run a command named <code>foo</code> with arguments <code>=</code> and <code>bar</code>.</p>
+<p><strong>To use a variable</strong>: use <code>$foo</code>.</p>
+<p><strong>Special variables</strong>: (take <code>./script.sh foo bar</code> as an example)</p>
 <ul>
-<li><strong><code class="language-sh highlight"><span class="nv">$0</span></code></strong>: <code>./script.sh</code>, name of the script.</li>
-<li><strong><code class="language-sh highlight"><span class="nv">$1</span></code> to <code class="language-sh highlight"><span class="nv">$9</span></code></strong>: <code>foo</code> to <code>bar</code>, arguments to the script.</li>
-<li><strong><code class="language-sh highlight"><span class="nv">$@</span></code></strong>: <code>foo bar</code>, all arguments.</li>
-<li><strong><code class="language-sh highlight"><span class="nv">$#</span></code></strong>: <code>2</code>, number of arguments.</li>
-<li><strong><code class="language-sh highlight"><span class="nv">$?</span></code></strong>: Return code of the previous command.</li>
-<li><strong><code class="language-sh highlight"><span class="nv">$$</span></code></strong>: PID of the current script.</li>
-<li><strong><code class="language-sh highlight"><span class="nv">$_</span></code></strong>: Last argument of the last command.</li>
+<li><strong><code>$0</code></strong>: <code>./script.sh</code>, name of the script.</li>
+<li><strong><code>$1</code> to <code>$9</code></strong>: <code>foo</code> to <code>bar</code>, arguments to the script.</li>
+<li><strong><code>$@</code></strong>: <code>foo bar</code>, all arguments.</li>
+<li><strong><code>$#</code></strong>: <code>2</code>, number of arguments.</li>
+<li><strong><code>$?</code></strong>: Return code of the previous command.</li>
+<li><strong><code>$$</code></strong>: PID of the current script.</li>
+<li><strong><code>$_</code></strong>: Last argument of the last command.</li>
 </ul>
+<p><strong>Arithmetic</strong>: use <code>((x + y))</code> to do arithmetic. Use <code>$((x + y))</code> to use the result of the arithmetic. Comparisons like <code>((x &gt;= y))</code> are also supported.</p>
 <h3 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h3>
 <p><strong>Operator <code>||</code>, <code>&amp;&amp;</code> and <code>;</code></strong>:</p>
 <ul>
-<li><strong><code class="language-sh highlight">foo<span class="w"> </span><span class="o">||</span><span class="w"> </span>bar</code></strong> means "run <code>foo</code>, if it fails, run <code>bar</code>".</li>
-<li><strong><code class="language-sh highlight">foo<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bar</code></strong> means "run <code>foo</code>, if it succeeds, run <code>bar</code>".</li>
-<li><strong><code class="language-sh highlight">foo<span class="w"> </span><span class="p">;</span><span class="w"> </span>bar</code></strong> means "run <code>foo</code>, then run <code>bar</code>".</li>
+<li><strong><code>foo || bar</code></strong> means "run <code>foo</code>, if it fails, run <code>bar</code>".</li>
+<li><strong><code>foo &amp;&amp; bar</code></strong> means "run <code>foo</code>, if it succeeds, run <code>bar</code>".</li>
+<li><strong><code>foo ; bar</code></strong> means "run <code>foo</code>, then run <code>bar</code>".</li>
 </ul>
 <p>Example:</p>
 <div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops, fail&quot;</span><span class="w">           </span><span class="c1"># Oops, fail</span>
@@ -1014,8 +1043,8 @@
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">true</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span><span class="w">   </span><span class="c1"># This will always run</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span><span class="w">  </span><span class="c1"># This will always run</span>
 </span></code></pre></div>
-<p><strong>Command substitution</strong>: use <code class="language-sh highlight"><span class="k">$(</span>foo<span class="k">)</span></code> to run <code>foo</code> and use its output as a string. Example: <code class="language-sh highlight"><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="k">)</span></code> iterates over all files.</p>
-<p><strong>Process substitution</strong>: <code class="language-sh highlight">&lt;<span class="o">(</span>foo<span class="o">)</span></code> will run <code>foo</code> and place the output in a temporary file and substitute the <code class="language-sh highlight">&lt;<span class="o">()</span></code> with that file’s name. Example: <code class="language-sh highlight">diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span></code> compares the files of directory <code>foo</code> and <code>bar</code>.</p>
+<p><strong>Command substitution</strong>: use <code>$(foo)</code> to run <code>foo</code> and use its output as a string. Example: <code>for file in $(ls)</code> iterates over all files.</p>
+<p><strong>Process substitution</strong>: <code>&lt;(foo)</code> will run <code>foo</code> and place the output in a temporary file and substitute the <code>&lt;()</code> with that file’s name. Example: <code>diff &lt;(ls foo) &lt;(ls bar)</code> compares the files of directory <code>foo</code> and <code>bar</code>.</p>
 <h3 id="redirection">Redirection<a class="headerlink" href="#redirection" title="Permanent link">&para;</a></h3>
 <p><strong>Input</strong>: use <code>&lt;</code> to redirect input from a file.</p>
 <p><strong>Output</strong>: use <code>&gt;</code> to redirect output to a file. Use <code>&gt;&gt;</code> to append to a file.</p>
@@ -1025,14 +1054,90 @@
 <p><strong>Discard</strong>: redirect to <code>/dev/null</code> to discard output/error/input.</p>
 <p><strong>Pipe</strong>: use <code>|</code> to pipe the output of a command to the input of another command.</p>
 <h3 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h3>
-<p><strong>Under Construction</strong></p>
+<p><strong><code>If</code></strong>: use <code>if foo; then bar; fi</code> to run <code>bar</code> if <code>foo</code> succeeds. <code>foo</code> can be any command or a test. Refer to <code>man test</code> for more information about tests. Here are some simple examples:</p>
+<ul>
+<li><strong><code>if [[ -d foo ]];</code></strong>: if <code>foo</code> is a directory.</li>
+<li><strong><code>if [[ -f foo ]];</code></strong>: if <code>foo</code> is a file.</li>
+<li><strong><code>if [[ $foo -ne 0 ]];</code></strong>: if <code>foo</code> is not equal to <code>0</code>.</li>
+<li><strong><code>if [[ $foo -gt 0 ]];</code></strong>: if <code>foo</code> is greater than <code>0</code>.</li>
+</ul>
+<p>The <code>[[ ]]</code> notation is syntactic sugar for the <code>test</code> command. The following two lines are equivalent:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-d<span class="w"> </span>foo<span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">if</span><span class="w"> </span><span class="nb">test</span><span class="w"> </span>-d<span class="w"> </span>foo<span class="p">;</span><span class="w"> </span><span class="k">then</span>
+</span></code></pre></div>
+<p><code>[[ ]]</code> notation provides more features than <code>test</code>. For example, <code>[[ ]]</code> supports <code>&amp;&amp;</code> and <code>||</code> operators, while <code>test</code> does not.</p>
+<p><strong><code>For</code>, <code>While</code> and <code>Until</code></strong>:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Run baz for each foo in bar</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">for</span><span class="w"> </span>foo<span class="w"> </span><span class="k">in</span><span class="w"> </span>bar<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>baz<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># e.g. Print all files in the current directory</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="k">)</span><span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="nv">$file</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="c1"># Run bar while foo succeeds</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">while</span><span class="w"> </span>foo<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>bar<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="c1"># e.g. Print &quot;Hello&quot; forever</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="k">until</span><span class="w"> </span>false<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="c1"># Run bar until foo succeeds</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="k">until</span><span class="w"> </span>foo<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span>bar<span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="c1"># e.g. Print &quot;Hello&quot; forever</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="k">until</span><span class="w"> </span>false<span class="p">;</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">done</span>
+</span></code></pre></div>
+<p><strong>Case</strong>: see the example:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">case</span><span class="w"> </span><span class="nv">$fruit</span><span class="w"> </span><span class="k">in</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span>apple<span class="o">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;It&#39;s an apple.&quot;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span>banana<span class="o">)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;It&#39;s a banana.&quot;</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">    </span>orange<span class="p">|</span>lemon<span class="o">)</span><span class="w"> </span><span class="c1"># &quot;|&quot; means &quot;or&quot;</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;It&#39;s an orange or a lemon.&quot;</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="w">    </span>*<span class="o">)</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;It&#39;s an unknown fruit.&quot;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="p">;;</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="k">esac</span>
+</span></code></pre></div>
+<p><strong>Functions</strong>: use <code>foo() { bar; }</code> to define a function named <code>foo</code> that runs <code>bar</code>. Example:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>multiply<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nv">result</span><span class="o">=</span><span class="k">$((</span><span class="nv">$1</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nv">$2</span><span class="k">))</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The result of multiplication is: </span><span class="nv">$result</span><span class="s2">&quot;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="o">}</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># Call the function</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>multiply<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="m">3</span>
+</span></code></pre></div>
+<h3 id="others">Others<a class="headerlink" href="#others" title="Permanent link">&para;</a></h3>
+<p><strong>Shebang</strong>: use <code>#!/bin/bash</code> to specify the interpreter of the script. The shebang must be the first line of the script. You can also choose python as the interpreter, e.g. <code>#!/usr/bin/env python</code>.</p>
+<p><strong>Exit code</strong>: use <code>exit 0</code> to exit with code <code>0</code>. Use <code>exit</code> to exit with the return code of the last command.</p>
+<h3 id="homework">Homework<a class="headerlink" href="#homework" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?</p>
+</blockquote>
+<p>Here is my implementation of the first part of the homework.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>__check_modified<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nb">local</span><span class="w"> </span>file
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nv">file</span><span class="o">=</span><span class="k">$(</span>ls<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n1<span class="k">)</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">/</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">        </span><span class="nv">file</span><span class="o">=</span><span class="k">$(</span>ls<span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">/</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n1<span class="k">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="k">done</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">/</span><span class="nv">$file</span><span class="s2">&quot;</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="o">}</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>__check_modified<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+</span></code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-06T08:14:20+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-06</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-06T09:47:37+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-06</span>
       
         <br>
         Created:
