@@ -475,9 +475,74 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          MIT Missing Semester
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         MIT Missing Semester
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shell-scripting" class="md-nav__link">
+    Shell Scripting
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell Scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirection" class="md-nav__link">
+    Redirection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -847,6 +912,55 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#shell-scripting" class="md-nav__link">
+    Shell Scripting
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell Scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variables" class="md-nav__link">
+    Variables
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators" class="md-nav__link">
+    Operators
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redirection" class="md-nav__link">
+    Redirection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-flow" class="md-nav__link">
+    Control Flow
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -870,6 +984,47 @@
 <p>Classes teach you all about advanced topics within CS, from operating systems to machine learning, but there’s one critical subject that’s rarely covered, and is instead left to students to figure out on their own: <strong>proficiency with their tools</strong>. We’ll teach you how to master the command-line, use a powerful text editor, use fancy features of version control systems, and much more!</p>
 <p><div align=right>——MIT Missing Semester</div></p>
 </blockquote>
+<hr />
+<h2 id="shell-scripting">Shell Scripting<a class="headerlink" href="#shell-scripting" title="Permanent link">&para;</a></h2>
+<h3 id="variables">Variables<a class="headerlink" href="#variables" title="Permanent link">&para;</a></h3>
+<p><strong>To define a variable</strong>: use <code class="language-sh highlight"><span class="nv">foo</span><span class="o">=</span>bar</code> instead of <code class="language-sh highlight"><span class="nv">foo</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>bar</code>. The latter tries to run a command named <code>foo</code> with arguments <code>=</code> and <code>bar</code>.</p>
+<p><strong>To use a variable</strong>: use <code class="language-sh highlight"><span class="nv">$foo</span></code>.</p>
+<p><strong>Special variables</strong>: (take <code class="language-sh highlight">./script.sh<span class="w"> </span>foo<span class="w"> </span>bar</code> as an example)</p>
+<ul>
+<li><strong><code class="language-sh highlight"><span class="nv">$0</span></code></strong>: <code>./script.sh</code>, name of the script.</li>
+<li><strong><code class="language-sh highlight"><span class="nv">$1</span></code> to <code class="language-sh highlight"><span class="nv">$9</span></code></strong>: <code>foo</code> to <code>bar</code>, arguments to the script.</li>
+<li><strong><code class="language-sh highlight"><span class="nv">$@</span></code></strong>: <code>foo bar</code>, all arguments.</li>
+<li><strong><code class="language-sh highlight"><span class="nv">$#</span></code></strong>: <code>2</code>, number of arguments.</li>
+<li><strong><code class="language-sh highlight"><span class="nv">$?</span></code></strong>: Return code of the previous command.</li>
+<li><strong><code class="language-sh highlight"><span class="nv">$$</span></code></strong>: PID of the current script.</li>
+<li><strong><code class="language-sh highlight"><span class="nv">$_</span></code></strong>: Last argument of the last command.</li>
+</ul>
+<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permanent link">&para;</a></h2>
+<p><strong>Operator <code>||</code>, <code>&amp;&amp;</code> and <code>;</code></strong>:</p>
+<ul>
+<li><strong><code class="language-sh highlight">foo<span class="w"> </span><span class="o">||</span><span class="w"> </span>bar</code></strong> means "run <code>foo</code>, if it fails, run <code>bar</code>".</li>
+<li><strong><code class="language-sh highlight">foo<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>bar</code></strong> means "run <code>foo</code>, if it succeeds, run <code>bar</code>".</li>
+<li><strong><code class="language-sh highlight">foo<span class="w"> </span><span class="p">;</span><span class="w"> </span>bar</code></strong> means "run <code>foo</code>, then run <code>bar</code>".</li>
+</ul>
+<p>Example:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops, fail&quot;</span><span class="w">           </span><span class="c1"># Oops, fail</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span><span class="w">   </span><span class="c1">#</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Things went well&quot;</span><span class="w">      </span><span class="c1"># Things went well</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span><span class="w">  </span><span class="c1">#</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="nb">true</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span><span class="w">   </span><span class="c1"># This will always run</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span><span class="w">  </span><span class="c1"># This will always run</span>
+</span></code></pre></div>
+<p><strong>Command substitution</strong>: use <code class="language-sh highlight"><span class="k">$(</span>foo<span class="k">)</span></code> to run <code>foo</code> and use its output as a string. Example: <code class="language-sh highlight"><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">$(</span>ls<span class="k">)</span></code> iterates over all files.</p>
+<p><strong>Process substitution</strong>: <code class="language-sh highlight">&lt;<span class="o">(</span>foo<span class="o">)</span></code> will run <code>foo</code> and place the output in a temporary file and substitute the <code class="language-sh highlight">&lt;<span class="o">()</span></code> with that file’s name. Example: <code class="language-sh highlight">diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span></code> compares the files of directory <code>foo</code> and <code>bar</code>.</p>
+<h2 id="redirection">Redirection<a class="headerlink" href="#redirection" title="Permanent link">&para;</a></h2>
+<p><strong>Input</strong>: use <code>&lt;</code> to redirect input from a file.</p>
+<p><strong>Output</strong>: use <code>&gt;</code> to redirect output to a file. Use <code>&gt;&gt;</code> to append to a file.</p>
+<p><strong>Error</strong>: use <code>2&gt;</code> to redirect error to a file.</p>
+<p><strong>Both output and error</strong>: use <code>&amp;&gt;</code> to redirect both output and error to a file.</p>
+<p><strong>Both input and output</strong>: use <code>&lt;&gt;</code> to redirect both input and output to a file.</p>
+<p><strong>Discard</strong>: redirect to <code>/dev/null</code> to discard output/error/input.</p>
+<p><strong>Pipe</strong>: use <code>|</code> to pipe the output of a command to the input of another command.</p>
+<h2 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h2>
 <p><strong>Under Construction</strong></p>
 
   <hr>
@@ -877,7 +1032,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-05T13:19:15+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-06T03:45:09+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-06</span>
       
         <br>
         Created:
