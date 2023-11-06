@@ -1,6 +1,6 @@
 # MIT Missing Semester
 
-[MIT Missing Semester](https://missing.csail.mit.edu/) is a course that teaches the *un-taught* parts of computer science.
+[MIT Missing Semester](https://missing.csail.mit.edu/) is a course that teaches the *untaught* parts of computer science.
 
 > Classes teach you all about advanced topics within CS, from operating systems to machine learning, but there’s one critical subject that’s rarely covered, and is instead left to students to figure out on their own: **proficiency with their tools**. We’ll teach you how to master the command-line, use a powerful text editor, use fancy features of version control systems, and much more!
 > 
@@ -12,27 +12,29 @@
 
 ### Variables
 
-**To define a variable**: use `#!sh foo=bar` instead of `#!sh foo = bar`. The latter tries to run a command named `foo` with arguments `=` and `bar`.
+**To define a variable**: use `foo=bar` instead of `foo = bar`. The latter tries to run a command named `foo` with arguments `=` and `bar`.
 
-**To use a variable**: use `#!sh $foo`.
+**To use a variable**: use `$foo`.
 
-**Special variables**: (take `#!sh ./script.sh foo bar` as an example)
+**Special variables**: (take `./script.sh foo bar` as an example)
 
- - **`#!sh $0`**: `./script.sh`, name of the script.
- - **`#!sh $1` to `#!sh $9`**: `foo` to `bar`, arguments to the script.
- - **`#!sh $@`**: `foo bar`, all arguments.
- - **`#!sh $#`**: `2`, number of arguments.
- - **`#!sh $?`**: Return code of the previous command.
- - **`#!sh $$`**: PID of the current script.
- - **`#!sh $_`**: Last argument of the last command.
+ - **`$0`**: `./script.sh`, name of the script.
+ - **`$1` to `$9`**: `foo` to `bar`, arguments to the script.
+ - **`$@`**: `foo bar`, all arguments.
+ - **`$#`**: `2`, number of arguments.
+ - **`$?`**: Return code of the previous command.
+ - **`$$`**: PID of the current script.
+ - **`$_`**: Last argument of the last command.
+
+**Arithmetic**: use `((x + y))` to do arithmetic. Use `$((x + y))` to use the result of the arithmetic. Comparisons like `((x >= y))` are also supported.
 
 ### Operators
 
 **Operator `||`, `&&` and `;`**:
 
- - **`#!sh foo || bar`** means "run `foo`, if it fails, run `bar`".
- - **`#!sh foo && bar`** means "run `foo`, if it succeeds, run `bar`".
- - **`#!sh foo ; bar`** means "run `foo`, then run `bar`".
+ - **`foo || bar`** means "run `foo`, if it fails, run `bar`".
+ - **`foo && bar`** means "run `foo`, if it succeeds, run `bar`".
+ - **`foo ; bar`** means "run `foo`, then run `bar`".
 
 Example:
 
@@ -45,9 +47,9 @@ true ; echo "This will always run"   # This will always run
 false ; echo "This will always run"  # This will always run
 ```
 
-**Command substitution**: use `#!sh $(foo)` to run `foo` and use its output as a string. Example: `#!sh for file in $(ls)` iterates over all files.
+**Command substitution**: use `$(foo)` to run `foo` and use its output as a string. Example: `for file in $(ls)` iterates over all files.
 
-**Process substitution**: `#!sh <(foo)` will run `foo` and place the output in a temporary file and substitute the `#!sh <()` with that file’s name. Example: `#!sh diff <(ls foo) <(ls bar)` compares the files of directory `foo` and `bar`.
+**Process substitution**: `<(foo)` will run `foo` and place the output in a temporary file and substitute the `<()` with that file’s name. Example: `diff <(ls foo) <(ls bar)` compares the files of directory `foo` and `bar`.
 
 ### Redirection
 
@@ -67,4 +69,98 @@ false ; echo "This will always run"  # This will always run
 
 ### Control Flow
 
-**Under Construction**
+**`If`**: use `if foo; then bar; fi` to run `bar` if `foo` succeeds. `foo` can be any command or a test. Refer to `man test` for more information about tests. Here are some simple examples:
+
+ - **`if [[ -d foo ]];`**: if `foo` is a directory.
+ - **`if [[ -f foo ]];`**: if `foo` is a file.
+ - **`if [[ $foo -ne 0 ]];`**: if `foo` is not equal to `0`.
+ - **`if [[ $foo -gt 0 ]];`**: if `foo` is greater than `0`.
+
+The `[[ ]]` notation is syntactic sugar for the `test` command. The following two lines are equivalent:
+
+```sh
+if [[ -d foo ]]; then
+if test -d foo; then
+```
+
+`[[ ]]` notation provides more features than `test`. For example, `[[ ]]` supports `&&` and `||` operators, while `test` does not.
+
+**`For`, `While` and `Until`**:
+
+```sh
+# Run baz for each foo in bar
+for foo in bar; do baz; done
+
+# e.g. Print all files in the current directory
+for file in $(ls); do echo $file; done
+
+# Run bar while foo succeeds
+while foo; do bar; done
+
+# e.g. Print "Hello" forever
+until false; do echo "Hello"; done
+
+# Run bar until foo succeeds
+until foo; do bar; done
+
+# e.g. Print "Hello" forever
+until false; do echo "Hello"; done
+```
+
+**Case**: see the example:
+
+```sh
+case $fruit in
+    apple)
+        echo "It's an apple."
+        ;;
+    banana)
+        echo "It's a banana."
+        ;;
+    orange|lemon) # "|" means "or"
+        echo "It's an orange or a lemon."
+        ;;
+    *)
+        echo "It's an unknown fruit."
+        ;;
+esac
+```
+
+**Functions**: use `foo() { bar; }` to define a function named `foo` that runs `bar`. Example:
+
+```sh
+multiply() {
+    result=$(($1 * $2))
+    echo "The result of multiplication is: $result"
+}
+
+# Call the function
+multiply 5 3
+```
+
+### Others
+
+**Shebang**: use `#!/bin/bash` to specify the interpreter of the script. The shebang must be the first line of the script. You can also choose python as the interpreter, e.g. `#!/usr/bin/env python`.
+
+**Exit code**: use `exit 0` to exit with code `0`. Use `exit` to exit with the return code of the last command.
+
+### Homework
+
+> Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?
+
+Here is my implementation of the first part of the homework.
+
+```sh
+__check_modified() {
+    local file
+    file=$(ls -t "$1" | head -n1)
+
+    while [[ -d "$1/$file" ]]; do
+        file=$(ls -t "$1/$file" | head -n1)
+    done
+
+    echo "$1/$file"
+}
+
+__check_modified "$1"
+```
