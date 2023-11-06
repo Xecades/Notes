@@ -1,5 +1,7 @@
-site
 .vscode
-upload.sh
 .DS_Store
+
+site
+
+upload.sh
 TODO.md
