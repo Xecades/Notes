@@ -12,15 +12,15 @@ comments: true
 
 ### General
 
- - *Computer Systems: A Programmer's Perspective*, or *CSAPP* for short.
+ - [ ] *Computer Systems: A Programmer's Perspective*, or *CSAPP* for short.
 
 ### Network
 
- - To-do.
+ - [ ] To-do.
 
 ### Operating System
 
- - To-do.
+ - [ ] To-do.
 
 ---
 
@@ -30,39 +30,39 @@ Several languages that I am interested in.
 
 ### C & C++
 
- - To-do.
+ - [ ] To-do.
 
 ### Python
 
- - To-do.
+ - [ ] To-do.
 
 ### Haskell
 
- - To-do.
+ - [ ] To-do.
   
 ### JavaScript
 
- - To-do.
+ - [ ] To-do.
 
 ### Go
 
- - To-do.
+ - [ ] To-do.
 
 ---
 
 ## Read source code
 
- - hexo: [@hexojs :: hexo](https://github.com/hexojs/hexo)
- - manim: [@3b1b :: manim](https://github.com/3b1b/manim)
+ - [ ] hexo: [@hexojs :: hexo](https://github.com/hexojs/hexo)
+ - [ ] manim: [@3b1b :: manim](https://github.com/3b1b/manim)
 
 ---
 
 ## Tools & Skills
 
- - Typing.
- - LaTeX.
- - Vim.
- - Docker.
- - CMake.
- - Regex.
- - MatLab.
+ - [ ] Typing.
+ - [ ] LaTeX.
+ - [ ] Vim.
+ - [ ] Docker.
+ - [ ] CMake.
+ - [x] Regex.
+ - [ ] Matlab.
