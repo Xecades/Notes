@@ -566,6 +566,26 @@
     Command-line Environment
   </a>
   
+    <nav class="md-nav" aria-label="Command-line Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-control" class="md-nav__link">
+    Job Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-multiplexers" class="md-nav__link">
+    Terminal Multiplexers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1013,6 +1033,26 @@
     Command-line Environment
   </a>
   
+    <nav class="md-nav" aria-label="Command-line Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#job-control" class="md-nav__link">
+    Job Control
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terminal-multiplexers" class="md-nav__link">
+    Terminal Multiplexers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1183,6 +1223,51 @@
 <p><strong>One more thing</strong>: Learning Regex can be incredibly useful. It's definitely worth investing time in it!</p>
 <hr />
 <h2 id="command-line-environment">Command-line Environment<a class="headerlink" href="#command-line-environment" title="Permanent link">&para;</a></h2>
+<h3 id="job-control">Job Control<a class="headerlink" href="#job-control" title="Permanent link">&para;</a></h3>
+<p>When pressed <code>Ctrl-C</code>, the shell delivers a <strong>SIGINT</strong> SIGnal to the process, which <em>by default</em> INTerrupts the process.</p>
+<p>This python program captures <strong>SIGINT</strong> and ignores it:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kn">import</span> <span class="nn">signal</span><span class="o">,</span> <span class="nn">time</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">def</span> <span class="nf">handler</span><span class="p">(</span><span class="n">signum</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">I got a SIGINT, but I am not stopping&quot;</span><span class="p">)</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">signal</span><span class="o">.</span><span class="n">signal</span><span class="p">(</span><span class="n">signal</span><span class="o">.</span><span class="n">SIGINT</span><span class="p">,</span> <span class="n">handler</span><span class="p">)</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="c1"># This program is a simple counter</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">.1</span><span class="p">)</span>
+</span><span id="__span-6-12"><a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\r</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+</span><span id="__span-6-13"><a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>    <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+</span></code></pre></div>
+<p>When we run this program and press <code>Ctrl-C</code>, the program will continue to run. To stop it, we need to send a <strong>SIGQUIT</strong> signal to it, by typing <code>Ctrl-\</code>.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>$<span class="w"> </span>python<span class="w"> </span>sigint.py
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="m">16</span>^C
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>I<span class="w"> </span>got<span class="w"> </span>a<span class="w"> </span>SIGINT,<span class="w"> </span>but<span class="w"> </span>I<span class="w"> </span>am<span class="w"> </span>not<span class="w"> </span>stopping
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="m">25</span>^C
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>I<span class="w"> </span>got<span class="w"> </span>a<span class="w"> </span>SIGINT,<span class="w"> </span>but<span class="w"> </span>I<span class="w"> </span>am<span class="w"> </span>not<span class="w"> </span>stopping
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="m">45</span>^<span class="se">\[</span><span class="m">1</span><span class="o">]</span><span class="w">    </span><span class="m">54634</span><span class="w"> </span>quit<span class="w">       </span>python<span class="w"> </span>sigint.py
+</span></code></pre></div>
+<p>Note that <strong>SIGINT</strong> and <strong>SIGQUIT</strong> can both be captured by the program. However, <strong>SIGTERM</strong> cannot. It is a more graceful way to TERMinate the process. To send the signal we can use <code>kill -TERM &lt;PID&gt;</code> or <code>kill &lt;PID&gt;</code> for short.</p>
+<p><code>Ctrl-Z</code> is used to suspend a process. It sends a <strong>SIGTSTP</strong> signal, short for "terminal stop". When a process is suspended, it pauses.</p>
+<p>Command <code>jobs</code> lists the unfinished jobs associated with the current terminal session. For example, if I suspended the <code>sigint.py</code> program above:</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>$<span class="w"> </span>python<span class="w"> </span>sigint.py
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="m">25</span>^Z
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w">  </span>+<span class="w"> </span><span class="m">56852</span><span class="w"> </span>suspended<span class="w">  </span>python<span class="w"> </span>sigint.py
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>$<span class="w"> </span><span class="nb">jobs</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w">  </span>+<span class="w"> </span>suspended<span class="w">  </span>python<span class="w"> </span>sigint.py
+</span></code></pre></div>
+<p>Then we can use <code>fg</code> to bring the job to the foreground, and <code>bg</code> to the background.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>$<span class="w"> </span><span class="nb">fg</span><span class="w"> </span>%1<span class="w">      </span><span class="c1"># %1 means it is the first job</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">[</span><span class="m">1</span><span class="o">]</span><span class="w">  </span>+<span class="w"> </span><span class="m">56852</span><span class="w"> </span>continued<span class="w">  </span>python<span class="w"> </span>sigint.py
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="m">75</span><span class="w">           </span><span class="c1"># Number counting continues</span>
+</span></code></pre></div>
+<p>By using the <code>&amp;</code> suffix, a command runs in the background but still prints to the terminal.</p>
+<p>To background a program we can use <code>Ctrl-Z</code> and <code>bg</code>, but note that the process will die if you close the terminal. To prevent this, we can use <code>nohup</code> to run the program in the background, it sets the process to ignores <strong>SIGHUP</strong> signal, which is sent to a process when the terminal session ends.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span>nohup<span class="w"> </span>python<span class="w"> </span>sigint.py<span class="w"> </span><span class="p">&amp;</span>
+</span></code></pre></div>
+<p>To get a comprehensive list of signals, check <code>man signal</code>.</p>
+<h3 id="terminal-multiplexers">Terminal Multiplexers<a class="headerlink" href="#terminal-multiplexers" title="Permanent link">&para;</a></h3>
 <p><strong>Under Construction</strong></p>
 
   <hr>
@@ -1190,7 +1275,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-07T04:58:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-07T06:28:08+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-07</span>
       
         <br>
         Created:
