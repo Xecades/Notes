@@ -261,4 +261,12 @@ To get a comprehensive list of signals, check `man signal`.
 
 ### Terminal Multiplexers
 
+Refer to [Tmux](https://github.com/tmux/tmux/wiki).
+
+Here is a tutorial: [A Quick and Easy Guide to tmux](https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/).
+
+---
+
+## Version Control (Git)
+
 **Under Construction**
