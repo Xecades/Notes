@@ -178,6 +178,9 @@ I don't know how to document this part, so I just note down some useful tools.
  - **`uniq`**: report or omit repeated lines.
  - **`paste`**: merge lines of files.
  - **`wc`**: print newline, word, and byte counts for each file.
+ - **`tee`**: read from standard input and write to standard output and files.
+ - **`tr`**: translate or delete characters.
+ - **`less`**: open a file for interactive reading.
  - **`head`**: output the first part of files.
  - **`tail`**: output the last part of files.
  - **`xargs`**: build and execute command lines from standard input.
@@ -185,7 +188,7 @@ I don't know how to document this part, so I just note down some useful tools.
  - **`jq`**: command-line JSON processor.
  - **`pup`**: command line tool for processing HTML.
 
-**One more thing**: RegEx is extremely handy. Learn it!
+**One more thing**: Learning Regex can be incredibly useful. It's definitely worth investing time in it!
 
 ---
 
