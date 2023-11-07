@@ -194,4 +194,71 @@ I don't know how to document this part, so I just note down some useful tools.
 
 ## Command-line Environment
 
+### Job Control
+
+When pressed `Ctrl-C`, the shell delivers a **SIGINT** SIGnal to the process, which *by default* INTerrupts the process.
+
+This python program captures **SIGINT** and ignores it:
+
+```python
+import signal, time
+
+def handler(signum, time):
+    print("\nI got a SIGINT, but I am not stopping")
+
+signal.signal(signal.SIGINT, handler)
+
+# This program is a simple counter
+i = 0
+while True:
+    time.sleep(.1)
+    print("\r{}".format(i), end="")
+    i += 1
+```
+
+When we run this program and press `Ctrl-C`, the program will continue to run. To stop it, we need to send a **SIGQUIT** signal to it, by typing `Ctrl-\`.
+
+```sh
+$ python sigint.py
+16^C
+I got a SIGINT, but I am not stopping
+25^C
+I got a SIGINT, but I am not stopping
+45^\[1]    54634 quit       python sigint.py
+```
+
+Note that **SIGINT** and **SIGQUIT** can both be captured by the program. However, **SIGTERM** cannot. It is a more graceful way to TERMinate the process. To send the signal we can use `kill -TERM <PID>` or `kill <PID>` for short.
+
+`Ctrl-Z` is used to suspend a process. It sends a **SIGTSTP** signal, short for "terminal stop". When a process is suspended, it pauses.
+
+Command `jobs` lists the unfinished jobs associated with the current terminal session. For example, if I suspended the `sigint.py` program above:
+
+```sh
+$ python sigint.py
+25^Z
+[1]  + 56852 suspended  python sigint.py
+$ jobs
+[1]  + suspended  python sigint.py
+```
+
+Then we can use `fg` to bring the job to the foreground, and `bg` to the background.
+
+```sh
+$ fg %1      # %1 means it is the first job
+[1]  + 56852 continued  python sigint.py
+75           # Number counting continues
+```
+
+By using the `&` suffix, a command runs in the background but still prints to the terminal.
+
+To background a program we can use `Ctrl-Z` and `bg`, but note that the process will die if you close the terminal. To prevent this, we can use `nohup` to run the program in the background, it sets the process to ignores **SIGHUP** signal, which is sent to a process when the terminal session ends.
+
+```sh
+$ nohup python sigint.py &
+```
+
+To get a comprehensive list of signals, check `man signal`.
+
+### Terminal Multiplexers
+
 **Under Construction**
