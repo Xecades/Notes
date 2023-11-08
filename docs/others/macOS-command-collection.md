@@ -23,6 +23,7 @@ Here is a collection of useful command-line tools for macOS.
 ## Productivity
 
  - `ffmpeg`: Video and audio converter.
+ - `convert`: Image converter.
 
 ## CTF
 
