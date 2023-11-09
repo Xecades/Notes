@@ -269,4 +269,18 @@ Here is a tutorial: [A Quick and Easy Guide to tmux](https://www.hamvocke.com/bl
 
 ## Version Control (Git)
 
+Here I list some useful commands that I'm not familiar with. I won't dig into that too much.
+
+```sh
+$ git log --all --graph --decorate
+$ git clone --shallow
+$ git fetch
+$ git stash
+$ git stash pop
+```
+
+---
+
+## Debugging and Profiling
+
 **Under Construction**
