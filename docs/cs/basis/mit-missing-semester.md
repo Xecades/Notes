@@ -180,6 +180,7 @@ I don't know how to document this part, so I just note down some useful tools.
  - **`wc`**: print newline, word, and byte counts for each file.
  - **`tee`**: read from standard input and write to standard output and files.
  - **`tr`**: translate or delete characters.
+ - **`tac`**: reverse `cat`.
  - **`less`**: open a file for interactive reading.
  - **`head`**: output the first part of files.
  - **`tail`**: output the last part of files.
