@@ -6,6 +6,8 @@
 > 
 > <div align=right>——MIT Missing Semester</div>
 
+For the parts I'm already familiar with, I simply skip them.
+
 ---
 
 ## Shell Scripting
@@ -282,6 +284,20 @@ $ git stash pop
 
 ---
 
-## Debugging and Profiling
+## Metaprogramming
+
+Here is an example of a simple Makefile that compiles a LaTeX document.
+
+```makefile
+paper.pdf: paper.tex plot-data.png
+	pdflatex paper.tex
+
+plot-%.png: %.dat plot.py
+	./plot.py -i $*.dat -o $@
+```
+
+---
+
+## Security and Cryptography
 
 **Under Construction**
