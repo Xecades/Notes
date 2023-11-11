@@ -300,4 +300,76 @@ plot-%.png: %.dat plot.py
 
 ## Security and Cryptography
 
+### Cryptographic hash function
+
+**Cryptographic hash functions** map an arbitrary length input to a fixed-length output. The general model is
+
+```
+hash(value: array<byte>) -> vector<byte, N>  (for some fixed N)
+```
+
+It has the following properties:
+
+ - **Deterministic**: the same input maps to the same output.
+ - **Non-invertible**: it is *hard* to find an input m such that `hash(m) = h` for some desired output `h`.
+ - **Target collision resistant**: given an input `m1`, it’s *hard* to find a different input `m2` such that `hash(m1) = hash(m2)`.
+ - **Collision resistant**: it’s *hard* to find two inputs `m1` and `m2` such that `hash(m1) = hash(m2)` (this is a strictly stronger property than target collision resistance).
+
+Note that it is *hard* to find a collision, but it is not completely *impossible*. This is why each cryptographic hash function has a [lifespan](https://valerieaurora.org/hash.html).
+
+A widely used cryptographic hash function is **SHA-1**. For example, Git uses SHA-1 to identify commits. But it is [not secure anymore](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html). To generate an SHA-1 hash, we can use the `shasum` command on macOS.
+
+```sh
+$ echo "hello, world" | shasum -a 1
+cd50d19784897085a8d0e3e413f8612b097c03f1  -
+```
+
+Imagine we're playing a number-guessing game. I've thought of a random number, and you're trying to guess it. You need to share your guess before I reveal if it's correct.
+
+Now, to ensure I don't cheat by altering the number in my mind, we can employ a cryptographic hash function. Before you make your guess, I'll share the hash of my number. After the game, you can verify that I haven't tampered with the chosen number by checking the hash of your guessed number.
+
+### Key derivation function
+
+**Key derivation functions**, or **KDFs**, share similarities with cryptographic hash functions, but they are specifically designed for deriving secret keys from a given input, typically a password or a low-entropy key. KDFs are intentionally designed to operate at a *slow* pace, making it time-consuming to brute-force the password.
+
+**Applications**:
+
+ - Producing keys from passphrases for use in other cryptographic algorithms (e.g. symmetric cryptography).
+ - Storing login credentials. Storing plaintext passwords is bad; the right approach is to generate and store a random [salt](https://en.wikipedia.org/wiki/Salt_(cryptography)) `salt = random()` for each user, store `KDF(password + salt)`, and verify login attempts by re-computing the KDF given the entered password and the stored salt.
+
+### Symmetric cryptography
+
+**Symmetric cryptography** is used to encrypt and decrypt data. It uses a **secret key** to encrypt and decrypt data. The same key is used for both encryption and decryption. The model is
+
+```
+keygen() -> key  (this function is randomized)
+
+encrypt(plaintext: array<byte>, key) -> array<byte>  (the ciphertext)
+decrypt(ciphertext: array<byte>, key) -> array<byte>  (the plaintext)
+```
+
+An example of a symmetric cryptosystem in wide use today is AES.
+
+### Asymmetric cryptography
+
+Except for encrypting and decrypting data, **asymmetric cryptography** can also be used to sign and verify data. It uses a **public key** and a **private key**. The public key is used to encrypt data and verify signatures, while the private key is used to decrypt data and sign data. The model is
+
+```
+keygen() -> (public-key, private-key)  (this function is randomized)
+
+encrypt(plaintext: array<byte>, public-key) -> array<byte>  (the ciphertext)
+decrypt(ciphertext: array<byte>, private-key) -> array<byte>  (the plaintext)
+
+sign(message: array<byte>, private-key) -> array<byte>  (the signature)
+verify(message: array<byte>, signature: array<byte>, public-key) -> bool  (whether or not the signature is valid)
+```
+
+As its name suggests, public key *can* be made public. Anyone can use the public key to encrypt data *for you*, but only you, with the corresponding private key, can decrypt it. That's how private messaging apps like Telegram works.
+
+On the flip side, you can sign data using your private key. Others can then verify the signature using your public key. This mechanism is exemplified in practices such as verifying commits in Git through digital signatures.
+
+---
+
+## Potpourri
+
 **Under Construction**
