@@ -607,6 +607,47 @@
     Security and Cryptography
   </a>
   
+    <nav class="md-nav" aria-label="Security and Cryptography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cryptographic-hash-function" class="md-nav__link">
+    Cryptographic hash function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-derivation-function" class="md-nav__link">
+    Key derivation function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-cryptography" class="md-nav__link">
+    Symmetric cryptography
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asymmetric-cryptography" class="md-nav__link">
+    Asymmetric cryptography
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potpourri" class="md-nav__link">
+    Potpourri
+  </a>
+  
 </li>
       
     </ul>
@@ -1109,6 +1150,47 @@
     Security and Cryptography
   </a>
   
+    <nav class="md-nav" aria-label="Security and Cryptography">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cryptographic-hash-function" class="md-nav__link">
+    Cryptographic hash function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-derivation-function" class="md-nav__link">
+    Key derivation function
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#symmetric-cryptography" class="md-nav__link">
+    Symmetric cryptography
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asymmetric-cryptography" class="md-nav__link">
+    Asymmetric cryptography
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#potpourri" class="md-nav__link">
+    Potpourri
+  </a>
+  
 </li>
       
     </ul>
@@ -1348,6 +1430,53 @@
 </span></code></pre></div>
 <hr />
 <h2 id="security-and-cryptography">Security and Cryptography<a class="headerlink" href="#security-and-cryptography" title="Permanent link">&para;</a></h2>
+<h3 id="cryptographic-hash-function">Cryptographic hash function<a class="headerlink" href="#cryptographic-hash-function" title="Permanent link">&para;</a></h3>
+<p><strong>Cryptographic hash functions</strong> map an arbitrary length input to a fixed-length output. The general model is</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>hash(value: array&lt;byte&gt;) -&gt; vector&lt;byte, N&gt;  (for some fixed N)
+</span></code></pre></div>
+<p>It has the following properties:</p>
+<ul>
+<li><strong>Deterministic</strong>: the same input maps to the same output.</li>
+<li><strong>Non-invertible</strong>: it is <em>hard</em> to find an input m such that <code>hash(m) = h</code> for some desired output <code>h</code>.</li>
+<li><strong>Target collision resistant</strong>: given an input <code>m1</code>, it’s <em>hard</em> to find a different input <code>m2</code> such that <code>hash(m1) = hash(m2)</code>.</li>
+<li><strong>Collision resistant</strong>: it’s <em>hard</em> to find two inputs <code>m1</code> and <code>m2</code> such that <code>hash(m1) = hash(m2)</code> (this is a strictly stronger property than target collision resistance).</li>
+</ul>
+<p>Note that it is <em>hard</em> to find a collision, but it is not completely <em>impossible</em>. This is why each cryptographic hash function has a <a href="https://valerieaurora.org/hash.html">lifespan</a>.</p>
+<p>A widely used cryptographic hash function is <strong>SHA-1</strong>. For example, Git uses SHA-1 to identify commits. But it is <a href="https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html">not secure anymore</a>. To generate an SHA-1 hash, we can use the <code>shasum</code> command on macOS.</p>
+<div class="language-sh highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;hello, world&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>shasum<span class="w"> </span>-a<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>cd50d19784897085a8d0e3e413f8612b097c03f1<span class="w">  </span>-
+</span></code></pre></div>
+<p>Imagine we're playing a number-guessing game. I've thought of a random number, and you're trying to guess it. You need to share your guess before I reveal if it's correct.</p>
+<p>Now, to ensure I don't cheat by altering the number in my mind, we can employ a cryptographic hash function. Before you make your guess, I'll share the hash of my number. After the game, you can verify that I haven't tampered with the chosen number by checking the hash of your guessed number.</p>
+<h3 id="key-derivation-function">Key derivation function<a class="headerlink" href="#key-derivation-function" title="Permanent link">&para;</a></h3>
+<p><strong>Key derivation functions</strong>, or <strong>KDFs</strong>, share similarities with cryptographic hash functions, but they are specifically designed for deriving secret keys from a given input, typically a password or a low-entropy key. KDFs are intentionally designed to operate at a <em>slow</em> pace, making it time-consuming to brute-force the password.</p>
+<p><strong>Applications</strong>:</p>
+<ul>
+<li>Producing keys from passphrases for use in other cryptographic algorithms (e.g. symmetric cryptography).</li>
+<li>Storing login credentials. Storing plaintext passwords is bad; the right approach is to generate and store a random <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salt</a> <code>salt = random()</code> for each user, store <code>KDF(password + salt)</code>, and verify login attempts by re-computing the KDF given the entered password and the stored salt.</li>
+</ul>
+<h3 id="symmetric-cryptography">Symmetric cryptography<a class="headerlink" href="#symmetric-cryptography" title="Permanent link">&para;</a></h3>
+<p><strong>Symmetric cryptography</strong> is used to encrypt and decrypt data. It uses a <strong>secret key</strong> to encrypt and decrypt data. The same key is used for both encryption and decryption. The model is</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>keygen() -&gt; key  (this function is randomized)
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>encrypt(plaintext: array&lt;byte&gt;, key) -&gt; array&lt;byte&gt;  (the ciphertext)
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>decrypt(ciphertext: array&lt;byte&gt;, key) -&gt; array&lt;byte&gt;  (the plaintext)
+</span></code></pre></div>
+<p>An example of a symmetric cryptosystem in wide use today is AES.</p>
+<h3 id="asymmetric-cryptography">Asymmetric cryptography<a class="headerlink" href="#asymmetric-cryptography" title="Permanent link">&para;</a></h3>
+<p>Except for encrypting and decrypting data, <strong>asymmetric cryptography</strong> can also be used to sign and verify data. It uses a <strong>public key</strong> and a <strong>private key</strong>. The public key is used to encrypt data and verify signatures, while the private key is used to decrypt data and sign data. The model is</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>keygen() -&gt; (public-key, private-key)  (this function is randomized)
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>encrypt(plaintext: array&lt;byte&gt;, public-key) -&gt; array&lt;byte&gt;  (the ciphertext)
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>decrypt(ciphertext: array&lt;byte&gt;, private-key) -&gt; array&lt;byte&gt;  (the plaintext)
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>sign(message: array&lt;byte&gt;, private-key) -&gt; array&lt;byte&gt;  (the signature)
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>verify(message: array&lt;byte&gt;, signature: array&lt;byte&gt;, public-key) -&gt; bool  (whether or not the signature is valid)
+</span></code></pre></div>
+<p>As its name suggests, public key <em>can</em> be made public. Anyone can use the public key to encrypt data <em>for you</em>, but only you, with the corresponding private key, can decrypt it. That's how private messaging apps like Telegram works.</p>
+<p>On the flip side, you can sign data using your private key. Others can then verify the signature using your public key. This mechanism is exemplified in practices such as verifying commits in Git through digital signatures.</p>
+<hr />
+<h2 id="potpourri">Potpourri<a class="headerlink" href="#potpourri" title="Permanent link">&para;</a></h2>
 <p><strong>Under Construction</strong></p>
 
   <hr>
@@ -1355,7 +1484,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-10T05:41:25+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-10</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-11T04:08:56+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-11</span>
       
         <br>
         Created:
