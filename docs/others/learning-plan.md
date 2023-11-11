@@ -12,6 +12,7 @@ comments: true
 
 ### General
 
+ - [x] *MIT Missing Semester*.
  - [ ] *Computer Systems: A Programmer's Perspective*, or *CSAPP* for short.
 
 ### Network
