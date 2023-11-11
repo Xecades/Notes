@@ -1,12 +1,18 @@
 # MIT Missing Semester
 
-[MIT Missing Semester](https://missing.csail.mit.edu/) is a course that teaches the *untaught* parts of computer science.
+**🔮 COURSE-FINISHED-AT**: 2023-11-11
+
+**🔗 COURSE-SITE**: [missing.csail.mit.edu](https://missing.csail.mit.edu/)
+
+---
+
+MIT Missing Semester is a course that teaches the *untaught* parts of computer science.
 
 > Classes teach you all about advanced topics within CS, from operating systems to machine learning, but there’s one critical subject that’s rarely covered, and is instead left to students to figure out on their own: **proficiency with their tools**. We’ll teach you how to master the command-line, use a powerful text editor, use fancy features of version control systems, and much more!
 > 
 > <div align=right>——MIT Missing Semester</div>
 
-For the parts I'm already familiar with, I simply skip them.
+For the parts I'm already familiar with, I skip them.
 
 ---
 
@@ -367,9 +373,3 @@ verify(message: array<byte>, signature: array<byte>, public-key) -> bool  (wheth
 As its name suggests, public key *can* be made public. Anyone can use the public key to encrypt data *for you*, but only you, with the corresponding private key, can decrypt it. That's how private messaging apps like Telegram works.
 
 On the flip side, you can sign data using your private key. Others can then verify the signature using your public key. This mechanism is exemplified in practices such as verifying commits in Git through digital signatures.
-
----
-
-## Potpourri
-
-**Under Construction**
