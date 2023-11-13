@@ -22,7 +22,7 @@ Here are some easy-to-forget terms in linear algebra. Check whether you are fami
 
 1. **Dimension**, or $\dim V$.
 2. **Rank**, or $\operatorname{rank} A$.
-3. For $W_1, W_2\leq V(F)$, what is $W_1+W_2$, $W_1\oplus W_2$.
+3. For $W_1, W_2\leq V(\mathbf{F})$, what is $W_1+W_2$, $W_1\oplus W_2$.
 4. **Inner product space**.
 5. **Euclidean space**.
 6. **Schmidt orthonormalization**.
