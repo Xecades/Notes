@@ -785,6 +785,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#linear-transformation" class="md-nav__link">
+    Linear Transformation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix" class="md-nav__link">
+    Matrix
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -947,6 +961,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#linear-transformation" class="md-nav__link">
+    Linear Transformation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matrix" class="md-nav__link">
+    Matrix
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -968,6 +996,9 @@
 
 <h1 id="prove-that">Prove That...<a class="headerlink" href="#prove-that" title="Permanent link">&para;</a></h1>
 <p>C'mon, prove these linear algebra things!</p>
+<blockquote>
+<p>For the content below, I use <span class="arithmatex">\(W\leqslant V\)</span> to denote <span class="arithmatex">\(W\)</span> is a subspace of <span class="arithmatex">\(V\)</span>, and <span class="arithmatex">\(\exists!\)</span> to denote "there exists a unique".</p>
+</blockquote>
 <h2 id="group-ring-field">Group, Ring &amp; Field<a class="headerlink" href="#group-ring-field" title="Permanent link">&para;</a></h2>
 <ol>
 <li><span class="arithmatex">\(\mathbb{Q}(\sqrt{2}) = \{a+b\sqrt{2}\mid a,b\in\mathbb{Q}\}\)</span> is a field.</li>
@@ -975,21 +1006,18 @@
 </ol>
 <hr />
 <h2 id="linear-space">Linear Space<a class="headerlink" href="#linear-space" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>For the content below, I use <span class="arithmatex">\(W\leqslant V\)</span> to denote <span class="arithmatex">\(W\)</span> is a subspace of <span class="arithmatex">\(V\)</span>, and <span class="arithmatex">\(\exists!\)</span> to denote "there exists a unique".</p>
-</blockquote>
 <ol>
-<li>For <span class="arithmatex">\(W\subset V(F)\)</span>, <span class="arithmatex">\(W\leqslant V\iff W\)</span> is closed under addition and scalar multiplication.</li>
-<li><span class="arithmatex">\(S_1\subset S_2\subset V(F)\Rightarrow\operatorname{span}S_1\subset\operatorname{span}S_2\)</span>.</li>
+<li>For <span class="arithmatex">\(W\subset V(\mathbf{F})\)</span>, <span class="arithmatex">\(W\leqslant V\iff W\)</span> is closed under addition and scalar multiplication.</li>
+<li><span class="arithmatex">\(S_1\subset S_2\subset V(\mathbf{F})\Rightarrow\operatorname{span}S_1\subset\operatorname{span}S_2\)</span>.</li>
 <li>If <span class="arithmatex">\(S_1\)</span> and <span class="arithmatex">\(S_2\)</span> are linearly independent, then <span class="arithmatex">\(\operatorname{span}S_1=\operatorname{span}S_2\Rightarrow|S_1|=|S_2|\)</span>.</li>
 <li>Functions <span class="arithmatex">\(\exp(\lambda_1x)\)</span>, <span class="arithmatex">\(\exp(\lambda_2x)\)</span> and <span class="arithmatex">\(\exp(\lambda_3x)\)</span> are linearly independent. (<span class="arithmatex">\(\lambda_1\)</span>, <span class="arithmatex">\(\lambda_2\)</span> and <span class="arithmatex">\(\lambda_3\)</span> are distinct)</li>
-<li>For <span class="arithmatex">\(W_1, W_2\leqslant V(F)\)</span>:<ol>
+<li>For <span class="arithmatex">\(W_1, W_2\leqslant V(\mathbf{F})\)</span>:<ol>
 <li><span class="arithmatex">\(W_1\cup W_2\leqslant V\iff W_1\subset W_2\)</span> or <span class="arithmatex">\(W_2\subset W_1\)</span>.</li>
 <li><span class="arithmatex">\(W_1 + W_2 = \operatorname{span}(W_1\cup W_2)\)</span>.</li>
 <li><span class="arithmatex">\(\dim(W_1 + W_2) = \dim W_1 + \dim W_2 - \dim(W_1\cap W_2)\)</span>.</li>
 </ol>
 </li>
-<li>For <span class="arithmatex">\(W_1, W_2\leqslant V(F)\)</span>, the following propositions are equivalent:<ol>
+<li>For <span class="arithmatex">\(W_1, W_2\leqslant V(\mathbf{F})\)</span>, the following propositions are equivalent:<ol>
 <li><span class="arithmatex">\(W_1 \cap W_2 = \{0\}\)</span>.</li>
 <li><span class="arithmatex">\(\forall\alpha\in W_1 + W_2\)</span>, <span class="arithmatex">\(\exists!\alpha_1\in W_1\)</span> and <span class="arithmatex">\(\exists!\alpha_2\in W_2\)</span> such that <span class="arithmatex">\(\alpha = \alpha_1 + \alpha_2\)</span>.</li>
 <li>If <span class="arithmatex">\(0 = \alpha_1 + \alpha_2 (\alpha_1 \in W_1, \alpha_2 \in W_2)\)</span>, then <span class="arithmatex">\(\alpha_1 = \alpha_2 = 0\)</span>.</li>
@@ -1004,7 +1032,29 @@
 <li>(<em>Triangle inequality</em>) <span class="arithmatex">\(\|\alpha\|+\|\beta\| \geq \|\alpha+\beta\|\)</span>.</li>
 <li>(<em>Pythagorean theorem</em>) <span class="arithmatex">\(\|\alpha\|^2+\|\beta\|^2 = \|\alpha+\beta\|^2\iff\alpha\perp\beta\iff\angle(\alpha,\beta)=\dfrac{\pi}{2}\)</span>.</li>
 <li>(<em>Gram–Schmidt process</em>) Any Euclidean space has an orthonormal basis. (The method to construct it is called Gram–Schmidt process.)</li>
-<li>If <span class="arithmatex">\(B = \{\varepsilon_1, \varepsilon_2, \cdots, \varepsilon_n\}\)</span> is an orthonormal basis of <span class="arithmatex">\(V(F)\)</span>, then <span class="arithmatex">\(\forall\alpha\in V\)</span>, <span class="arithmatex">\(\alpha = \sum\limits_{i=1}^n\langle\alpha,\varepsilon_i\rangle\cdot\varepsilon_i\)</span>.</li>
+<li>If <span class="arithmatex">\(B = \{\varepsilon_1, \varepsilon_2, \cdots, \varepsilon_n\}\)</span> is an orthonormal basis of <span class="arithmatex">\(V(\mathbf{F})\)</span>, then <span class="arithmatex">\(\forall\alpha\in V\)</span>, <span class="arithmatex">\(\alpha = \sum\limits_{i=1}^n\langle\alpha,\varepsilon_i\rangle\cdot\varepsilon_i\)</span>.</li>
+</ol>
+<hr />
+<h2 id="linear-transformation">Linear Transformation<a class="headerlink" href="#linear-transformation" title="Permanent link">&para;</a></h2>
+<ol>
+<li><span class="arithmatex">\(\sigma:V\to W\)</span> is injective <span class="arithmatex">\(\iff\ker\sigma = \{0\}\)</span>.</li>
+<li><span class="arithmatex">\(\sigma:V\to W\)</span> is surjective <span class="arithmatex">\(\iff\operatorname{im}\sigma = W\)</span>.</li>
+<li>If <span class="arithmatex">\(B=\{\alpha_1,\alpha_2,\dots,\alpha_n\}\)</span> is a basis of <span class="arithmatex">\(V\)</span>, then <span class="arithmatex">\(\forall \beta_1, \beta_2, \dots, \beta_n\in W\)</span>, <span class="arithmatex">\(\exists !\sigma:V \to W\)</span> such that <span class="arithmatex">\(\sigma(\alpha_i) = \beta_i\)</span>.</li>
+<li>For <span class="arithmatex">\(\sigma: V \to W\)</span>, <span class="arithmatex">\(\operatorname{rank}\sigma + \dim\ker\sigma = \dim V\)</span>.</li>
+<li>For <span class="arithmatex">\(\sigma: V \to W\)</span>, if <span class="arithmatex">\(\dim V = \dim W = n\)</span>, the following propositions are equivalent:<ol>
+<li><span class="arithmatex">\(\sigma\)</span> is injective.</li>
+<li><span class="arithmatex">\(\sigma\)</span> is surjective.</li>
+<li><span class="arithmatex">\(\operatorname{rank}\sigma = n\)</span>.</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(V\cong W \iff \dim V = \dim W\)</span>.</li>
+</ol>
+<hr />
+<h2 id="matrix">Matrix<a class="headerlink" href="#matrix" title="Permanent link">&para;</a></h2>
+<ol>
+<li><span class="arithmatex">\(\mathbf{M}(\sigma)\)</span> and <span class="arithmatex">\(\sigma\)</span> are one-to-one.</li>
+<li>Prove with matrix: if <span class="arithmatex">\(\dim V(\mathbf{F})=m\)</span>, <span class="arithmatex">\(\dim W(\mathbf{F})=n\)</span>, then <span class="arithmatex">\(\mathcal{L}(V, W)\cong \mathbf{F}^{m\times n}\)</span>.</li>
+<li>Prove with matrix: <span class="arithmatex">\(\dim\mathcal{L}(V, W)=\dim V\cdot\dim W\)</span>.</li>
 </ol>
 
   <hr>
@@ -1012,7 +1062,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-07T16:06:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-07</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-13T13:55:53+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-13</span>
       
         <br>
         Created:
