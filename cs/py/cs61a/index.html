@@ -575,9 +575,40 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          CS61A: Structure and Interpretation of Computer Programs
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         CS61A: Structure and Interpretation of Computer Programs
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#higher-order-functions" class="md-nav__link">
+    Higher-Order Functions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -911,6 +942,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#higher-order-functions" class="md-nav__link">
+    Higher-Order Functions
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -932,6 +978,44 @@
 <p><strong>🔮 COURSE-FINISHED-AT</strong>: Nope, haven't finished yet.</p>
 <p><strong>🔗 COURSE-SITE</strong>: <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/">inst.eecs.berkeley.edu/~cs61a/su20</a></p>
 <hr />
+<h2 id="higher-order-functions">Higher-Order Functions<a class="headerlink" href="#higher-order-functions" title="Permanent link">&para;</a></h2>
+<p>The homework <a href="https://inst.eecs.berkeley.edu/~cs61a/su20/hw/hw02/#q4">HW 02 Q4: Church numerals</a> introduced a very interesting concept called <em>Church numerals</em>. I'd like to note it down.</p>
+<blockquote>
+<p>The logician Alonzo Church invented a system of representing non-negative integers entirely using functions. The purpose was to show that functions are sufficient to describe all of number theory: if we have functions, we do not need to assume that numbers exist, but instead we can invent them.</p>
+</blockquote>
+<p>Using <span class="arithmatex">\(\lambda\)</span>-functions in python, we have the following definitions:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">zero</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span> <span class="nf">successor</span><span class="p">(</span><span class="n">n</span><span class="p">):</span> <span class="c1"># n is a church numeral</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="n">x</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Both <code>zero(f)</code> and <code>successor(n)</code> are <em>higher-order functions</em>, they take functions as arguments and return functions as results.</p>
+<p>The <code>successor(n)</code> function may look scary, but it's actually not. <code>n</code> is a function that takes <code>f</code> in and returns another function that takes <code>x</code> in. So <code>n</code> is technically the same as <code>lambda f: lambda x: n(f)(x)</code>. What <code>successor(n)</code> does is just to wrap another layer of <code>f</code> to <code>n</code>.</p>
+<p>From the explanation above, we can see that the number of <code>f</code> is simply the corresponding integer. Rather than defining <code>one(f)</code> as <code>successor(zero)</code> and <code>two(f)</code> as <code>successor(one)</code>, we can also use:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">one</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">def</span> <span class="nf">two</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Then it's easy to implement <code>church_to_int(n)</code> function:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">church_to_int</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="k">return</span> <span class="n">n</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)(</span><span class="mi">0</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Let's examine how to add two Church numerals together. For example, by adding <code>two(f)(x) = f(f(x))</code> and <code>one(f)(x) = f(x)</code> together, we should get <code>three(f)(x) = f(f(f(x)))</code>. The answer is to take <code>one</code> and plug it into <code>x</code> of <code>two(f)(x)</code>: <code>two(f)(one(f)(x))</code>. The code would be:</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">add_church</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">m</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="n">n</span><span class="p">(</span><span class="n">f</span><span class="p">)(</span><span class="n">x</span><span class="p">))</span>
+</span></code></pre></div>
+<p>Then we try multiplication. The idea is to plug <code>n</code> into <code>f</code> of <code>m(f)(x)</code>.</p>
+<p><div class="language-py highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">mul_church</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">m</span><span class="p">(</span><span class="n">n</span><span class="p">(</span><span class="n">f</span><span class="p">))(</span><span class="n">x</span><span class="p">)</span>
+</span></code></pre></div>
+The most challenging task is to implement power. Here is the answer. You can verify this by plugging in some numbers.</p>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">pow_church</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="k">return</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">n</span><span class="p">(</span><span class="n">m</span><span class="p">)(</span><span class="n">f</span><span class="p">)(</span><span class="n">x</span><span class="p">)</span>
+</span></code></pre></div>
+<hr />
 <p><strong>Under Construction</strong></p>
 
   <hr>
@@ -939,7 +1023,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-14T02:31:13+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-14T12:14:38+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-14</span>
       
         <br>
         Created:
