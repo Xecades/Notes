@@ -13,7 +13,8 @@ comments: true
 ### General
 
  - [x] MIT Missing Semester.
- - [ ] *Computer Systems: A Programmer's Perspective*, or *CSAPP* for short. **[IN-PROGRESS]**
+ - [ ] CS61A: Structure and Interpretation of Computer Programs. **[IN-PROGRESS]**
+ - [ ] *Computer Systems: A Programmer's Perspective* (CSAPP). **[IN-PROGRESS]**
  - [ ] UCB: Sysadmin DeCal. **[SUSPENDING]**
 
 ### Network
