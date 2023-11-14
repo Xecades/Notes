@@ -12,9 +12,9 @@ comments: true
 
 ### General
 
- - [x] *MIT Missing Semester*.
- - [ ] *UCB: Sysadmin DeCal*.
- - [ ] *Computer Systems: A Programmer's Perspective*, or *CSAPP* for short.
+ - [x] MIT Missing Semester.
+ - [ ] *Computer Systems: A Programmer's Perspective*, or *CSAPP* for short. **[IN-PROGRESS]**
+ - [ ] UCB: Sysadmin DeCal. **[SUSPENDING]**
 
 ### Network
 
@@ -66,5 +66,5 @@ Several languages that I am interested in.
  - [ ] Vim.
  - [ ] Docker.
  - [ ] CMake.
- - [x] Regex.
  - [ ] Matlab.
+ - [x] Regex.
