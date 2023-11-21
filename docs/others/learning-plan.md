@@ -14,7 +14,7 @@ comments: true
 
  - [x] MIT Missing Semester.
  - [ ] CS61A: Structure and Interpretation of Computer Programs. **[IN-PROGRESS]**
- - [ ] *Computer Systems: A Programmer's Perspective* (CSAPP). **[IN-PROGRESS]**
+ - [ ] *Computer Systems: A Programmer's Perspective* (CSAPP). **[SUSPENDING]**
  - [ ] UCB: Sysadmin DeCal. **[SUSPENDING]**
 
 ### Network
@@ -64,8 +64,8 @@ Several languages that I am interested in.
 
  - [ ] Typing.
  - [ ] LaTeX.
- - [ ] Vim.
  - [ ] Docker.
  - [ ] CMake.
  - [ ] Matlab.
  - [x] Regex.
+ - [x] Vim.
