@@ -107,7 +107,52 @@ fact = Y(lambda f: lambda n: 1 if n == 0 else n * f(n - 1))
 fact(5)  # 120
 ```
 
-I won't dig into Y Combinator here.
+I won't dig into Y Combinator here. (Maybe elsewhere)
+
+---
+
+## Data Abstraction
+
+The way to implement data abstraction in python is way easier than in C++. Here's an example to construct a tree (which is actually nested lists):
+
+```py
+def tree(label, branches=[]):
+    for branch in branches:
+        assert is_tree(branch)
+    return [label] + list(branches)
+
+def label(tree):
+    return tree[0]
+
+def branches(tree):
+    return tree[1:]
+
+def is_tree(tree):
+    if type(tree) != list or len(tree) < 1:
+        return False
+    for branch in branches(tree):
+        if not is_tree(branch):
+            return False
+    return True
+
+def is_leaf(tree):
+    return not branches(tree)
+```
+
+To construct a Fibonacci tree, we simply use:
+
+```py
+def fib_tree(n):
+    if n == 0 or n == 1:
+        return tree(n)
+
+    left = fib_tree(n - 2)
+    right = fib_tree(n - 1)
+    fib_n = label(left) + label(right)
+    return tree(fib_n, [left, right])
+```
+
+That's it. A newly-baked Fibonacci tree, in a few lines. (I'm lovin' python)
 
 ---
 
