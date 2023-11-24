@@ -778,6 +778,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#derivative" class="md-nav__link">
+    Derivative
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1025,6 +1032,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#derivative" class="md-nav__link">
+    Derivative
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1110,13 +1124,27 @@
 <li>The sufficient and necessary condition for <span class="arithmatex">\(f(x)\)</span> to be uniformly continuous in <span class="arithmatex">\(D\)</span> is that for all sequences <span class="arithmatex">\(\{x_n\}, \{y_n\}\in D^\mathbb{N}\)</span> that satisfies <span class="arithmatex">\(\lim\limits_{n\to\infty}(x_n-y_n)=0\)</span>, <span class="arithmatex">\(\lim\limits_{n\to\infty}(f(x_n)-f(y_n))=0\)</span>.</li>
 <li>If <span class="arithmatex">\(f(x)\)</span> is continuous in finite open interval <span class="arithmatex">\((a, b)\)</span>, then <span class="arithmatex">\(f(x)\)</span> is uniformly continuous on <span class="arithmatex">\((a, b)\)</span> if and only if <span class="arithmatex">\(\lim\limits_{x\to a^+}f(x)\)</span> and <span class="arithmatex">\(\lim\limits_{x\to b^-}f(x)\)</span> exist.</li>
 </ol>
+<hr />
+<h2 id="derivative">Derivative<a class="headerlink" href="#derivative" title="Permanent link">&para;</a></h2>
+<ol>
+<li>(<em>Darboux's theorem</em>) If <span class="arithmatex">\(f(x)\)</span> is differentiable in <span class="arithmatex">\((a, b)\)</span>, then for every <span class="arithmatex">\(y\)</span> between <span class="arithmatex">\(f'(a)\)</span> and <span class="arithmatex">\(f'(b)\)</span>, there exists <span class="arithmatex">\(\xi\in(a, b)\)</span> so that <span class="arithmatex">\(f'(\xi)=y\)</span>.</li>
+<li>(<em>Rolle's theorem</em>) If <span class="arithmatex">\(f(x)\)</span> is continuous in <span class="arithmatex">\([a, b]\)</span>, differentiable in <span class="arithmatex">\((a, b)\)</span>, and <span class="arithmatex">\(f(a)=f(b)\)</span>, then exists <span class="arithmatex">\(\xi\in(a, b)\)</span> so that <span class="arithmatex">\(f'(\xi)=0\)</span>.</li>
+<li>If <span class="arithmatex">\(f(x)\)</span> is twice differentiable in <span class="arithmatex">\([a, b]\)</span>, and <span class="arithmatex">\(f(a) = f(b) = 0\)</span>, then <span class="arithmatex">\(\forall x\in(a, b)\)</span>, <span class="arithmatex">\(\exists\xi\in(a, b)\)</span>, such that <span class="arithmatex">\(2f(x) = f''(\xi)(x - a)(x - b)\)</span>.</li>
+<li>If <span class="arithmatex">\(f'(x)\)</span> is bounded in <span class="arithmatex">\((a, b)\)</span>, then <span class="arithmatex">\(f(x)\)</span> is uniformly continuous in <span class="arithmatex">\((a, b)\)</span>.</li>
+<li>If <span class="arithmatex">\(f(x)\)</span> is twice differentiable at <span class="arithmatex">\(x=0\)</span>, <span class="arithmatex">\(\lim\limits_{x\to0}\dfrac{f(x)}{x}=0\)</span>, and <span class="arithmatex">\(f''(0)=4\)</span>,<ol>
+<li>find <span class="arithmatex">\(\lim\limits_{x\to0}\dfrac{f(x)}{x^2}\)</span> and <span class="arithmatex">\(\lim\limits_{x\to0}\left(1+\dfrac{f(x)}{x}\right)^{1/x}\)</span>. (answer: <span class="arithmatex">\(2\)</span> and <span class="arithmatex">\(e^2\)</span>)</li>
+<li>point out two mistakes: <span class="arithmatex">\(\lim\limits_{x\to0}\dfrac{f(x)}{x^2}=\lim\limits_{x\to0}\dfrac{f'(x)}{2x}=\lim\limits_{x\to0}\dfrac{f''(x)}{2}=\dfrac{1}{2}f''(0)=2\)</span>.</li>
+</ol>
+</li>
+<li>Prove using <em>Taylor series with Lagrange remainder</em>: <span class="arithmatex">\(e\)</span> is irrational.</li>
+</ol>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-02T09:08:28+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-11-24T14:52:26+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-11-24</span>
       
         <br>
         Created:
