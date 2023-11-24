@@ -106,7 +106,7 @@ for file in $(ls); do echo $file; done
 while foo; do bar; done
 
 # e.g. Print "Hello" forever
-until false; do echo "Hello"; done
+while true; do echo "Hello"; done
 
 # Run bar until foo succeeds
 until foo; do bar; done
