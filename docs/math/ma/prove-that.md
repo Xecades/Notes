@@ -60,3 +60,16 @@ Here are theorems and proofs that are essential in mathematical analysis. It wou
     5. (*Cantor's theorem*) then it is uniformly continuous in $[a, b]$.
 4. The sufficient and necessary condition for $f(x)$ to be uniformly continuous in $D$ is that for all sequences $\{x_n\}, \{y_n\}\in D^\mathbb{N}$ that satisfies $\lim\limits_{n\to\infty}(x_n-y_n)=0$, $\lim\limits_{n\to\infty}(f(x_n)-f(y_n))=0$.
 5. If $f(x)$ is continuous in finite open interval $(a, b)$, then $f(x)$ is uniformly continuous on $(a, b)$ if and only if $\lim\limits_{x\to a^+}f(x)$ and $\lim\limits_{x\to b^-}f(x)$ exist.
+
+---
+
+## Derivative
+
+1. (*Darboux's theorem*) If $f(x)$ is differentiable in $(a, b)$, then for every $y$ between $f'(a)$ and $f'(b)$, there exists $\xi\in(a, b)$ so that $f'(\xi)=y$.
+2. (*Rolle's theorem*) If $f(x)$ is continuous in $[a, b]$, differentiable in $(a, b)$, and $f(a)=f(b)$, then exists $\xi\in(a, b)$ so that $f'(\xi)=0$.
+3. If $f(x)$ is twice differentiable in $[a, b]$, and $f(a) = f(b) = 0$, then $\forall x\in(a, b)$, $\exists\xi\in(a, b)$, such that $2f(x) = f''(\xi)(x - a)(x - b)$.
+4. If $f'(x)$ is bounded in $(a, b)$, then $f(x)$ is uniformly continuous in $(a, b)$.
+5. If $f(x)$ is twice differentiable at $x=0$, $\lim\limits_{x\to0}\dfrac{f(x)}{x}=0$, and $f''(0)=4$,
+    1. find $\lim\limits_{x\to0}\dfrac{f(x)}{x^2}$ and $\lim\limits_{x\to0}\left(1+\dfrac{f(x)}{x}\right)^{1/x}$. (answer: $2$ and $e^2$)
+    2. point out two mistakes: $\lim\limits_{x\to0}\dfrac{f(x)}{x^2}=\lim\limits_{x\to0}\dfrac{f'(x)}{2x}=\lim\limits_{x\to0}\dfrac{f''(x)}{2}=\dfrac{1}{2}f''(0)=2$.
+ 6. Prove using *Taylor series with Lagrange remainder*: $e$ is irrational.
