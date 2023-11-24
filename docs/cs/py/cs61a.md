@@ -96,7 +96,7 @@ So the answer would be:
 fact = (lambda f: lambda x: f(f, x))(lambda f, x: 1 if x == 1 else x * f(f, x - 1))
 ```
 
-The idea behind this quiz is something called *Y Combinator*. Y Combinator is a method to turn a non-anonymous recursive function into an anonymous one. Here's one example (by GitHub Copilot):
+The logic behind this quiz is something called *Y Combinator*. Y Combinator is a method to turn a non-anonymous recursive function into an anonymous one. Here's one example (by GitHub Copilot):
 
 ```py
 def Y(f):
