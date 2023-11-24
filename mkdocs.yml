@@ -85,6 +85,7 @@ nav:
       - Cheatsheet: cs/c-cpp/c-language-cheatsheet.md
   - Math:
     - Mathematical Analysis:
+      - Cheatsheet: math/ma/cheatsheet.md
       - Prove That...: math/ma/prove-that.md
       - Completeness Of Real Numbers: math/ma/completeness-of-real-numbers.md
     - Linear Algebra:
