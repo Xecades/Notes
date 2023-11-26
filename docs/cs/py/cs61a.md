@@ -258,4 +258,170 @@ The default argument `x = []` is evaluated only once, when the function is defin
 
 ---
 
-**Under Construction**
+## Nonlocal
+
+The `nonlocal` statement is used to indicate that a variable is defined in the parent's local scope. Consider the following code:
+
+```py
+>>> n = 1
+>>> def f():
+...     n += 1
+...     return n
+...
+>>> f()  # UnboundLocalError
+```
+
+The error is caused by the fact that `n` is not defined in the local scope of `f`. To fix this, we use `nonlocal`:
+
+```py
+>>> n = 1
+>>> def f():
+...     nonlocal n
+...     n += 1
+...     return n
+...
+>>> f()
+>>> n
+2
+```
+
+Such statement is very useful for implementing *closures*.
+
+```py
+>>> def make_inc(n):
+...     def inc(k):
+...         nonlocal n
+...         n += k
+...         return n
+...     return inc
+...
+>>> inc = make_inc(0)
+>>> inc(10)
+10
+>>> inc(10)
+20
+>>> inc(10)
+30
+```
+
+---
+
+## Iterators & Generators
+
+### Iterators
+
+`iter` function takes an *iterable* object and returns an *iterator*. `next` function takes an iterator and returns the next item in the iterable object. When there's no more item, `next` raises a `StopIteration` exception.
+
+```py
+>>> t = iter([1, 2])
+>>> s = t
+>>> next(t)
+1
+>>> next(s)  # Iterators are mutable. 
+2
+>>> next(t)  # StopIteration
+```
+
+Some built-in functions like `map`, `filter`, `zip` return iterators.
+
+```py
+>>> t = map(lambda x: x ** 2, [1, 2, 3])
+>>> next(t)
+1
+>>> next(t)
+4
+>>> next(t)
+9
+>>> next(t)  # StopIteration
+```
+
+Note that such functions are *lazy*, they don't compute the whole list at once. Instead, they compute the next item only when it's needed.
+
+```py
+>>> def check(x):
+...     print("Checking", x)
+...     return x * x >= 10
+...
+>>> t = filter(check, range(6))  # No output yet
+>>> next(t)
+Checking 0
+Checking 1
+Checking 2
+Checking 3
+Checking 4
+4
+>>> next(t)
+Checking 5
+5
+>>> next(t)  # StopIteration
+```
+
+---
+
+### Generators
+
+A *generator* is a function that returns an *iterator*. It looks like a normal function, but it contains `yield` statements.
+
+```py
+>>> def naturals():
+...     n = 0
+...     while True:
+...         yield n
+...         n += 1
+...
+>>> t = naturals()
+>>> next(t)
+0
+>>> next(t)
+1
+>>> next(t)
+2
+```
+
+Generators are also *lazy*. This is why `naturals` doesn't run into an infinite loop.
+
+`yield from` is another special syntax that allows a generator to yield all values from another generator. You can consider it a syntax sugar for nested loops. For example,
+
+```py
+yield from t
+```
+
+is equivalent to:
+
+```py
+for x in t:
+    yield x
+```
+
+### HW 05 Q6: Remainder Generator
+
+The homework [HW 05 Q6: Remainder Generator](https://inst.eecs.berkeley.edu/~cs61a/su20/hw/hw05/#q6) asks us to implement `remainders_generator`. This is an easy task but it helps to understand iterators and generators.
+
+> `remainders_generator` takes in an integer `m`, and yields `m` different generators. The first generator is a generator of multiples of `m`, i.e. numbers where the remainder is 0. The second is a generator of natural numbers with remainder 1 when divided by `m`. The last generator yields natural numbers with remainder `m - 1` when divided by `m`.
+
+In short, `remainders_generator` yields all the congruence classes of `m`.
+
+For instance, `remainders_generator(4)` should yield:
+
+```py
+>>> for r in remainders_generator(4):
+...     print([next(r) for _ in range(5)])
+... 
+[4, 8, 12, 16, 20]
+[1, 5, 9, 13, 17]
+[2, 6, 10, 14, 18]
+[3, 7, 11, 15, 19]
+```
+
+Here is my implementation:
+
+```py
+def remainders_generator(m):
+    def remainder(r):
+        if r == 0: r += m
+        while True:
+            yield r
+            r += m
+    for r in range(m):
+        yield remainder(r)
+```
