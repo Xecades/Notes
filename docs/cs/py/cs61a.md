@@ -26,9 +26,9 @@ def successor(n): # n is a church numeral
 
 Both `zero(f)` and `successor(n)` are *higher-order functions*, they take functions as arguments and return functions as results.
 
-The `successor(n)` function may look scary, but it's actually not. `n` is a function that takes `f` in and returns another function that takes `x` in. So `n` is technically the same as `lambda f: lambda x: n(f)(x)`. What `successor(n)` does is just to wrap another layer of `f` to `n`.
+The `successor(n)` function may look scary, but it's actually pretty straight-forward. `n` is a function that takes `f` in and returns another function that takes `x` in. So `n` is technically the same as `lambda f: lambda x: n(f)(x)`. What `successor(n)` does is just to wrap another layer of `f` to `n`.
 
-From the explanation above, we can see that the number of `f` is simply the corresponding integer. Rather than defining `one(f)` as `successor(zero)` and `two(f)` as `successor(one)`, we can also use:
+From the explanation above, we see that the number of `f`s is simply the corresponding integer. Rather than defining `one(f)` as `successor(zero)` and `two(f)` as `successor(one)`, we can also use:
 
 ```py
 def one(f):
@@ -58,12 +58,15 @@ Then we try multiplication. The idea is to plug `n` into `f` of `m(f)(x)`.
 def mul_church(m, n):
     return lambda f: lambda x: m(n(f))(x)
 ```
-The most challenging task is to implement power. Here is the answer. You can verify this by plugging in some numbers.
+
+The most challenging task is to implement power.
 
 ```py
 def pow_church(m, n):
     return lambda f: lambda x: n(m)(f)(x)
 ```
+
+You can verify this by plugging in some numbers.
 
 ---
 
