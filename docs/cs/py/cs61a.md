@@ -159,4 +159,103 @@ That's it. A newly-baked Fibonacci tree, in a few lines. (I'm lovin' python)
 
 ---
 
+## Mutation
+
+Here's a piece of code, pay attention how `a` behaves.
+
+```py
+>>> a = [1, 2]
+>>> b = a
+>>> b.append(3)
+>>> b
+[1, 2, 3]
+>>> a
+[1, 2, 3]
+```
+
+You may expect `a` to be `[1, 2]`, but it's not. The reason is that `a` and `b` are both *names* that refer to the same *object*. When we call `b.append(3)`, we are actually ***mutating*** the object that `a` refers to. Thus, `a` is also changed.
+
+Using mutations, we can do some magic:
+
+```py
+>>> def magic(x):
+...     x[0] = 1
+...
+>>> a = [0, 2]
+>>> magic(a)
+>>> a
+[1, 2]
+```
+
+The `magic` function above behaves pretty C-ish, compare it with the following C code:
+
+```c
+void magic(int x[]) {
+    x[0] = 1;
+}
+
+int main() {
+    int a[] = {0, 2};
+    magic(a);
+    printf("{%d, %d}", a[0], a[1]); // {1, 2}
+}
+```
+
+In python, types are classified into two categories:
+
+ - Mutable types: `list`, `dict`, `set`, `bytearray`, etc.
+ - Immutable types: `int`, `float`, `bool`, `str`, `tuple`, `frozenset`, `bytes`, etc.
+
+Note that `tuple` is immutable, but it *can* contain mutable objects.
+
+```py
+>>> a = ([], 2)
+>>> b = a
+>>> a[0].append(1)
+>>> a
+([1], 2)
+>>> b
+([1], 2)
+```
+
+`is` operator can be used to check whether two names refer to the same object. And `==` checks whether two objects are equal.
+
+```py
+>>> a = [1, 2, 3]
+>>> b = [1, 2, 3]
+>>> c = a
+>>> a == b  # True
+>>> a == c  # True
+>>> a is b  # False
+>>> a is c  # True
+```
+
+In this case, `a` and `b` are two different objects that *happened* to hold the same value, while `a` and `c` are literally the same object.
+
+Mutable objects can be used as dictionary keys, but immutable objects cannot.
+
+```py
+>>> a = {[1, 2]: 0}  # TypeError: unhashable type: 'list'
+>>> a = {(1, 2): 0}  # No error
+```
+
+Mutable default arguments are dangerous. Consider the following code:
+
+```py
+>>> def f(x = []):
+...     x.append(0)
+...     return x
+...
+>>> f()
+[0]
+>>> f()
+[0, 0]
+>>> f()
+[0, 0, 0]
+```
+
+The default argument `x = []` is evaluated only once, when the function is defined. Thus, every time we call `f()`, we are actually appending `0` to the same list.
+
+---
+
 **Under Construction**
