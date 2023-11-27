@@ -1,5 +1,7 @@
 # MIT Missing Semester
 
+**📖 COURSE-STARTED-AT**: 2023-11-5
+
 **🔮 COURSE-FINISHED-AT**: 2023-11-11
 
 **🔗 COURSE-SITE**: [missing.csail.mit.edu](https://missing.csail.mit.edu/)
