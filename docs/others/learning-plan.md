@@ -13,7 +13,6 @@ comments: true
 ### General
 
  - [x] MIT Missing Semester.
- - [ ] CS61A: Structure and Interpretation of Computer Programs. **[IN-PROGRESS]**
  - [ ] *Computer Systems: A Programmer's Perspective* (CSAPP). **[SUSPENDING]**
  - [ ] UCB: Sysadmin DeCal. **[SUSPENDING]**
 
@@ -31,19 +30,11 @@ comments: true
 
 Several languages that I am interested in.
 
-### C & C++
-
- - [ ] To-do.
-
 ### Python
 
- - [ ] To-do.
+ - [ ] CS61A: Structure and Interpretation of Computer Programs. **[IN-PROGRESS]**
 
 ### Haskell
-
- - [ ] To-do.
-  
-### JavaScript
 
  - [ ] To-do.
 
