@@ -119,7 +119,7 @@ I won't dig into Y Combinator here. (Maybe elsewhere)
 The way to implement data abstraction in python is way easier than in C++. Here's an example to construct a tree (which is actually nested lists):
 
 ```py
-def tree(label, branches=[]):
+def tree(label, branches = []):
     for branch in branches:
         assert is_tree(branch)
     return [label] + list(branches)
