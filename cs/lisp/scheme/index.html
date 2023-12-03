@@ -741,6 +741,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#macros" class="md-nav__link">
+    Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#streams" class="md-nav__link">
     Streams
   </a>
@@ -1214,6 +1221,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#macros" class="md-nav__link">
+    Macros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#streams" class="md-nav__link">
     Streams
   </a>
@@ -1298,7 +1312,7 @@
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="mi">3</span>
 </span></code></pre></div>
 <h4 id="define">Define<a class="headerlink" href="#define" title="Permanent link">&para;</a></h4>
-<p>Use <code>(define &lt;name&gt; &lt;value&gt;)</code> to define a variable.</p>
+<p>Use <code>(define &lt;name&gt; &lt;value&gt;)</code> to define a symbol (variable).</p>
 <p>Use <code>(define (&lt;name&gt; &lt;param1&gt; &lt;param2&gt; ...) &lt;body&gt;)</code> to define a procedure. It is equivalent to <code>(define &lt;name&gt; (lambda (&lt;param1&gt; &lt;param2&gt; ...) &lt;body&gt;))</code>.</p>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="nv">x</span>
@@ -1376,20 +1390,20 @@
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 </span></code></pre></div>
 <p><code>car</code> is short for <em>Contents of Address Register</em>, and <code>cdr</code> is short for <em>Contents of Decrement Register</em>.</p>
-<p><strong>Scheme code itself is a list.</strong> So here comes some magic:</p>
-<div class="language-scm highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="c1">; `+` as a primitive procedure will be calculated</span>
+<p><strong>Scheme code itself is a list.</strong> Using this feature we can do some magic:</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="c1">; `+` as a primitive procedure will be evaluated</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">(</span><span class="o">#</span><span class="p">[</span><span class="nb">+</span><span class="p">]</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="ss">&#39;+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="c1">; `+` must be quoted to prevent evaluation</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="ss">&#39;+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="ss">&#39;+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w">  </span><span class="c1">; `eval` evaluates a list</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="mi">3</span>
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="mi">3</span>
 </span></code></pre></div>
 <hr />
 <h3 id="eq-equal"><code>=</code>, <code>eq?</code> &amp; <code>equal?</code><a class="headerlink" href="#eq-equal" title="Permanent link">&para;</a></h3>
-<p><code>=</code> can only be used to compare numbers.</p>
-<p>For <code>(eq? &lt;a&gt; &lt;b&gt;)</code>.</p>
+<p><code>=</code> can only be used to compare numbers. There's nothing to say about it.</p>
+<p>As for <code>(eq? &lt;a&gt; &lt;b&gt;)</code>.</p>
 <ul>
 <li>If <code>a</code> and <code>b</code> are both numbers, booleans, symbols, or strings, return true if they are equivalent; false otherwise.</li>
 <li>Otherwise, return true if <code>a</code> and <code>b</code> both refer to the same object in memory; false otherwise.</li>
@@ -1406,8 +1420,45 @@
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="no">#t</span>
 </span></code></pre></div>
 <hr />
+<h3 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">&para;</a></h3>
+<p>Macros are procedures that transform code. They are used to extend the language.</p>
+<p>Remember that Scheme code itself is a list? Macros are procedures that input a piece of code (which is literally a list) and generate another piece of code (which is done by generating a list) and evaluate it.</p>
+<p>This way, without using built-in <code>define-macro</code> procedure, let's try to define a <code>twice</code> macro.</p>
+<p>Our desired syntax is <code>(twice &lt;body&gt;)</code>, which will run <code>&lt;body&gt;</code> twice. Note that <code>&lt;body&gt;</code> is evaluated <em>after</em> <code>twice</code> is evaluated, so it is a <em>special form</em>.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">       </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="o">`</span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="p">)))</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; Equivalent to (begin (print &quot;Hello&quot;) (print &quot;Hello&quot;))</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nv">Hello</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nv">Hello</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="p">(</span><span class="nf">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span><span class="w">  </span><span class="c1">; Equivalent to (begin)</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nv">Hello</span>
+</span></code></pre></div>
+<p>In the implementation above, <code>begin</code> is used to evaluate multiple expressions one by one. It is a special form that evaluates all its operands in order and returns the value of the last operand.</p>
+<p>However, the home-made <code>twice</code> macro above is not perfect. You have to quote <code>&lt;body&gt;</code>, otherwise it would evaluate <code>&lt;body&gt;</code> first and use it return value as the body of the macro, which is <code>#void</code> in the example above.</p>
+<p>To solve this problem, we introduce another special form: <code>define-macro</code>.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define-macro</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">       </span><span class="o">`</span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="p">))</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="p">(</span><span class="nf">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nv">Hello</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nv">Hello</span>
+</span></code></pre></div>
+<p>Comparing with our first implementation, we simply changed <code>define</code> to <code>define-macro</code> and omitted <code>eval</code>.</p>
+<p><code>define-macro</code> is an older form of macro definition. In modern Scheme, we use <code>define-syntax</code> and <code>syntax-rules</code> instead. I won't go into details here.</p>
+<p>Here is our modernized <code>twice</code> macro:</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="k">define-syntax</span><span class="w"> </span><span class="nv">twice</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p">(</span><span class="k">syntax-rules</span><span class="w"> </span><span class="p">()</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="p">((</span><span class="k">_</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">     </span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="nv">body</span><span class="w"> </span><span class="nv">body</span><span class="p">))))</span>
+</span></code></pre></div>
+<p>Moreover, we can define a <code>for</code> macro. The desired syntax is <code>(for x in '(1 2 3) do (* x x))</code>, which is evaluated to <code>(1 4 9)</code>. It is similar to <code>[x * x for x in [1, 2, 3]]</code> in Python.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="k">define-syntax</span><span class="w"> </span><span class="nv">for</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p">(</span><span class="k">syntax-rules</span><span class="w"> </span><span class="p">(</span><span class="nf">in</span><span class="w"> </span><span class="k">do</span><span class="p">)</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="p">((</span><span class="k">_</span><span class="w"> </span><span class="nv">var</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">lst</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">expr</span><span class="p">)</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">     </span><span class="p">(</span><span class="nb">map</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="p">)</span><span class="w"> </span><span class="nv">expr</span><span class="p">)</span><span class="w"> </span><span class="nv">lst</span><span class="p">))))</span>
+</span></code></pre></div>
+<hr />
 <h3 id="streams">Streams<a class="headerlink" href="#streams" title="Permanent link">&para;</a></h3>
-<p>Streams are lazy lists. They are evaluated only when needed.</p>
+<p>Streams are lazy lists. They are similar to generators in Python and iterators in C++.</p>
 <p><strong>Under Construction</strong></p>
 
   <hr>
@@ -1415,7 +1466,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-03T05:13:22+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-03T14:56:42+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-03</span>
       
         <br>
         Created:
