@@ -81,6 +81,8 @@ nav:
       - CSAPP Notes: cs/sys/csapp.md
     - Python:
       - "CS61A: Structure and Interpretation of Computer Programs": cs/py/cs61a.md
+    - Lisp:
+      - Scheme: cs/lisp/scheme.md
     - C / C++:
       - Cheatsheet: cs/c-cpp/c-language-cheatsheet.md
   - Math:

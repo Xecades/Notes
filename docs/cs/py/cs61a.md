@@ -427,3 +427,11 @@ def remainders_generator(m):
     for r in range(m):
         yield remainder(r)
 ```
+
+---
+
+## Scheme
+
+Scheme is a dialect of Lisp. For the syntax and language features, refer to [Scheme](../lisp/scheme.md) notes.
+
+The task is to build a Scheme interpreter, in python.
