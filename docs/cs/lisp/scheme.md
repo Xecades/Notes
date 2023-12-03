@@ -79,7 +79,7 @@ scm> ((lambda (x y) (+ x y)) 1 2)
 
 #### Define
 
-Use `(define <name> <value>)` to define a variable.
+Use `(define <name> <value>)` to define a symbol (variable).
 
 Use `(define (<name> <param1> <param2> ...) <body>)` to define a procedure. It is equivalent to `(define <name> (lambda (<param1> <param2> ...) <body>))`.
 
@@ -182,14 +182,14 @@ scm> (cdr lst)      ; `cdr` returns the rest of a list
 
 `car` is short for *Contents of Address Register*, and `cdr` is short for *Contents of Decrement Register*.
 
-**Scheme code itself is a list.** So here comes some magic:
+**Scheme code itself is a list.** Using this feature we can do some magic:
 
 ```scm
-scm> (list + 1 2)   ; `+` as a primitive procedure will be calculated
+scm> (list + 1 2)   ; `+` as a primitive procedure will be evaluated
 (#[+] 1 2)
 scm> (list '+ 1 2)  ; `+` must be quoted to prevent evaluation
 (+ 1 2)
-scm> (eval (list '+ 1 2))
+scm> (eval (list '+ 1 2))  ; `eval` evaluates a list
 3
 scm> (eval '(+ 1 2))
 3
@@ -199,9 +199,9 @@ scm> (eval '(+ 1 2))
 
 ### `=`, `eq?` & `equal?`
 
-`=` can only be used to compare numbers.
+`=` can only be used to compare numbers. There's nothing to say about it.
 
-For `(eq? <a> <b>)`.
+As for `(eq? <a> <b>)`.
 
  - If `a` and `b` are both numbers, booleans, symbols, or strings, return true if they are equivalent; false otherwise.
  - Otherwise, return true if `a` and `b` both refer to the same object in memory; false otherwise.
@@ -225,8 +225,66 @@ scm> (equal? '(1 2 3) '(1 2 3))
 
 ---
 
+### Macros
+
+Macros are procedures that transform code. They are used to extend the language.
+
+Remember that Scheme code itself is a list? Macros are procedures that input a piece of code (which is literally a list) and generate another piece of code (which is done by generating a list) and evaluate it.
+
+This way, without using built-in `define-macro` procedure, let's try to define a `twice` macro.
+
+Our desired syntax is `(twice <body>)`, which will run `<body>` twice. Note that `<body>` is evaluated *after* `twice` is evaluated, so it is a *special form*.
+
+```scm
+scm> (define (twice body)
+       (eval `(begin ,body ,body)))
+scm> (twice '(print "Hello")) ; Equivalent to (begin (print "Hello") (print "Hello"))
+Hello
+Hello
+scm> (twice (print "Hello"))  ; Equivalent to (begin)
+Hello
+```
+
+In the implementation above, `begin` is used to evaluate multiple expressions one by one. It is a special form that evaluates all its operands in order and returns the value of the last operand.
+
+However, the home-made `twice` macro above is not perfect. You have to quote `<body>`, otherwise it would evaluate `<body>` first and use it return value as the body of the macro, which is `#void` in the example above.
+
+To solve this problem, we introduce another special form: `define-macro`.
+
+```scm
+scm> (define-macro (twice body)
+       `(begin ,body ,body))
+scm> (twice (print "Hello"))
+Hello
+Hello
+```
+
+Comparing with our first implementation, we simply changed `define` to `define-macro` and omitted `eval`.
+
+`define-macro` is an older form of macro definition. In modern Scheme, we use `define-syntax` and `syntax-rules` instead. I won't go into details here.
+
+Here is our modernized `twice` macro:
+
+```scm
+(define-syntax twice
+  (syntax-rules ()
+    ((_ body)
+     (begin body body))))
+```
+
+Moreover, we can define a `for` macro. The desired syntax is `(for x in '(1 2 3) do (* x x))`, which is evaluated to `(1 4 9)`. It is similar to `[x * x for x in [1, 2, 3]]` in Python.
+
+```scm
+(define-syntax for
+  (syntax-rules (in do)
+    ((_ var in lst do expr)
+     (map (lambda (var) expr) lst))))
+```
+
+---
+
 ### Streams
 
-Streams are lazy lists. They are evaluated only when needed.
+Streams are lazy lists. They are similar to generators in Python and iterators in C++.
 
 **Under Construction**
