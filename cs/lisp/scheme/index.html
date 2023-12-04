@@ -650,28 +650,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-    <nav class="md-nav" aria-label="Syntax">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#primitives" class="md-nav__link">
     Primitives
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#call-expressions" class="md-nav__link">
     Call Expressions
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#special-forms" class="md-nav__link">
     Special Forms
   </a>
@@ -718,44 +710,39 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#list" class="md-nav__link">
     List
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#eq-equal" class="md-nav__link">
     =, eq? &amp; equal?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#macros" class="md-nav__link">
     Macros
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#streams" class="md-nav__link">
     Streams
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1130,28 +1117,20 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#syntax" class="md-nav__link">
-    Syntax
-  </a>
-  
-    <nav class="md-nav" aria-label="Syntax">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#primitives" class="md-nav__link">
     Primitives
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#call-expressions" class="md-nav__link">
     Call Expressions
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#special-forms" class="md-nav__link">
     Special Forms
   </a>
@@ -1198,44 +1177,39 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#quotation" class="md-nav__link">
     Quotation
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#list" class="md-nav__link">
     List
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#eq-equal" class="md-nav__link">
     =, eq? &amp; equal?
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#macros" class="md-nav__link">
     Macros
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#streams" class="md-nav__link">
     Streams
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -1266,8 +1240,7 @@
 </blockquote>
 <p>Online REPL: <a href="https://try.scheme.org/">try.scheme.org</a>.</p>
 <hr />
-<h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<h3 id="primitives">Primitives<a class="headerlink" href="#primitives" title="Permanent link">&para;</a></h3>
+<h2 id="primitives">Primitives<a class="headerlink" href="#primitives" title="Permanent link">&para;</a></h2>
 <p>Scheme has a set of <em>atomic</em> primitive expressions. Atomic means that these expressions cannot be divided up. For example:</p>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="mi">123</span><span class="w">     </span><span class="c1">; Number</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="mi">123</span>
@@ -1280,7 +1253,7 @@
 </span></code></pre></div>
 <p>Note that the only primitive in Scheme that is false is <code>#f</code>. All other values are true.</p>
 <hr />
-<h3 id="call-expressions">Call Expressions<a class="headerlink" href="#call-expressions" title="Permanent link">&para;</a></h3>
+<h2 id="call-expressions">Call Expressions<a class="headerlink" href="#call-expressions" title="Permanent link">&para;</a></h2>
 <p><center><code>(&lt;operator&gt; &lt;operand1&gt; &lt;operand2&gt; ...)</code></center></p>
 <p>All expressions are written in the form of a list, with the first element being the operator and the rest being the operands. For example:</p>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">                  </span><span class="c1">; 1 + 2 + 3 = 6</span>
@@ -1301,9 +1274,9 @@
 <p>In the examples above, <code>+</code>, <code>-</code>, <code>*</code>, <code>&gt;=</code>, <code>even?</code> and <code>string-append</code> are all procedure (function) names.</p>
 <p>Commonly used math procedures: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>abs</code>, <code>quotient</code>, <code>remainder</code>, <code>modulo</code>, <code>min</code>, <code>max</code>, <code>expt</code>, <code>sqrt</code>, <code>sin</code>, <code>cos</code>, <code>tan</code>, <code>asin</code>, <code>acos</code>, <code>atan</code>, <code>log</code>, <code>exp</code>, <code>floor</code>, <code>ceiling</code>, <code>round</code>.</p>
 <hr />
-<h3 id="special-forms">Special Forms<a class="headerlink" href="#special-forms" title="Permanent link">&para;</a></h3>
+<h2 id="special-forms">Special Forms<a class="headerlink" href="#special-forms" title="Permanent link">&para;</a></h2>
 <p>Special forms are expressions that are not evaluated in the same way as call expressions. For example:</p>
-<h4 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h4>
+<h3 id="lambda">Lambda<a class="headerlink" href="#lambda" title="Permanent link">&para;</a></h3>
 <p>Lambda function is the meat of Scheme. It is used to create anonymous functions.</p>
 <p>Syntax: <code>(lambda (&lt;param1&gt; &lt;param2&gt; ...) &lt;body&gt;)</code></p>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">))</span>
@@ -1311,7 +1284,7 @@
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">((</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="w"> </span><span class="nv">y</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">y</span><span class="p">))</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="mi">3</span>
 </span></code></pre></div>
-<h4 id="define">Define<a class="headerlink" href="#define" title="Permanent link">&para;</a></h4>
+<h3 id="define">Define<a class="headerlink" href="#define" title="Permanent link">&para;</a></h3>
 <p>Use <code>(define &lt;name&gt; &lt;value&gt;)</code> to define a symbol (variable).</p>
 <p>Use <code>(define (&lt;name&gt; &lt;param1&gt; &lt;param2&gt; ...) &lt;body&gt;)</code> to define a procedure. It is equivalent to <code>(define &lt;name&gt; (lambda (&lt;param1&gt; &lt;param2&gt; ...) &lt;body&gt;))</code>.</p>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
@@ -1324,7 +1297,7 @@
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">add-lambda</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="mi">3</span>
 </span></code></pre></div>
-<h4 id="if">If<a class="headerlink" href="#if" title="Permanent link">&para;</a></h4>
+<h3 id="if">If<a class="headerlink" href="#if" title="Permanent link">&para;</a></h3>
 <p>Syntax: <code>(if &lt;condition&gt; &lt;consequent&gt; &lt;alternative&gt;)</code></p>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">odd?</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span>
@@ -1332,7 +1305,7 @@
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">print</span><span class="w"> </span><span class="s">&quot;x is even&quot;</span><span class="p">))</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">; &quot;x is even&quot;</span>
 </span></code></pre></div>
-<h4 id="cond">Cond<a class="headerlink" href="#cond" title="Permanent link">&para;</a></h4>
+<h3 id="cond">Cond<a class="headerlink" href="#cond" title="Permanent link">&para;</a></h3>
 <p><em>Cond</em> is a multi-way if statement.</p>
 <p>Syntax: <code>(cond (&lt;condition1&gt; &lt;consequent1&gt;) (&lt;condition2&gt; &lt;consequent2&gt;) ... [(else &lt;alternative&gt;)])</code></p>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
@@ -1342,7 +1315,7 @@
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">       </span><span class="p">(</span><span class="k">else</span><span class="w"> </span><span class="mi">1</span><span class="p">))</span>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="mi">1</span>
 </span></code></pre></div>
-<h4 id="and-or">And &amp; Or<a class="headerlink" href="#and-or" title="Permanent link">&para;</a></h4>
+<h3 id="and-or">And &amp; Or<a class="headerlink" href="#and-or" title="Permanent link">&para;</a></h3>
 <p><code>and</code> and <code>or</code> are used to combine multiple conditions. They are <em>short-circuit</em>.</p>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">and</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">       </span><span class="p">(</span><span class="nb">zero?</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
@@ -1355,7 +1328,7 @@
 </span></code></pre></div>
 <p>Even though running <code>(/ 1 0)</code> alone will cause <code>DivisionByZero</code> error, In the example above it won't be evaluated since <code>and</code> and <code>or</code> are short-circuit.</p>
 <hr />
-<h3 id="quotation">Quotation<a class="headerlink" href="#quotation" title="Permanent link">&para;</a></h3>
+<h2 id="quotation">Quotation<a class="headerlink" href="#quotation" title="Permanent link">&para;</a></h2>
 <p>Quotation is used to prevent evaluation of an expression. There are two types of quotations:</p>
 <ul>
 <li>
@@ -1374,7 +1347,7 @@
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 </span></code></pre></div>
 <hr />
-<h3 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h3>
+<h2 id="list">List<a class="headerlink" href="#list" title="Permanent link">&para;</a></h2>
 <div class="language-scm highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w">       </span><span class="c1">; Use quote to create a list</span>
@@ -1390,18 +1363,22 @@
 </span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span>
 </span></code></pre></div>
 <p><code>car</code> is short for <em>Contents of Address Register</em>, and <code>cdr</code> is short for <em>Contents of Decrement Register</em>.</p>
+<p><code>cons</code> is usually used to construct a list (which is actually a linked list), but it can also be used to construct a pair.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span></code></pre></div>
 <p><strong>Scheme code itself is a list.</strong> Using this feature we can do some magic:</p>
-<div class="language-scm highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="c1">; `+` as a primitive procedure will be evaluated</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="p">(</span><span class="o">#</span><span class="p">[</span><span class="nb">+</span><span class="p">]</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="ss">&#39;+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="c1">; `+` must be quoted to prevent evaluation</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="ss">&#39;+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w">  </span><span class="c1">; `eval` evaluates a list</span>
-</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="mi">3</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="mi">3</span>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">   </span><span class="c1">; `+` as a primitive procedure will be evaluated</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">(</span><span class="o">#</span><span class="p">[</span><span class="nb">+</span><span class="p">]</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="ss">&#39;+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w">  </span><span class="c1">; `+` must be quoted to prevent evaluation</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="p">(</span><span class="nb">list</span><span class="w"> </span><span class="ss">&#39;+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="w">  </span><span class="c1">; `eval` evaluates a list</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="mi">3</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="mi">3</span>
 </span></code></pre></div>
 <hr />
-<h3 id="eq-equal"><code>=</code>, <code>eq?</code> &amp; <code>equal?</code><a class="headerlink" href="#eq-equal" title="Permanent link">&para;</a></h3>
+<h2 id="eq-equal"><code>=</code>, <code>eq?</code> &amp; <code>equal?</code><a class="headerlink" href="#eq-equal" title="Permanent link">&para;</a></h2>
 <p><code>=</code> can only be used to compare numbers. There's nothing to say about it.</p>
 <p>As for <code>(eq? &lt;a&gt; &lt;b&gt;)</code>.</p>
 <ul>
@@ -1409,64 +1386,125 @@
 <li>Otherwise, return true if <code>a</code> and <code>b</code> both refer to the same object in memory; false otherwise.</li>
 </ul>
 <p>It behaves like <code>is</code> in python.</p>
-<div class="language-scm highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eq?</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="no">#f</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eq?</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="no">#t</span>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eq?</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="no">#f</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">eq?</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">x</span><span class="p">)</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="no">#t</span>
 </span></code></pre></div>
 <p><code>(equal? &lt;a&gt; &lt;b&gt;)</code> returns true if <code>a</code> and <code>b</code> are equivalent. For two pairs, they are equivalent if their <code>car</code>s are equivalent and their <code>cdr</code>s are equivalent.</p>
-<div class="language-scm highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">equal?</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="no">#t</span>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nb">equal?</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="p">))</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="no">#t</span>
 </span></code></pre></div>
 <hr />
-<h3 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">&para;</a></h3>
+<h2 id="macros">Macros<a class="headerlink" href="#macros" title="Permanent link">&para;</a></h2>
 <p>Macros are procedures that transform code. They are used to extend the language.</p>
 <p>Remember that Scheme code itself is a list? Macros are procedures that input a piece of code (which is literally a list) and generate another piece of code (which is done by generating a list) and evaluate it.</p>
 <p>This way, without using built-in <code>define-macro</code> procedure, let's try to define a <code>twice</code> macro.</p>
 <p>Our desired syntax is <code>(twice &lt;body&gt;)</code>, which will run <code>&lt;body&gt;</code> twice. Note that <code>&lt;body&gt;</code> is evaluated <em>after</em> <code>twice</code> is evaluated, so it is a <em>special form</em>.</p>
-<div class="language-scm highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">       </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="o">`</span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="p">)))</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; Equivalent to (begin (print &quot;Hello&quot;) (print &quot;Hello&quot;))</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nv">Hello</span>
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nv">Hello</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="p">(</span><span class="nf">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span><span class="w">  </span><span class="c1">; Equivalent to (begin)</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="nv">Hello</span>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">       </span><span class="p">(</span><span class="nb">eval</span><span class="w"> </span><span class="o">`</span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="p">)))</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="o">&#39;</span><span class="p">(</span><span class="nv">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span><span class="w"> </span><span class="c1">; Equivalent to (begin (print &quot;Hello&quot;) (print &quot;Hello&quot;))</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nv">Hello</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nv">Hello</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="p">(</span><span class="nf">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span><span class="w">  </span><span class="c1">; Equivalent to (begin)</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nv">Hello</span>
 </span></code></pre></div>
 <p>In the implementation above, <code>begin</code> is used to evaluate multiple expressions one by one. It is a special form that evaluates all its operands in order and returns the value of the last operand.</p>
 <p>However, the home-made <code>twice</code> macro above is not perfect. You have to quote <code>&lt;body&gt;</code>, otherwise it would evaluate <code>&lt;body&gt;</code> first and use it return value as the body of the macro, which is <code>#void</code> in the example above.</p>
 <p>To solve this problem, we introduce another special form: <code>define-macro</code>.</p>
-<div class="language-scm highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define-macro</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">       </span><span class="o">`</span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="p">))</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="p">(</span><span class="nf">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nv">Hello</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nv">Hello</span>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define-macro</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">       </span><span class="o">`</span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="p">))</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">twice</span><span class="w"> </span><span class="p">(</span><span class="nf">print</span><span class="w"> </span><span class="s">&quot;Hello&quot;</span><span class="p">))</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="nv">Hello</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a><span class="nv">Hello</span>
 </span></code></pre></div>
 <p>Comparing with our first implementation, we simply changed <code>define</code> to <code>define-macro</code> and omitted <code>eval</code>.</p>
-<p><code>define-macro</code> is an older form of macro definition. In modern Scheme, we use <code>define-syntax</code> and <code>syntax-rules</code> instead. I won't go into details here.</p>
+<p><code>define-macro</code> is an older form of macro definition. In modern Scheme, we use <code>define-syntax</code> and <code>syntax-rules</code> instead. But I won't go into details here.</p>
 <p>Here is our modernized <code>twice</code> macro:</p>
-<div class="language-scm highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">(</span><span class="k">define-syntax</span><span class="w"> </span><span class="nv">twice</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">  </span><span class="p">(</span><span class="k">syntax-rules</span><span class="w"> </span><span class="p">()</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="w">    </span><span class="p">((</span><span class="k">_</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
-</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="w">     </span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="nv">body</span><span class="w"> </span><span class="nv">body</span><span class="p">))))</span>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="k">define-syntax</span><span class="w"> </span><span class="nv">twice</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p">(</span><span class="k">syntax-rules</span><span class="w"> </span><span class="p">()</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="p">((</span><span class="k">_</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">     </span><span class="p">(</span><span class="k">begin</span><span class="w"> </span><span class="nv">body</span><span class="w"> </span><span class="nv">body</span><span class="p">))))</span>
 </span></code></pre></div>
 <p>Moreover, we can define a <code>for</code> macro. The desired syntax is <code>(for x in '(1 2 3) do (* x x))</code>, which is evaluated to <code>(1 4 9)</code>. It is similar to <code>[x * x for x in [1, 2, 3]]</code> in Python.</p>
-<div class="language-scm highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="p">(</span><span class="k">define-syntax</span><span class="w"> </span><span class="nv">for</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">  </span><span class="p">(</span><span class="k">syntax-rules</span><span class="w"> </span><span class="p">(</span><span class="nf">in</span><span class="w"> </span><span class="k">do</span><span class="p">)</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="w">    </span><span class="p">((</span><span class="k">_</span><span class="w"> </span><span class="nv">var</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">lst</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">expr</span><span class="p">)</span>
-</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="w">     </span><span class="p">(</span><span class="nb">map</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="p">)</span><span class="w"> </span><span class="nv">expr</span><span class="p">)</span><span class="w"> </span><span class="nv">lst</span><span class="p">))))</span>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">(</span><span class="k">define-syntax</span><span class="w"> </span><span class="nv">for</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">  </span><span class="p">(</span><span class="k">syntax-rules</span><span class="w"> </span><span class="p">(</span><span class="nf">in</span><span class="w"> </span><span class="k">do</span><span class="p">)</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">    </span><span class="p">((</span><span class="k">_</span><span class="w"> </span><span class="nv">var</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">lst</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="nv">expr</span><span class="p">)</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">     </span><span class="p">(</span><span class="nb">map</span><span class="w"> </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">var</span><span class="p">)</span><span class="w"> </span><span class="nv">expr</span><span class="p">)</span><span class="w"> </span><span class="nv">lst</span><span class="p">))))</span>
 </span></code></pre></div>
 <hr />
-<h3 id="streams">Streams<a class="headerlink" href="#streams" title="Permanent link">&para;</a></h3>
+<h2 id="streams">Streams<a class="headerlink" href="#streams" title="Permanent link">&para;</a></h2>
 <p>Streams are lazy lists. They are similar to generators in Python and iterators in C++.</p>
-<p><strong>Under Construction</strong></p>
+<p>Stream is not built-in in Scheme, however, we can implement it using <code>delay</code> and <code>force</code>.</p>
+<p><code>(delay &lt;body&gt;)</code> delays the evaluation of <code>&lt;body&gt;</code> and returns a <em>promise</em>, while <code>(force &lt;delayed&gt;)</code> resumes the evaluation of promise <code>&lt;delayed&gt;</code>.</p>
+<p>Actually, <code>delay</code> and <code>force</code> are just macros. Here is their implementation:</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="p">(</span><span class="k">define-macro</span><span class="w"> </span><span class="p">(</span><span class="k">delay</span><span class="w"> </span><span class="nv">body</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">  </span><span class="o">`</span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">,</span><span class="nv">body</span><span class="p">))</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nb">force</span><span class="w"> </span><span class="nv">delayed</span><span class="p">)</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="w">  </span><span class="p">(</span><span class="nf">delayed</span><span class="p">))</span>
+</span></code></pre></div>
+<p>By using <code>delay</code> and <code>force</code>, we can define our own stream-version <code>cons</code>, <code>car</code> and <code>cdr</code>.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">;; &quot;-s&quot; means stream</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="p">(</span><span class="k">define-macro</span><span class="w"> </span><span class="p">(</span><span class="nf">cons-s</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">  </span><span class="o">`</span><span class="p">(</span><span class="nb">cons</span><span class="w"> </span><span class="o">,</span><span class="nv">a</span><span class="w"> </span><span class="p">(</span><span class="k">delay</span><span class="w"> </span><span class="o">,</span><span class="nv">b</span><span class="p">)))</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">car</span><span class="w"> </span><span class="nv">s</span><span class="p">))</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">force</span><span class="w"> </span><span class="p">(</span><span class="nb">cdr</span><span class="w"> </span><span class="nv">s</span><span class="p">)))</span>
+</span></code></pre></div>
+<p>Thus, we can create an infinite list.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">ones</span><span class="w"> </span><span class="p">(</span><span class="nf">cons-s</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="nv">ones</span><span class="p">))</span><span class="w"> </span><span class="c1">; `ones` is defined recursively</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="nv">ones</span><span class="w">                          </span><span class="c1">; `ones` is an infinite list of 1</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="o">.</span><span class="w"> </span><span class="o">#</span><span class="p">[</span><span class="nv">promise</span><span class="p">])</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">ones</span><span class="p">)</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="mi">1</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">ones</span><span class="p">))</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="mi">1</span>
+</span></code></pre></div>
+<p>Then we define some helper functions, <code>add-s</code> to add two streams together, <code>head-s</code> to get the first <code>n</code> elements of a stream, and <code>filter-s</code> to filter a stream.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">add-s</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">cons-s</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="w">    </span><span class="p">(</span><span class="nb">+</span><span class="w"> </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">a</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">b</span><span class="p">))</span>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">add-s</span><span class="w"> </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">a</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">b</span><span class="p">))))</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">head-s</span><span class="w"> </span><span class="nv">n</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="w">  </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nb">zero?</span><span class="w"> </span><span class="nv">n</span><span class="p">)</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="w">    </span><span class="o">`</span><span class="p">()</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="w">    </span><span class="p">(</span><span class="nb">cons</span>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="w">      </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a><span class="w">      </span><span class="p">(</span><span class="nf">head-s</span><span class="w"> </span><span class="p">(</span><span class="nb">-</span><span class="w"> </span><span class="nv">n</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)))))</span>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">filter-s</span><span class="w"> </span><span class="nv">fn</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="w">  </span><span class="p">(</span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nf">fn</span><span class="w"> </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">s</span><span class="p">))</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a><span class="w">    </span><span class="p">(</span><span class="nf">cons-s</span><span class="w"> </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nf">filter-s</span><span class="w"> </span><span class="nv">fn</span><span class="w"> </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)))</span>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="w">    </span><span class="p">(</span><span class="nf">filter-s</span><span class="w"> </span><span class="nv">fn</span><span class="w"> </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">s</span><span class="p">))))</span>
+</span></code></pre></div>
+<p>Finally, we can create a stream of natural numbers.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">naturals</span><span class="w"> </span><span class="p">(</span><span class="nf">cons-s</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">(</span><span class="nf">add-s</span><span class="w"> </span><span class="nv">ones</span><span class="w"> </span><span class="nv">naturals</span><span class="p">)))</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">head-s</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="nv">naturals</span><span class="p">)</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="p">(</span><span class="mi">1</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="mi">5</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Streams are very useful in solving problems that require infinite lists. For example, we can use streams to implement the famous <em>Sieve of Eratosthenes</em> algorithm to generate prime numbers.</p>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="p">(</span><span class="nf">sieve</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="w">  </span><span class="p">(</span><span class="nf">cons-s</span>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="w">    </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="p">(</span><span class="nf">sieve</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="w">      </span><span class="p">(</span><span class="nf">filter-s</span>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="w">        </span><span class="p">(</span><span class="k">lambda</span><span class="w"> </span><span class="p">(</span><span class="nf">x</span><span class="p">)</span><span class="w"> </span><span class="p">(</span><span class="nb">not</span><span class="w"> </span><span class="p">(</span><span class="nb">zero?</span><span class="w"> </span><span class="p">(</span><span class="nb">modulo</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="p">(</span><span class="nf">car-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)))))</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">        </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">s</span><span class="p">)))))</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="p">(</span><span class="k">define</span><span class="w"> </span><span class="nv">primes</span><span class="w"> </span><span class="p">(</span><span class="nf">sieve</span><span class="w"> </span><span class="p">(</span><span class="nf">cdr-s</span><span class="w"> </span><span class="nv">naturals</span><span class="p">)))</span>
+</span></code></pre></div>
+<div class="language-scm highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">scm&gt;</span><span class="w"> </span><span class="p">(</span><span class="nf">head-s</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="nv">primes</span><span class="p">)</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="p">(</span><span class="mi">2</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="mi">11</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="mi">17</span><span class="w"> </span><span class="mi">19</span><span class="w"> </span><span class="mi">23</span><span class="w"> </span><span class="mi">29</span><span class="p">)</span>
+</span></code></pre></div>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-03T14:56:42+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-04T03:04:27+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-04</span>
       
         <br>
         Created:
