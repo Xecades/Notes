@@ -434,4 +434,34 @@ def remainders_generator(m):
 
 Scheme is a dialect of Lisp. For the syntax and language features, refer to [Scheme](../lisp/scheme.md) notes.
 
-The task is to build a Scheme interpreter, in python.
+The task is to build a Scheme interpreter, in python. I won't go into details here, but I'd like to note down some important parts.
+
+Interpreting a piece of code follows the following procedures:
+
+1. Input
+2. Tokenize
+3. Parse
+4. Evaluate
+5. Print
+
+```py
+Input = '(even? (* (+ 1 2) 3 4))'
+Token = ['(', 'even?', '(', '*', '(', '+', '1', '2', ')', '3', '4', ')', ')']
+Parsed = CallExpr(Name('even?'),
+             [CallExpr(Name('*'),
+                 [CallExpr(Name('+'),
+                     [Literal(1), Literal(2)]),
+                 Literal(3), Literal(4)])])
+Evaluation = True
+Print = '#t'
+```
+
+Another thing to mention is that Scheme also have environment frames. When evaluating an expression, the current environment frame should be passed to the `eval` function.
+
+---
+
+## SQL
+
+SQL is pronounced as "sequel".
+
+**Under Construction**
