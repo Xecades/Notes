@@ -10,9 +10,7 @@ Online REPL: [try.scheme.org](https://try.scheme.org/).
 
 ---
 
-## Syntax
-
-### Primitives
+## Primitives
 
 Scheme has a set of *atomic* primitive expressions. Atomic means that these expressions cannot be divided up. For example:
 
@@ -31,7 +29,7 @@ Note that the only primitive in Scheme that is false is `#f`. All other values a
 
 ---
 
-### Call Expressions
+## Call Expressions
 
 <center>`(<operator> <operand1> <operand2> ...)`</center>
 
@@ -60,11 +58,11 @@ Commonly used math procedures: `+`, `-`, `*`, `/`, `abs`, `quotient`, `remainder
 
 ---
 
-### Special Forms
+## Special Forms
 
 Special forms are expressions that are not evaluated in the same way as call expressions. For example:
 
-#### Lambda
+### Lambda
 
 Lambda function is the meat of Scheme. It is used to create anonymous functions.
 
@@ -77,7 +75,7 @@ scm> ((lambda (x y) (+ x y)) 1 2)
 3
 ```
 
-#### Define
+### Define
 
 Use `(define <name> <value>)` to define a symbol (variable).
 
@@ -95,7 +93,7 @@ scm> (add-lambda 1 2)
 3
 ```
 
-#### If
+### If
 
 Syntax: `(if <condition> <consequent> <alternative>)`
 
@@ -107,7 +105,7 @@ Syntax: `(if <condition> <consequent> <alternative>)`
 ; "x is even"
 ```
 
-#### Cond
+### Cond
 
 *Cond* is a multi-way if statement.
 
@@ -122,7 +120,7 @@ scm> (cond
 1
 ```
 
-#### And & Or
+### And & Or
 
 `and` and `or` are used to combine multiple conditions. They are *short-circuit*.
 
@@ -141,7 +139,7 @@ Even though running `(/ 1 0)` alone will cause `DivisionByZero` error, In the ex
 
 ---
 
-### Quotation
+## Quotation
 
 Quotation is used to prevent evaluation of an expression. There are two types of quotations:
 
@@ -162,7 +160,7 @@ scm> `(1 (+ 1 1) ,(+ 1 2))  ; (+ 1 1) won't be evaluated, but (+ 1 2) will
 
 ---
 
-### List
+## List
 
 ```scm
 scm> (list 1 2 3)
@@ -182,6 +180,13 @@ scm> (cdr lst)      ; `cdr` returns the rest of a list
 
 `car` is short for *Contents of Address Register*, and `cdr` is short for *Contents of Decrement Register*.
 
+`cons` is usually used to construct a list (which is actually a linked list), but it can also be used to construct a pair.
+
+```scm
+scm> (cons 1 2)
+(1 . 2)
+```
+
 **Scheme code itself is a list.** Using this feature we can do some magic:
 
 ```scm
@@ -197,7 +202,7 @@ scm> (eval '(+ 1 2))
 
 ---
 
-### `=`, `eq?` & `equal?`
+## `=`, `eq?` & `equal?`
 
 `=` can only be used to compare numbers. There's nothing to say about it.
 
@@ -225,7 +230,7 @@ scm> (equal? '(1 2 3) '(1 2 3))
 
 ---
 
-### Macros
+## Macros
 
 Macros are procedures that transform code. They are used to extend the language.
 
@@ -261,7 +266,7 @@ Hello
 
 Comparing with our first implementation, we simply changed `define` to `define-macro` and omitted `eval`.
 
-`define-macro` is an older form of macro definition. In modern Scheme, we use `define-syntax` and `syntax-rules` instead. I won't go into details here.
+`define-macro` is an older form of macro definition. In modern Scheme, we use `define-syntax` and `syntax-rules` instead. But I won't go into details here.
 
 Here is our modernized `twice` macro:
 
@@ -283,8 +288,90 @@ Moreover, we can define a `for` macro. The desired syntax is `(for x in '(1 2 3)
 
 ---
 
-### Streams
+## Streams
 
 Streams are lazy lists. They are similar to generators in Python and iterators in C++.
 
-**Under Construction**
+Stream is not built-in in Scheme, however, we can implement it using `delay` and `force`.
+
+`(delay <body>)` delays the evaluation of `<body>` and returns a *promise*, while `(force <delayed>)` resumes the evaluation of promise `<delayed>`.
+
+Actually, `delay` and `force` are just macros. Here is their implementation:
+
+```scm
+(define-macro (delay body)
+  `(lambda () ,body))
+(define (force delayed)
+  (delayed))
+```
+
+By using `delay` and `force`, we can define our own stream-version `cons`, `car` and `cdr`.
+
+```scm
+;; "-s" means stream
+(define-macro (cons-s a b)
+  `(cons ,a (delay ,b)))
+
+(define (car-s s) (car s))
+(define (cdr-s s) (force (cdr s)))
+```
+
+Thus, we can create an infinite list.
+
+```scm
+scm> (define ones (cons-s 1 ones)) ; `ones` is defined recursively
+scm> ones                          ; `ones` is an infinite list of 1
+(1 . #[promise])
+scm> (car-s ones)
+1
+scm> (car-s (cdr-s ones))
+1
+```
+
+Then we define some helper functions, `add-s` to add two streams together, `head-s` to get the first `n` elements of a stream, and `filter-s` to filter a stream.
+
+```scm
+(define (add-s a b)
+  (cons-s
+    (+ (car-s a) (car-s b))
+    (add-s (cdr-s a) (cdr-s b))))
+
+(define (head-s n s)
+  (if (zero? n)
+    `()
+    (cons
+      (car-s s)
+      (head-s (- n 1) (cdr-s s)))))
+
+(define (filter-s fn s)
+  (if (fn (car-s s))
+    (cons-s (car-s s) (filter-s fn (cdr-s s)))
+    (filter-s fn (cdr-s s))))
+```
+
+Finally, we can create a stream of natural numbers.
+
+```scm
+scm> (define naturals (cons-s 1 (add-s ones naturals)))
+scm> (head-s 5 naturals)
+(1 2 3 4 5)
+```
+
+Streams are very useful in solving problems that require infinite lists. For example, we can use streams to implement the famous *Sieve of Eratosthenes* algorithm to generate prime numbers.
+
+```scm
+(define (sieve s)
+  (cons-s
+    (car-s s)
+    (sieve
+      (filter-s
+        (lambda (x) (not (zero? (modulo x (car-s s)))))
+        (cdr-s s)))))
+
+(define primes (sieve (cdr-s naturals)))
+```
+
+```scm
+scm> (head-s 10 primes)
+(2 3 5 7 11 13 17 19 23 29)
+```
