@@ -9,7 +9,7 @@
       
       
       
-        <link rel="prev" href="../../ds/cs61b/">
+        <link rel="prev" href="../../lc/y-combinator/">
       
       
         <link rel="next" href="../../lisp/scheme/">
@@ -585,6 +585,70 @@
               
   
   
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+        
+      
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4" tabindex="0" aria-expanded="false">
+          Lambda Calculus
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lambda Calculus" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Lambda Calculus
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lc/y-combinator/" class="md-nav__link">
+        Y Combinator
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -594,17 +658,17 @@
       
       
       
-      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" checked>
+      <input class="md-nav__toggle md-toggle " data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" checked>
       
       
       
-        <label class="md-nav__link" for="__nav_2_4" tabindex="0" aria-expanded="true">
+        <label class="md-nav__link" for="__nav_2_5" tabindex="0" aria-expanded="true">
           Python
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Python" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_4">
+        <label class="md-nav__title" for="__nav_2_5">
           <span class="md-nav__icon md-icon"></span>
           Python
         </label>
@@ -774,17 +838,17 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
       
       
       
-        <label class="md-nav__link" for="__nav_2_5" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_2_6" tabindex="0" aria-expanded="false">
           Lisp
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="Lisp" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_5">
+        <label class="md-nav__title" for="__nav_2_6">
           <span class="md-nav__icon md-icon"></span>
           Lisp
         </label>
@@ -824,17 +888,17 @@
       
         
       
-      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_7" type="checkbox" id="__nav_2_7" >
       
       
       
-        <label class="md-nav__link" for="__nav_2_6" tabindex="0" aria-expanded="false">
+        <label class="md-nav__link" for="__nav_2_7" tabindex="0" aria-expanded="false">
           C / C++
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <nav class="md-nav" aria-label="C / C++" data-md-level="2">
-        <label class="md-nav__title" for="__nav_2_6">
+        <label class="md-nav__title" for="__nav_2_7">
           <span class="md-nav__icon md-icon"></span>
           C / C++
         </label>
@@ -1348,7 +1412,7 @@
 <p>So the answer would be:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">fact</span> <span class="o">=</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">))(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="n">x</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 </span></code></pre></div>
-<p>The logic behind this quiz is something called <em>Y Combinator</em>. Y Combinator is a method to turn a non-anonymous recursive function into an anonymous one. Here's one example (by GitHub Copilot):</p>
+<p>The logic behind this quiz is something called <em>Y Combinator</em>. Y Combinator is a method to turn a non-anonymous recursive function into an anonymous one. Here's one example:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">def</span> <span class="nf">Y</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
 </span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="k">return</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="p">)(</span><span class="n">y</span><span class="p">)))(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="p">)(</span><span class="n">y</span><span class="p">)))</span>
 </span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
@@ -1356,7 +1420,7 @@
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># 120</span>
 </span></code></pre></div>
-<p>I won't dig into Y Combinator here. (Maybe elsewhere)</p>
+<p>A full introduction to Y Combinator can be found in <a href="../../lc/y-combinator/">Y Combinator</a>, you may need to read <a href="../../lc/introduction/">Introduction to Lambda Calculus</a> first.</p>
 <hr />
 <h2 id="data-abstraction">Data Abstraction<a class="headerlink" href="#data-abstraction" title="Permanent link">&para;</a></h2>
 <p>The way to implement data abstraction in python is way easier than in C++. Here's an example to construct a tree (which is actually nested lists):</p>
@@ -1625,7 +1689,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-04T10:42:21+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-04T15:53:36+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-04</span>
       
         <br>
         Created:
