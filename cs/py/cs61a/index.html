@@ -688,6 +688,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    SQL
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1197,6 +1204,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#sql" class="md-nav__link">
+    SQL
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1525,14 +1539,37 @@
 <hr />
 <h2 id="scheme">Scheme<a class="headerlink" href="#scheme" title="Permanent link">&para;</a></h2>
 <p>Scheme is a dialect of Lisp. For the syntax and language features, refer to <a href="../../lisp/scheme/">Scheme</a> notes.</p>
-<p>The task is to build a Scheme interpreter, in python.</p>
+<p>The task is to build a Scheme interpreter, in python. I won't go into details here, but I'd like to note down some important parts.</p>
+<p>Interpreting a piece of code follows the following procedures:</p>
+<ol>
+<li>Input</li>
+<li>Tokenize</li>
+<li>Parse</li>
+<li>Evaluate</li>
+<li>Print</li>
+</ol>
+<div class="language-py highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">Input</span> <span class="o">=</span> <span class="s1">&#39;(even? (* (+ 1 2) 3 4))&#39;</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="n">Token</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;even?&#39;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">,</span> <span class="s1">&#39;4&#39;</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="s1">&#39;)&#39;</span><span class="p">]</span>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="n">Parsed</span> <span class="o">=</span> <span class="n">CallExpr</span><span class="p">(</span><span class="n">Name</span><span class="p">(</span><span class="s1">&#39;even?&#39;</span><span class="p">),</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>             <span class="p">[</span><span class="n">CallExpr</span><span class="p">(</span><span class="n">Name</span><span class="p">(</span><span class="s1">&#39;*&#39;</span><span class="p">),</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>                 <span class="p">[</span><span class="n">CallExpr</span><span class="p">(</span><span class="n">Name</span><span class="p">(</span><span class="s1">&#39;+&#39;</span><span class="p">),</span>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>                     <span class="p">[</span><span class="n">Literal</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="mi">2</span><span class="p">)]),</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>                 <span class="n">Literal</span><span class="p">(</span><span class="mi">3</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="mi">4</span><span class="p">)])])</span>
+</span><span id="__span-30-8"><a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a><span class="n">Evaluation</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-30-9"><a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a><span class="n">Print</span> <span class="o">=</span> <span class="s1">&#39;#t&#39;</span>
+</span></code></pre></div>
+<p>Another thing to mention is that Scheme also have environment frames. When evaluating an expression, the current environment frame should be passed to the <code>eval</code> function.</p>
+<hr />
+<h2 id="sql">SQL<a class="headerlink" href="#sql" title="Permanent link">&para;</a></h2>
+<p>SQL is pronounced as "sequel".</p>
+<p><strong>Under Construction</strong></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-03T05:14:04+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-04T03:31:33+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-04</span>
       
         <br>
         Created:
