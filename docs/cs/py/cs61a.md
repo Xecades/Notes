@@ -1,10 +1,20 @@
-# CS61A: Structure and Interpretation of Computer Programs
+# CS 61A: Structure and Interpretation of Computer Programs
 
 **📖 COURSE-STARTED-AT**: 2023-11-14
 
-**🔮 COURSE-FINISHED-AT**: Nope, haven't finished yet.
+**🔮 COURSE-FINISHED-AT**: 2023-12-4
 
 **🔗 COURSE-SITE**: [inst.eecs.berkeley.edu/~cs61a/su20](https://inst.eecs.berkeley.edu/~cs61a/su20/)
+
+---
+
+CS 61A is a course that teaches CS alive.
+
+> In CS 61A, we are interested in teaching you about programming, not about how to use one particular programming language. We consider a series of techniques for controlling program complexity, such as functional programming, data abstraction, and object-oriented programming.
+>
+> <div align=right>——CS 61A</div>
+
+The course website I followed is a little old (I realized this when I almost finished the course). You may find the latest version at [cs61a.org](https://cs61a.org/).
 
 ---
 
@@ -462,6 +472,4 @@ Another thing to mention is that Scheme also have environment frames. When evalu
 
 ## SQL
 
-SQL is pronounced as "sequel".
-
-**Under Construction**
+I skipped this part since I would like to learn it systematically in database courses.

@@ -32,7 +32,7 @@ Several languages that I am interested in.
 
 ### Python
 
- - [ ] CS61A: Structure and Interpretation of Computer Programs. **[IN-PROGRESS]**
+ - [x] CS 61A: Structure and Interpretation of Computer Programs.
 
 ### Haskell
 
