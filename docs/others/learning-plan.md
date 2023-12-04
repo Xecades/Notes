@@ -16,6 +16,10 @@ comments: true
  - [ ] *Computer Systems: A Programmer's Perspective* (CSAPP). **[SUSPENDING]**
  - [ ] UCB: Sysadmin DeCal. **[SUSPENDING]**
 
+### Data Structures
+
+ - [ ] CS 61B: Data Structures. **[IN-PROGRESS]**
+
 ### Network
 
  - [ ] To-do.
