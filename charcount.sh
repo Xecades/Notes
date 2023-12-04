@@ -1,7 +1,7 @@
 #!/bin/bash
 # Usage: charcount [path] [extension]
 # Description: Count the number of characters in a file or files in a directory
-# Example: charcount ./docs txt
+# Example: charcount ./docs md
 
 cnt=0
 path=$1
