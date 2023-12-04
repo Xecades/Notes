@@ -79,8 +79,10 @@ nav:
       - MIT Missing Semester: cs/basis/mit-missing-semester.md
     - Computer System:
       - CSAPP Notes: cs/sys/csapp.md
+    - Data Structures:
+      - "CS 61B: Data Structures": cs/ds/cs61b.md
     - Python:
-      - "CS61A: Structure and Interpretation of Computer Programs": cs/py/cs61a.md
+      - "CS 61A: Structure and Interpretation of Computer Programs": cs/py/cs61a.md
     - Lisp:
       - Scheme: cs/lisp/scheme.md
     - C / C++:
