@@ -81,6 +81,9 @@ nav:
       - CSAPP Notes: cs/sys/csapp.md
     - Data Structures:
       - "CS 61B: Data Structures": cs/ds/cs61b.md
+    - Lambda Calculus:
+      - Introduction: cs/lc/introduction.md
+      - Y Combinator: cs/lc/y-combinator.md
     - Python:
       - "CS 61A: Structure and Interpretation of Computer Programs": cs/py/cs61a.md
     - Lisp:
