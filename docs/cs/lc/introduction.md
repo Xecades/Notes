@@ -16,11 +16,11 @@ The basic building blocks of lambda calculus are **terms**. A term is either a *
 2. $(\lambda x.M)$. An **abstraction** is a function that takes **ONE** variable $x$ and returns a term $M$. Variables and term are separated by a dot.
 3. $(M\ N)$. An **application** applies a term $M$ to another term $N$.
 
-For example, $(\lambda x.(\mathbf{negative}\ x))$ is an abstraction that takes a variable $x$ and returns the term $(\mathbf{negative}\ x)$, which is an application of the function $\mathbf{negative}$ to the variables $x$.
+For example, $(\lambda x.(\mathbf{sqrt}\ x))$ is an abstraction that takes a variable $x$ and returns the term $(\mathbf{sqrt}\ x)$, which is an application of the function $\mathbf{sqrt}$ to the variables $x$.
 
-Note that $(\mathbf{negative}\ x)$ is equivalent to $-x$ in mathematics. Actually, we have to define the function $\mathbf{negative}$ first. We just suppose it exists for now.
+Note that $(\mathbf{sqrt}\ x)$ is equivalent to $\sqrt{x}$ in mathematics. Actually, we have to define the function $\mathbf{sqrt}$ first. We just suppose it exists for now.
 
-If you are familiar with [Scheme](../lisp/scheme.md), you may find that the lambda expression $(\lambda x.(\mathbf{negative}\ x))$ is very similar to the Scheme expression `(lambda (x) (- x))`. In fact, lambda calculus is the theoretical foundation of Scheme. Now you may understand why normal arithmetic operations are prefix notations (`+ 1 2`) instead of infix notations (`1 + 2`) in Scheme — `+` is just a function, it has nothing different from other functions like `cdr` or `list`.
+If you are familiar with [Scheme](../lisp/scheme.md), you may find that the lambda expression $(\lambda x.(\mathbf{sqrt}\ x))$ is very similar to the Scheme expression `(lambda (x) (sqrt x))`. In fact, Scheme is built on lambda calculus. Now you may understand why normal arithmetic operations in Scheme are prefix notations (`+ 1 2`) instead of infix notations (`1 + 2`) — `+` is just a function, it has nothing different from other functions like `cdr` or `list`.
 
 > For the wellness of your eyes, sometimes I will use infix notations and common math as an informal representation of lambda expressions. For example, $(\lambda x.(\mathbf{add}\ x\ y))$ is written as $(\lambda x.(x + y))$. Just don't forget $+$ is a function.
 

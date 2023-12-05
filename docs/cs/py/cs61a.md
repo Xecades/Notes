@@ -122,7 +122,7 @@ fact = Y(lambda f: lambda n: 1 if n == 0 else n * f(n - 1))
 fact(5)  # 120
 ```
 
-A full introduction to Y Combinator can be found in [Y Combinator](../lc/y-combinator.md), you may need to read [Introduction to Lambda Calculus](../lc/introduction.md) first.
+A full introduction to Y Combinator can be found in [Y Combinator Notes](../lc/y-combinator.md), you may need to read [Introduction to Lambda Calculus](../lc/introduction.md) first.
 
 ---
 
