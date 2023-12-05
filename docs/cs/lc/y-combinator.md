@@ -16,7 +16,7 @@ You may think our lambda-calculus-version `fact` is like this:
 
 $$\mathbf{fact} := \lambda n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{fact}(n - 1)$$
 
-However, this is not a valid lambda expression. The reason is that we cannot refer to $\mathbf{fact}$ in its own definition. Giving a name to a lambda expression is a *syntax sugar* and every time we use it, we should replace the name with the expression. But if we replace $\mathbf{fact}$ with its definition, we get an infinite expression, which doesn't make sense.
+However, this is not a valid lambda expression. The reason is that we cannot refer to $\mathbf{fact}$ in its own definition. Giving a name to a lambda expression is a *syntax sugar* and every time we use it, we should replace the name with the expression. But if we replace $\mathbf{fact}$ with its definition, we get an infinite expression, which does not make sense.
 
 We cannot even define a simple recursive function in lambda calculus! That sounds horrible. But luckily, we have solutions.
 
@@ -46,13 +46,13 @@ It looks ugly. I mean, the two $\mathbf{self}$s in $\mathbf{self}(\mathbf{self},
 
 $$\mathbf{fact} := \lambda\ \mathbf{self}\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{self}(n - 1)$$
 
-Apparently $\mathbf{fact}(\mathbf{fact}, 5)$ will no longer work. But what if $\mathbf{self}$ is our desired recursive anonymous factorial function?
+Apparently $\mathbf{fact}(\mathbf{fact}, 5)$ will no longer work.
 
 Let's suppose we already have a well-defined $\mathbf{fact_Real}$ function that is anonymous and recursive. That is, $\mathbf{fact_Real}$ is a valid lambda expression, and it doesn't require an extra $\mathbf{self}$ argument.
 
 What if we pass $\mathbf{fact_Real}$ as $\mathbf{self}$ in that $\mathbf{fact}$ function?
 
-$$\mathbf{fact}(\mathbf{fact_Real}) = \lambda\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{fact_Real}(\mathbf{fact_Real}, n - 1)$$
+$$\mathbf{fact}(\mathbf{fact_Real}) = \lambda\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{fact_Real}(n - 1)$$
 
 What's that? It's $\mathbf{fact_Real}$ itself! So we have:
 
