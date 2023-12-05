@@ -1262,9 +1262,9 @@
 <li><span class="arithmatex">\((\lambda x.M)\)</span>. An <strong>abstraction</strong> is a function that takes <strong>ONE</strong> variable <span class="arithmatex">\(x\)</span> and returns a term <span class="arithmatex">\(M\)</span>. Variables and term are separated by a dot.</li>
 <li><span class="arithmatex">\((M\ N)\)</span>. An <strong>application</strong> applies a term <span class="arithmatex">\(M\)</span> to another term <span class="arithmatex">\(N\)</span>.</li>
 </ol>
-<p>For example, <span class="arithmatex">\((\lambda x.(\mathbf{negative}\ x))\)</span> is an abstraction that takes a variable <span class="arithmatex">\(x\)</span> and returns the term <span class="arithmatex">\((\mathbf{negative}\ x)\)</span>, which is an application of the function <span class="arithmatex">\(\mathbf{negative}\)</span> to the variables <span class="arithmatex">\(x\)</span>.</p>
-<p>Note that <span class="arithmatex">\((\mathbf{negative}\ x)\)</span> is equivalent to <span class="arithmatex">\(-x\)</span> in mathematics. Actually, we have to define the function <span class="arithmatex">\(\mathbf{negative}\)</span> first. We just suppose it exists for now.</p>
-<p>If you are familiar with <a href="../../lisp/scheme/">Scheme</a>, you may find that the lambda expression <span class="arithmatex">\((\lambda x.(\mathbf{negative}\ x))\)</span> is very similar to the Scheme expression <code>(lambda (x) (- x))</code>. In fact, lambda calculus is the theoretical foundation of Scheme. Now you may understand why normal arithmetic operations are prefix notations (<code>+ 1 2</code>) instead of infix notations (<code>1 + 2</code>) in Scheme — <code>+</code> is just a function, it has nothing different from other functions like <code>cdr</code> or <code>list</code>.</p>
+<p>For example, <span class="arithmatex">\((\lambda x.(\mathbf{sqrt}\ x))\)</span> is an abstraction that takes a variable <span class="arithmatex">\(x\)</span> and returns the term <span class="arithmatex">\((\mathbf{sqrt}\ x)\)</span>, which is an application of the function <span class="arithmatex">\(\mathbf{sqrt}\)</span> to the variables <span class="arithmatex">\(x\)</span>.</p>
+<p>Note that <span class="arithmatex">\((\mathbf{sqrt}\ x)\)</span> is equivalent to <span class="arithmatex">\(\sqrt{x}\)</span> in mathematics. Actually, we have to define the function <span class="arithmatex">\(\mathbf{sqrt}\)</span> first. We just suppose it exists for now.</p>
+<p>If you are familiar with <a href="../../lisp/scheme/">Scheme</a>, you may find that the lambda expression <span class="arithmatex">\((\lambda x.(\mathbf{sqrt}\ x))\)</span> is very similar to the Scheme expression <code>(lambda (x) (sqrt x))</code>. In fact, Scheme is built on lambda calculus. Now you may understand why normal arithmetic operations in Scheme are prefix notations (<code>+ 1 2</code>) instead of infix notations (<code>1 + 2</code>) — <code>+</code> is just a function, it has nothing different from other functions like <code>cdr</code> or <code>list</code>.</p>
 <blockquote>
 <p>For the wellness of your eyes, sometimes I will use infix notations and common math as an informal representation of lambda expressions. For example, <span class="arithmatex">\((\lambda x.(\mathbf{add}\ x\ y))\)</span> is written as <span class="arithmatex">\((\lambda x.(x + y))\)</span>. Just don't forget <span class="arithmatex">\(+\)</span> is a function.</p>
 </blockquote>
@@ -1316,7 +1316,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-04T15:53:36+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-04</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-05T04:18:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-05</span>
       
         <br>
         Created:
