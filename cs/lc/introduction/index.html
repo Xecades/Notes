@@ -1259,18 +1259,18 @@
 <p>The basic building blocks of lambda calculus are <strong>terms</strong>. A term is either a <strong>variable</strong>, an <strong>abstraction</strong>, or an <strong>application</strong>.</p>
 <ol>
 <li><span class="arithmatex">\(x\)</span>. A <strong>variable</strong> is a symbol that represents a value.</li>
-<li><span class="arithmatex">\((\lambda x.M)\)</span>. An <strong>abstraction</strong> is a function that takes <strong>ONE</strong> variable <span class="arithmatex">\(x\)</span> and returns a term <span class="arithmatex">\(M\)</span>. Variables and term are separated by a dot.</li>
+<li><span class="arithmatex">\((\lambda x.M)\)</span>. An <strong>abstraction</strong> is a function that takes an variable <span class="arithmatex">\(x\)</span> and returns a term <span class="arithmatex">\(M\)</span>. Variables and term are separated by a dot.</li>
 <li><span class="arithmatex">\((M\ N)\)</span>. An <strong>application</strong> applies a term <span class="arithmatex">\(M\)</span> to another term <span class="arithmatex">\(N\)</span>.</li>
 </ol>
 <p>For example, <span class="arithmatex">\((\lambda x.(\mathbf{sqrt}\ x))\)</span> is an abstraction that takes a variable <span class="arithmatex">\(x\)</span> and returns the term <span class="arithmatex">\((\mathbf{sqrt}\ x)\)</span>, which is an application of the function <span class="arithmatex">\(\mathbf{sqrt}\)</span> to the variables <span class="arithmatex">\(x\)</span>.</p>
 <p>Note that <span class="arithmatex">\((\mathbf{sqrt}\ x)\)</span> is equivalent to <span class="arithmatex">\(\sqrt{x}\)</span> in mathematics. Actually, we have to define the function <span class="arithmatex">\(\mathbf{sqrt}\)</span> first. We just suppose it exists for now.</p>
-<p>If you are familiar with <a href="../../lisp/scheme/">Scheme</a>, you may find that the lambda expression <span class="arithmatex">\((\lambda x.(\mathbf{sqrt}\ x))\)</span> is very similar to the Scheme expression <code>(lambda (x) (sqrt x))</code>. In fact, Scheme is built on lambda calculus. Now you may understand why normal arithmetic operations in Scheme are prefix notations (<code>+ 1 2</code>) instead of infix notations (<code>1 + 2</code>) — <code>+</code> is just a function, it has nothing different from other functions like <code>cdr</code> or <code>list</code>.</p>
+<p>If you are familiar with <a href="../../lisp/scheme/">Scheme</a>, you may find lambda expression <span class="arithmatex">\((\lambda x.(\mathbf{sqrt}\ x))\)</span> very similar to Scheme expression <code>(lambda (x) (sqrt x))</code>. In fact the underlying logic of Scheme is based on lambda calculus. That's why normal arithmetic operations in Scheme are in prefix notation (<code>+ 1 2</code>) instead of infix notation (<code>1 + 2</code>) — <code>+</code> is just a function, it has nothing different from other functions like <code>cdr</code> or <code>list</code>.</p>
 <blockquote>
-<p>For the wellness of your eyes, sometimes I will use infix notations and common math as an informal representation of lambda expressions. For example, <span class="arithmatex">\((\lambda x.(\mathbf{add}\ x\ y))\)</span> is written as <span class="arithmatex">\((\lambda x.(x + y))\)</span>. Just don't forget <span class="arithmatex">\(+\)</span> is a function.</p>
+<p>For simplicity, sometimes we use infix notations and common math as an informal representation of lambda expressions. For example, <span class="arithmatex">\((\lambda x.(\mathbf{add}\ x\ y))\)</span> is usually written as <span class="arithmatex">\((\lambda x.(x + y))\)</span>. Just don't forget <span class="arithmatex">\(+\)</span> is a function.</p>
 </blockquote>
 <hr />
 <h3 id="syntax-sugar">Syntax sugar<a class="headerlink" href="#syntax-sugar" title="Permanent link">&para;</a></h3>
-<p>Writing a long lambda expression is tedious. We can use the following <em>syntax sugar</em> to simplify it.</p>
+<p>Writing a long lambda expression is tedious. We use the following <em>syntax sugar</em> to simplify it.</p>
 <ol>
 <li><span class="arithmatex">\((\lambda x_1\ x_2\ \cdots\ x_n.M)\)</span> is equivalent to <span class="arithmatex">\((\lambda x_1.(\lambda x_2.(\cdots(\lambda x_n.M)\cdots)))\)</span>.</li>
 <li><span class="arithmatex">\((M\ N_1\ N_2\ \cdots\ N_n)\)</span> is equivalent to <span class="arithmatex">\(((\cdots((M\ N_1)\ N_2)\cdots)\ N_n)\)</span>.</li>
@@ -1278,8 +1278,8 @@
 <p>Parentheses can be omitted if they are not necessary. For example, <span class="arithmatex">\((\lambda x.(f\ x))\)</span> is equivalent to <span class="arithmatex">\(\lambda x.f\ x\)</span>.</p>
 <hr />
 <h3 id="partial-evaluation">Partial evaluation<a class="headerlink" href="#partial-evaluation" title="Permanent link">&para;</a></h3>
-<p>Consider the function <span class="arithmatex">\(\mathbf{add}\)</span> (We haven't defined it yet, but just suppose it exists). It is apparent that <span class="arithmatex">\((\mathbf{add}\ 1\ 2)\)</span> gives us <span class="arithmatex">\(3\)</span>, but what about <span class="arithmatex">\((\mathbf{add}\ 1)\)</span>? Well, it is a function that takes a number <span class="arithmatex">\(x\)</span> and returns <span class="arithmatex">\(x+1\)</span>. In other words, <span class="arithmatex">\((\mathbf{add}\ 1)=(\lambda x.(\mathbf{add}\ 1\ x))\)</span>.</p>
-<p>By not giving all the arguments to a function, we can get a new function with some arguments already applied. This is called <strong>partial evaluation</strong>.</p>
+<p>Consider the function <span class="arithmatex">\(\mathbf{add}\)</span> (We haven't defined it yet, but just suppose it exists). It is apparent that <span class="arithmatex">\((\mathbf{add}\ 1\ 2)\)</span> gives us <span class="arithmatex">\(3\)</span>, but what about <span class="arithmatex">\((\mathbf{add}\ 1)\)</span>? It turns out that <span class="arithmatex">\((\mathbf{add}\ 1)\)</span> returns another function that takes a number <span class="arithmatex">\(x\)</span> and returns <span class="arithmatex">\(x + 1\)</span>. In other words, <span class="arithmatex">\((\mathbf{add}\ 1)=(\lambda x.(\mathbf{add}\ 1\ x))\)</span>.</p>
+<p>By not giving all the arguments to a function, we get a new function with some arguments already applied. This is called <strong>partial evaluation</strong>.</p>
 <hr />
 <h2 id="reduction">Reduction<a class="headerlink" href="#reduction" title="Permanent link">&para;</a></h2>
 <p>The meaning of lambda expressions is defined by how expressions can be reduced. There are three kinds of reduction: <strong><span class="arithmatex">\(\alpha\)</span>-conversion</strong>, <strong><span class="arithmatex">\(\beta\)</span>-reduction</strong>, and <strong><span class="arithmatex">\(\eta\)</span>-conversion</strong>.</p>
@@ -1299,7 +1299,7 @@
 \]</div>
 <hr />
 <h2 id="conditional-expression">Conditional expression<a class="headerlink" href="#conditional-expression" title="Permanent link">&para;</a></h2>
-<p>I'd like to mention that conditional expressions like <code>if</code> are nothing more than functions. We can define our own <span class="arithmatex">\(\mathbf{if}\)</span> function in lambda calculus:</p>
+<p>Note that conditional expressions like <code>if</code> or <code>while</code> are nothing more than functions. We can define our own <span class="arithmatex">\(\mathbf{if}\)</span> function in lambda calculus:</p>
 <div class="arithmatex">\[
 \begin{aligned}
 \mathbf{TRUE} &amp;:= \lambda x\ y.x \\
@@ -1307,16 +1307,15 @@
 \mathbf{if} &amp;:= \lambda p.\lambda x.\lambda y.p\ x\ y
 \end{aligned}
 \]</div>
-<p>Then <span class="arithmatex">\((\mathbf{if}\ p\ a\ b)\)</span> represents the conditional expression <code>if p then a else b</code>.</p>
-<p>It is easier than you think, isn't it?</p>
-<p>Normally I'd like to use a python-ish syntax to represent lambda expressions. For example, I use <span class="arithmatex">\((a\ \mathbf{if}\ p\ \mathbf{else}\ b)\)</span> instead of <span class="arithmatex">\((\mathbf{if}\ p\ a\ b)\)</span>.</p>
+<p>Then <span class="arithmatex">\((\mathbf{if}\ p\ a\ b)\)</span> represents the conditional expression <code>if p then a else b</code>. It is easier than you think, isn't it?</p>
+<p>Normally I'd like to use a python-ish syntax to represent conditional expressions. For example, I use <span class="arithmatex">\((a\ \mathbf{if}\ p\ \mathbf{else}\ b)\)</span> instead of <span class="arithmatex">\((\mathbf{if}\ p\ a\ b)\)</span>.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-05T04:18:18+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-11T11:51:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-11</span>
       
         <br>
         Created:

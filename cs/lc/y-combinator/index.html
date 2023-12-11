@@ -1228,38 +1228,35 @@
 <p>We can easily define a <code>fact</code> function that computes the factorial of a number in python:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">fact</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">fact</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 </span></code></pre></div>
-<p>We used <code>lambda</code> in python, but it is, actually, not lambda calculus.</p>
-<p>You may think our lambda-calculus-version <code>fact</code> is like this:</p>
+<p>We've used <code>lambda</code> in python, but it is, actually, not lambda calculus.</p>
+<p>You may think our lambda-calculus-version <code>fact</code> is something like this:</p>
 <div class="arithmatex">\[\mathbf{fact} := \lambda n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{fact}(n - 1)\]</div>
-<p>However, this is not a valid lambda expression. The reason is that we cannot refer to <span class="arithmatex">\(\mathbf{fact}\)</span> itself in its own definition. Giving a name to a lambda expression is a <em>syntax sugar</em> and every time we use it, we should replace the name with the expression. In this implementation, if we replace <span class="arithmatex">\(\mathbf{fact}\)</span> with its definition, we get an infinite expression, which does not make sense.</p>
-<p>We cannot even define a simple recursive function in lambda calculus! That sounds horrible. But luckily, we have solutions.</p>
+<p>However, this is not a valid lambda expression. The reason is that we cannot refer to <span class="arithmatex">\(\mathbf{fact}\)</span> itself in its own definition. Giving a name to a lambda expression is a <em>syntax sugar</em> and we should replace the name with the expression every time we use it. However, in this implementation, if we replace <span class="arithmatex">\(\mathbf{fact}\)</span> with its definition, we get an infinite expression, which is not well-defined.</p>
 <hr />
 <h2 id="another-attempt">Another attempt<a class="headerlink" href="#another-attempt" title="Permanent link">&para;</a></h2>
-<p>The problem occurs because we can't refer to the expression itself in a lambda expression (that is, lambda expressions are anonymous). What if we pass the expression as an argument?</p>
+<p>The issue arises because lambda expressions are <em>anonymous</em>, preventing us from directly referencing the expression itself. What if we were to pass the expression as an argument instead?</p>
 <div class="arithmatex">\[\mathbf{fact} := \lambda\ \mathbf{self}\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{self}(\mathbf{self}, n - 1)\]</div>
-<p>We tried to pass <span class="arithmatex">\(\mathbf{fact}\)</span> itself as an argument explicitly. To calculate the factorial of <span class="arithmatex">\(5\)</span>, we have to use <span class="arithmatex">\(\mathbf{fact}(\mathbf{fact}, 5)\)</span>. This implementation does not rely on the name <span class="arithmatex">\(\mathbf{fact}\)</span> anymore, so this is a valid lambda expression.</p>
-<p>Hold on, we encountered another trouble! Every time we want to calculate the factorial of a number, we have to pass the expression itself as an argument. It sounds ridiculous and that is not what we wish.</p>
-<p>But with this attempt, we can forge ahead to the final solution.</p>
+<p>We tried to pass <span class="arithmatex">\(\mathbf{fact}\)</span> itself as an argument explicitly. For example, by evaluating <span class="arithmatex">\(\mathbf{fact}(\mathbf{fact}, 5)\)</span> we get the factorial of <span class="arithmatex">\(5\)</span>. This implementation does not rely on the name <span class="arithmatex">\(\mathbf{fact}\)</span> anymore, and we can safely expand the syntax sugar without worrying getting infinite long, so this is a valid lambda expression.</p>
+<p>Unfortunately, each time we want to calculate the factorial of a number, we have to pass the expression itself as an argument. This seems absurd and goes against our desired approach.</p>
+<p>But with this approach, we can continue moving forward towards the final solution.</p>
 <hr />
 <h2 id="dig-deeper">Dig deeper<a class="headerlink" href="#dig-deeper" title="Permanent link">&para;</a></h2>
 <p>Let's examine our last implementation again.</p>
 <div class="arithmatex">\[\mathbf{fact} := \lambda\ \mathbf{self}\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{self}(\mathbf{self}, n - 1)\]</div>
-<p>It looks ugly. I mean, the two <span class="arithmatex">\(\mathbf{self}\)</span>s in <span class="arithmatex">\(\mathbf{self}(\mathbf{self}, n - 1)\)</span> violates the principle of Don't-Repeat-Yourself. Let's try to get rid of one of them.</p>
+<p>It looks ugly. I mean, the two <span class="arithmatex">\(\mathbf{self}\)</span>s in <span class="arithmatex">\(\mathbf{self}(\mathbf{self}, n - 1)\)</span> violates the holy principle of Don't-Repeat-Yourself (DRY). Let's try to get rid of one of them.</p>
 <div class="arithmatex">\[\mathbf{fact} := \lambda\ \mathbf{self}\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{self}(n - 1)\]</div>
 <p>Apparently <span class="arithmatex">\(\mathbf{fact}(\mathbf{fact}, 5)\)</span> will no longer work. We need to pass a different argument: <span class="arithmatex">\(\mathbf{fact}(\mathbf{?}, 5)\)</span>. What should we pass?</p>
-<p>Let's suppose we already have a well-defined <span class="arithmatex">\(\mathbf{fact_Real}\)</span> function that is anonymous and recursive. That is, <span class="arithmatex">\(\mathbf{fact_Real}\)</span> is a valid lambda expression, and it doesn't require an extra <span class="arithmatex">\(\mathbf{self}\)</span> argument.</p>
-<p>What if we pass <span class="arithmatex">\(\mathbf{fact_Real}\)</span> as <span class="arithmatex">\(\mathbf{self}\)</span> in that <span class="arithmatex">\(\mathbf{fact}\)</span> function?</p>
+<p>Let's suppose we already have a well-defined <span class="arithmatex">\(\mathbf{fact_Real}\)</span> function that is both anonymous and recursive. What if we pass <span class="arithmatex">\(\mathbf{fact_Real}\)</span> as <span class="arithmatex">\(\mathbf{self}\)</span> in that <span class="arithmatex">\(\mathbf{fact}\)</span> function?</p>
 <div class="arithmatex">\[\mathbf{fact}(\mathbf{fact_Real}) = \lambda\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{fact_Real}(n - 1)\]</div>
-<p>What's that? It's <span class="arithmatex">\(\mathbf{fact_Real}\)</span> itself! So we have:</p>
+<p>Without too much surprise we find that the right-hand side of the equation actually equals the value of <span class="arithmatex">\(\mathbf{fact_Real}\)</span> itself. So we have:</p>
 <div class="arithmatex">\[\mathbf{fact}(\mathbf{fact_Real}) = \mathbf{fact_Real}\]</div>
-<p>Such function <span class="arithmatex">\(\mathbf{fact_Real}\)</span> is called a <strong>fixed point</strong> of <span class="arithmatex">\(\mathbf{fact}\)</span>.</p>
-<p>We still haven't finished yet, but we are close.</p>
+<p>Such function <span class="arithmatex">\(\mathbf{fact_Real}\)</span> is called a <strong>fixed point</strong> of <span class="arithmatex">\(\mathbf{fact}\)</span>. So our goal is to find such fixed point.</p>
 <hr />
 <h2 id="y-combinator_1">Y Combinator<a class="headerlink" href="#y-combinator_1" title="Permanent link">&para;</a></h2>
 <p>Is there a function <span class="arithmatex">\(\mathbf{Y}\)</span>, that takes a function <span class="arithmatex">\(f\)</span> and returns the fixed point of <span class="arithmatex">\(f\)</span>?</p>
 <p>We achieve this by defining a helper function <span class="arithmatex">\(\mathbf{helper}\)</span>:</p>
 <div class="arithmatex">\[\mathbf{helper} := \lambda f.\mathbf{fact}(f(f))\]</div>
-<p>Let's see what is <span class="arithmatex">\(\mathbf{helper}(\mathbf{helper})\)</span>:</p>
+<p>Let's see what <span class="arithmatex">\(\mathbf{helper}(\mathbf{helper})\)</span> is:</p>
 <div class="arithmatex">\[\mathbf{helper}(\mathbf{helper}) = \mathbf{fact}(\mathbf{helper}(\mathbf{helper}))\]</div>
 <p>It is a fixed point of <span class="arithmatex">\(\mathbf{fact}\)</span>! So we have:</p>
 <div class="arithmatex">\[
@@ -1270,7 +1267,7 @@
 \end{aligned}
 \]</div>
 <p>Well, that's it, <span class="arithmatex">\((\lambda f.\mathbf{fact}(f(f)))(\lambda f.\mathbf{fact}(f(f)))\)</span> is our desired anonymous recursive factorial function.</p>
-<p>So function <span class="arithmatex">\(Y\)</span> would be:</p>
+<p>Function <span class="arithmatex">\(\mathbf{Y}\)</span> would be:</p>
 <div class="arithmatex">\[
 \begin{aligned}
 \mathbf{Y} :=&amp; \lambda f.\mathbf{helper}_f(\mathbf{helper}_f) \\
@@ -1284,7 +1281,7 @@
 <p>We can implement the Y Combinator in python:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">Y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="p">)(</span><span class="n">y</span><span class="p">)))(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">f</span><span class="p">(</span><span class="k">lambda</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="p">(</span><span class="n">x</span><span class="p">)(</span><span class="n">y</span><span class="p">)))</span>
 </span></code></pre></div>
-<p>Note that <code>lambda y: x(x)(y)</code> cannot be replaced with <code>x(x)</code>, because python does eager evaluation. If we use <code>x(x)</code>, <code>x</code> will be evaluated immediately, which will cause an infinite recursion.</p>
+<p>Note that the expression <code>lambda y: x(x)(y)</code> cannot be replaced with <code>x(x)</code> due to Python's eager evaluation. If we were to use <code>x(x)</code>, the function <code>x</code> would be evaluated immediately, leading to an infinite recursion.</p>
 <p>Then we can define the factorial function:</p>
 <div class="language-py highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">fact</span> <span class="o">=</span> <span class="n">Y</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">n</span><span class="p">:</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">n</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">fact</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>  <span class="c1"># 120</span>
@@ -1296,7 +1293,7 @@
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-05T03:49:31+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-timeago"><span class="timeago" datetime="2023-12-11T11:51:58+00:00" locale="en"></span></span><span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2023-12-11</span>
       
         <br>
         Created:
