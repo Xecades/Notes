@@ -13,22 +13,22 @@
 The basic building blocks of lambda calculus are **terms**. A term is either a **variable**, an **abstraction**, or an **application**.
 
 1. $x$. A **variable** is a symbol that represents a value.
-2. $(\lambda x.M)$. An **abstraction** is a function that takes **ONE** variable $x$ and returns a term $M$. Variables and term are separated by a dot.
+2. $(\lambda x.M)$. An **abstraction** is a function that takes an variable $x$ and returns a term $M$. Variables and term are separated by a dot.
 3. $(M\ N)$. An **application** applies a term $M$ to another term $N$.
 
 For example, $(\lambda x.(\mathbf{sqrt}\ x))$ is an abstraction that takes a variable $x$ and returns the term $(\mathbf{sqrt}\ x)$, which is an application of the function $\mathbf{sqrt}$ to the variables $x$.
 
 Note that $(\mathbf{sqrt}\ x)$ is equivalent to $\sqrt{x}$ in mathematics. Actually, we have to define the function $\mathbf{sqrt}$ first. We just suppose it exists for now.
 
-If you are familiar with [Scheme](../lisp/scheme.md), you may find that the lambda expression $(\lambda x.(\mathbf{sqrt}\ x))$ is very similar to the Scheme expression `(lambda (x) (sqrt x))`. In fact, Scheme is built on lambda calculus. Now you may understand why normal arithmetic operations in Scheme are prefix notations (`+ 1 2`) instead of infix notations (`1 + 2`) — `+` is just a function, it has nothing different from other functions like `cdr` or `list`.
+If you are familiar with [Scheme](../lisp/scheme.md), you may find lambda expression $(\lambda x.(\mathbf{sqrt}\ x))$ very similar to Scheme expression `(lambda (x) (sqrt x))`. In fact the underlying logic of Scheme is based on lambda calculus. That's why normal arithmetic operations in Scheme are in prefix notation (`+ 1 2`) instead of infix notation (`1 + 2`) — `+` is just a function, it has nothing different from other functions like `cdr` or `list`.
 
-> For the wellness of your eyes, sometimes I will use infix notations and common math as an informal representation of lambda expressions. For example, $(\lambda x.(\mathbf{add}\ x\ y))$ is written as $(\lambda x.(x + y))$. Just don't forget $+$ is a function.
+> For simplicity, sometimes we use infix notations and common math as an informal representation of lambda expressions. For example, $(\lambda x.(\mathbf{add}\ x\ y))$ is usually written as $(\lambda x.(x + y))$. Just don't forget $+$ is a function.
 
 ---
 
 ### Syntax sugar
 
-Writing a long lambda expression is tedious. We can use the following *syntax sugar* to simplify it.
+Writing a long lambda expression is tedious. We use the following *syntax sugar* to simplify it.
 
 1. $(\lambda x_1\ x_2\ \cdots\ x_n.M)$ is equivalent to $(\lambda x_1.(\lambda x_2.(\cdots(\lambda x_n.M)\cdots)))$.
 2. $(M\ N_1\ N_2\ \cdots\ N_n)$ is equivalent to $((\cdots((M\ N_1)\ N_2)\cdots)\ N_n)$.
@@ -39,9 +39,9 @@ Parentheses can be omitted if they are not necessary. For example, $(\lambda x.(
 
 ### Partial evaluation
 
-Consider the function $\mathbf{add}$ (We haven't defined it yet, but just suppose it exists). It is apparent that $(\mathbf{add}\ 1\ 2)$ gives us $3$, but what about $(\mathbf{add}\ 1)$? Well, it is a function that takes a number $x$ and returns $x+1$. In other words, $(\mathbf{add}\ 1)=(\lambda x.(\mathbf{add}\ 1\ x))$.
+Consider the function $\mathbf{add}$ (We haven't defined it yet, but just suppose it exists). It is apparent that $(\mathbf{add}\ 1\ 2)$ gives us $3$, but what about $(\mathbf{add}\ 1)$? It turns out that $(\mathbf{add}\ 1)$ returns another function that takes a number $x$ and returns $x + 1$. In other words, $(\mathbf{add}\ 1)=(\lambda x.(\mathbf{add}\ 1\ x))$.
 
-By not giving all the arguments to a function, we can get a new function with some arguments already applied. This is called **partial evaluation**.
+By not giving all the arguments to a function, we get a new function with some arguments already applied. This is called **partial evaluation**.
 
 ---
 
@@ -68,7 +68,7 @@ $$
 
 ## Conditional expression
 
-I'd like to mention that conditional expressions like `if` are nothing more than functions. We can define our own $\mathbf{if}$ function in lambda calculus:
+Note that conditional expressions like `if` or `while` are nothing more than functions. We can define our own $\mathbf{if}$ function in lambda calculus:
 
 $$
 \begin{aligned}
@@ -78,8 +78,6 @@ $$
 \end{aligned}
 $$
 
-Then $(\mathbf{if}\ p\ a\ b)$ represents the conditional expression `if p then a else b`.
+Then $(\mathbf{if}\ p\ a\ b)$ represents the conditional expression `if p then a else b`. It is easier than you think, isn't it?
 
-It is easier than you think, isn't it?
-
-Normally I'd like to use a python-ish syntax to represent lambda expressions. For example, I use $(a\ \mathbf{if}\ p\ \mathbf{else}\ b)$ instead of $(\mathbf{if}\ p\ a\ b)$.
+Normally I'd like to use a python-ish syntax to represent conditional expressions. For example, I use $(a\ \mathbf{if}\ p\ \mathbf{else}\ b)$ instead of $(\mathbf{if}\ p\ a\ b)$.

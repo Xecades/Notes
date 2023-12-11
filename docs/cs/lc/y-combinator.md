@@ -10,29 +10,27 @@ We can easily define a `fact` function that computes the factorial of a number i
 fact = lambda n: 1 if n == 0 else n * fact(n - 1)
 ```
 
-We used `lambda` in python, but it is, actually, not lambda calculus.
+We've used `lambda` in python, but it is, actually, not lambda calculus.
 
-You may think our lambda-calculus-version `fact` is like this:
+You may think our lambda-calculus-version `fact` is something like this:
 
 $$\mathbf{fact} := \lambda n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{fact}(n - 1)$$
 
-However, this is not a valid lambda expression. The reason is that we cannot refer to $\mathbf{fact}$ itself in its own definition. Giving a name to a lambda expression is a *syntax sugar* and every time we use it, we should replace the name with the expression. In this implementation, if we replace $\mathbf{fact}$ with its definition, we get an infinite expression, which does not make sense.
-
-We cannot even define a simple recursive function in lambda calculus! That sounds horrible. But luckily, we have solutions.
+However, this is not a valid lambda expression. The reason is that we cannot refer to $\mathbf{fact}$ itself in its own definition. Giving a name to a lambda expression is a *syntax sugar* and we should replace the name with the expression every time we use it. However, in this implementation, if we replace $\mathbf{fact}$ with its definition, we get an infinite expression, which is not well-defined.
 
 ---
 
 ## Another attempt
 
-The problem occurs because we can't refer to the expression itself in a lambda expression (that is, lambda expressions are anonymous). What if we pass the expression as an argument?
+The issue arises because lambda expressions are *anonymous*, preventing us from directly referencing the expression itself. What if we were to pass the expression as an argument instead?
 
 $$\mathbf{fact} := \lambda\ \mathbf{self}\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{self}(\mathbf{self}, n - 1)$$
 
-We tried to pass $\mathbf{fact}$ itself as an argument explicitly. To calculate the factorial of $5$, we have to use $\mathbf{fact}(\mathbf{fact}, 5)$. This implementation does not rely on the name $\mathbf{fact}$ anymore, so this is a valid lambda expression.
+We tried to pass $\mathbf{fact}$ itself as an argument explicitly. For example, by evaluating $\mathbf{fact}(\mathbf{fact}, 5)$ we get the factorial of $5$. This implementation does not rely on the name $\mathbf{fact}$ anymore, and we can safely expand the syntax sugar without worrying getting infinite long, so this is a valid lambda expression.
 
-Hold on, we encountered another trouble! Every time we want to calculate the factorial of a number, we have to pass the expression itself as an argument. It sounds ridiculous and that is not what we wish.
+Unfortunately, each time we want to calculate the factorial of a number, we have to pass the expression itself as an argument. This seems absurd and goes against our desired approach.
 
-But with this attempt, we can forge ahead to the final solution.
+But with this approach, we can continue moving forward towards the final solution.
 
 ---
 
@@ -42,25 +40,21 @@ Let's examine our last implementation again.
 
 $$\mathbf{fact} := \lambda\ \mathbf{self}\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{self}(\mathbf{self}, n - 1)$$
 
-It looks ugly. I mean, the two $\mathbf{self}$s in $\mathbf{self}(\mathbf{self}, n - 1)$ violates the principle of Don't-Repeat-Yourself. Let's try to get rid of one of them.
+It looks ugly. I mean, the two $\mathbf{self}$s in $\mathbf{self}(\mathbf{self}, n - 1)$ violates the holy principle of Don't-Repeat-Yourself (DRY). Let's try to get rid of one of them.
 
 $$\mathbf{fact} := \lambda\ \mathbf{self}\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{self}(n - 1)$$
 
 Apparently $\mathbf{fact}(\mathbf{fact}, 5)$ will no longer work. We need to pass a different argument: $\mathbf{fact}(\mathbf{?}, 5)$. What should we pass?
 
-Let's suppose we already have a well-defined $\mathbf{fact_Real}$ function that is anonymous and recursive. That is, $\mathbf{fact_Real}$ is a valid lambda expression, and it doesn't require an extra $\mathbf{self}$ argument.
-
-What if we pass $\mathbf{fact_Real}$ as $\mathbf{self}$ in that $\mathbf{fact}$ function?
+Let's suppose we already have a well-defined $\mathbf{fact_Real}$ function that is both anonymous and recursive. What if we pass $\mathbf{fact_Real}$ as $\mathbf{self}$ in that $\mathbf{fact}$ function?
 
 $$\mathbf{fact}(\mathbf{fact_Real}) = \lambda\ n.1\ \mathbf{if}\ n = 0\ \mathbf{else}\ n\times\mathbf{fact_Real}(n - 1)$$
 
-What's that? It's $\mathbf{fact_Real}$ itself! So we have:
+Without too much surprise we find that the right-hand side of the equation actually equals the value of $\mathbf{fact_Real}$ itself. So we have:
 
 $$\mathbf{fact}(\mathbf{fact_Real}) = \mathbf{fact_Real}$$
 
-Such function $\mathbf{fact_Real}$ is called a **fixed point** of $\mathbf{fact}$.
-
-We still haven't finished yet, but we are close.
+Such function $\mathbf{fact_Real}$ is called a **fixed point** of $\mathbf{fact}$. So our goal is to find such fixed point.
 
 ---
 
@@ -72,7 +66,7 @@ We achieve this by defining a helper function $\mathbf{helper}$:
 
 $$\mathbf{helper} := \lambda f.\mathbf{fact}(f(f))$$
 
-Let's see what is $\mathbf{helper}(\mathbf{helper})$:
+Let's see what $\mathbf{helper}(\mathbf{helper})$ is:
 
 $$\mathbf{helper}(\mathbf{helper}) = \mathbf{fact}(\mathbf{helper}(\mathbf{helper}))$$
 
@@ -88,7 +82,7 @@ $$
 
 Well, that's it, $(\lambda f.\mathbf{fact}(f(f)))(\lambda f.\mathbf{fact}(f(f)))$ is our desired anonymous recursive factorial function.
 
-So function $Y$ would be:
+Function $\mathbf{Y}$ would be:
 
 $$
 \begin{aligned}
@@ -110,7 +104,7 @@ We can implement the Y Combinator in python:
 Y = lambda f: (lambda x: f(lambda y: x(x)(y)))(lambda x: f(lambda y: x(x)(y)))
 ```
 
-Note that `lambda y: x(x)(y)` cannot be replaced with `x(x)`, because python does eager evaluation. If we use `x(x)`, `x` will be evaluated immediately, which will cause an infinite recursion.
+Note that the expression `lambda y: x(x)(y)` cannot be replaced with `x(x)` due to Python's eager evaluation. If we were to use `x(x)`, the function `x` would be evaluated immediately, leading to an infinite recursion.
 
 Then we can define the factorial function:
 

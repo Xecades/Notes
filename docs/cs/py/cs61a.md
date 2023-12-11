@@ -8,13 +8,11 @@
 
 ---
 
-CS 61A is a course that brings CS to life.
-
 > In CS 61A, we are interested in teaching you about programming, not about how to use one particular programming language. We consider a series of techniques for controlling program complexity, such as functional programming, data abstraction, and object-oriented programming.
 >
 > <div align=right>——CS 61A</div>
 
-The course website I followed is a little old (I realized this when I almost finished the course). You may find the latest version at [cs61a.org](https://cs61a.org/).
+The course website I followed is a bit old (I realized it when I almost finished the course). You can find the latest version at [cs61a.org](https://cs61a.org/).
 
 ---
 

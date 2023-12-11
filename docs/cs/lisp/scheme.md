@@ -1,6 +1,6 @@
 # Scheme
 
-**Scheme** is a dialect of the *Lisp* family of programming languages, known for its minimalism and simplicity. Many developers consider Scheme a very elegant language.
+**Scheme** is a dialect of the *Lisp* family of programming languages, known for its minimalism and simplicity. Many developers consider Scheme an elegant language.
 
 > Scheme is a very simple language, much easier to implement than many other languages of comparable expressive power. This ease is attributable to the use of lambda calculus to derive much of the syntax of the language from more primitive forms.
 >
@@ -25,7 +25,7 @@ scm> "Hello" ; String
 "Hello"
 ```
 
-Note that the only primitive in Scheme that is false is `#f`. All other values are true.
+That the only primitive in Scheme that is false is `#f`. All other values are true. That is, even `0` and `""` are true.
 
 ---
 
@@ -36,15 +36,15 @@ Note that the only primitive in Scheme that is false is `#f`. All other values a
 All expressions are written in the form of a list, with the first element being the operator and the rest being the operands. For example:
 
 ```scm
-scm> (+ 1 2 3)                  ; 1 + 2 + 3 = 6
+scm> (+ 1 2 3)                  ; 1+2+3 = 6
 6
-scm> (* (+ 1 2) 3 4)            ; (1 + 2) * 3 * 4 = 36
+scm> (* (+ 1 2) 3 4)            ; (1+2)*3*4 = 36
 36
 scm> (even? (* (+ 1 2) 3 4))    ; Is 36 even?
 #t
 scm> (- 5)                      ; -5
 -5
-scm> (- 1 2 3)                  ; 1 - 2 - 3 = -4
+scm> (- 1 2 3)                  ; 1-2-3 = -4
 -4
 scm> (>= 1 2)                   ; Is 1 >= 2?
 #f
