@@ -105,4 +105,119 @@ Both `connect` and `isConnected` take the same time as `root`, which is $\Theta(
 
 ---
 
+## Binary Search Tree
+
+### Interface
+
+```java
+public interface BST<T extends Comparable<T>> {
+    /**
+     * Returns true iff the BST contains the given key.
+     */
+    boolean contains(T key);
+
+    /**
+     * Inserts the given key into the BST.
+     * If the key is already in the BST, do nothing.
+     */
+    void insert(T key);
+
+    /**
+     * Removes the given key from the BST.
+     * If the key is not in the BST, do nothing.
+     */
+    void remove(T key);
+}
+```
+
+---
+
+### Implementation
+
+```java
+public class BSTImpl<T extends Comparable<T>> implements BST<T> {
+    /**
+     * A node in the BST.
+     */
+    private class Node {
+        T value;
+        Node left, right;
+
+        Node(T v) { value = v; }
+    }
+
+    private Node root;
+
+    @Override
+    public boolean contains(T key) {
+        return contains(root, key);
+    }
+
+    private boolean contains(Node node, T key) {
+        if (node == null)
+            return false;
+        int cmp = node.value.compareTo(key);
+        if (cmp < 0) return contains(node.left, key);
+        if (cmp > 0) return contains(node.right, key);
+        return true;
+    }
+
+    @Override
+    public void insert(T key) {
+        root = insert(root, key);
+    }
+
+    private Node insert(Node node, T key) {
+        if (node == null)
+            return new Node(key);
+        int cmp = node.value.compareTo(key);
+        if (cmp < 0) node.left = insert(node.left, key);
+        if (cmp > 0) node.right = insert(node.right, key);
+        return node;
+    }
+
+    @Override
+    public void remove(T key) {
+        root = remove(root, key);
+    }
+
+    private Node remove(Node node, T key) {
+        if (node == null)
+            return null;
+        int cmp = node.value.compareTo(key);
+        if (cmp < 0) node.left = remove(node.left, key);
+        if (cmp > 0) node.right = remove(node.right, key);
+        if (cmp == 0) {
+            if (node.left == null) return node.right;
+            if (node.right == null) return node.left;
+
+            // If node has two children, replace it with the
+            // minimum node in the right subtree.
+            Node min = min(node.right);
+            node.value = min.value;
+            node.right = remove(node.right, min.value);
+        }
+        return node;
+    }
+
+    /**
+     * Returns the minimum node in the BST rooted at node.
+     */
+    private Node min(Node node) {
+        if (node.left == null) return node;
+        return min(node.left);
+    }
+}
+```
+
+---
+
+### Time Complexity
+
+The time complexity of `contains`, `insert` and `remove` is $\Theta(H)$, where $H$ is the height of the tree. The worst case is when the tree is a linked list, which has height $n$. The best case is when the tree is balanced, which has height $\log n$.
+
+For randomized operations, the expected time complexity is $\Theta(\log n)$.
+
+---
+
 **Under Construction**
