@@ -199,7 +199,7 @@ I don't know how to document this part, so I just note down some useful tools.
  - **`jq`**: command-line JSON processor.
  - **`pup`**: command line tool for processing HTML.
 
-**One more thing**: Learning Regex can be incredibly useful. It's definitely worth investing time in it!
+**One more thing**: Learning Regex can be incredibly useful. It's definitely worth investing time in!
 
 ---
 
