@@ -22,6 +22,23 @@ When $x\to0$:
 
 ---
 
+## Integrals
+
+ - $\displaystyle\int\dfrac{x}{\sqrt{a^2 \pm x^2}}\mathrm{d}x = \pm\sqrt{a^2 \pm x^2}+C$
+ - $\displaystyle\int\dfrac{1}{\sqrt{x^2+a^2}}\mathrm{d}x = \ln\left(x+\sqrt{x^2+a^2}\right)+C$
+ - $\displaystyle\int\dfrac{1}{\sqrt{a^2-x^2}}\mathrm{d}x = \arcsin\dfrac{x}{a}+C$
+ - $\displaystyle\int\dfrac{\mathrm{d}x}{x^2 - a^2} = \dfrac{1}{2a}\int\left(\dfrac{1}{x-a}-\dfrac{1}{x+a}\right)\mathrm{d}x = \dfrac{1}{2a}\ln\left|\dfrac{x-a}{x+a}\right|+C$
+ - $\displaystyle\int\dfrac{\mathrm{d}x}{x^2 + a^2} = \dfrac{1}{a}\arctan\dfrac{x}{a}+C$
+ - $\displaystyle\int\sqrt{a^2-x^2}\mathrm{d}x = \dfrac{x}{2}\sqrt{a^2-x^2}+\dfrac{a^2}{2}\arcsin\dfrac{x}{a}+C$, $a>0$
+ - $\displaystyle\int\sqrt{x^2\pm a^2}\mathrm{d}x = \dfrac{x}{2}\sqrt{x^2\pm a^2}+\dfrac{a^2}{2}\ln\left(x+\sqrt{x^2\pm a^2}\right)+C$, $a>0$
+ - $\int\tan x\mathrm{d}x = -\ln|\cos x|+C$
+ - $\int\cot x\mathrm{d}x = \ln|\sin x|+C$
+ - $\int\sec x\mathrm{d}x = \ln|\sec x+\tan x|+C$
+ - $\int\csc x\mathrm{d}x = -\ln|\csc x+\cot x|+C = \ln|\csc x-\cot x|+C$
+ - $\int\sec^3x\mathrm{d}x = \dfrac{1}{2}\sec x\tan x+\dfrac{1}{2}\ln|\sec x+\tan x|+C$
+
+---
+
 ## Taylor Series
 
 With $\theta\in(0, 1)$ and $\xi = x_0 + \theta(x - x_0)$:
