@@ -16,7 +16,9 @@ Aka. Bucket list. Content will be updated from time to time.
  - [ ] Psychology.
  - [ ] Skydive.
  - [ ] Scuba dive.
- - [ ] Learn to swim.
+ - [ ] Play music.
+ - [ ] Learn painting.
+ - [ ] Teach.
  - [ ] Fall in love.
  - [ ] Horseback riding.
  - [ ] Climb a mountain.
@@ -30,3 +32,4 @@ Aka. Bucket list. Content will be updated from time to time.
  - [ ] Get a pet.
  - [ ] Volunteer.
  - [ ] Go on a balloon ride.
+ - [x] Learn to swim.
