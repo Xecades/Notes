@@ -19,7 +19,6 @@ Aka. Bucket list. Content will be updated from time to time.
  - [ ] Play music.
  - [ ] Learn painting.
  - [ ] Teach.
- - [ ] Fall in love.
  - [ ] Horseback riding.
  - [ ] Climb a mountain.
  - [ ] Travel around the world.
@@ -33,3 +32,4 @@ Aka. Bucket list. Content will be updated from time to time.
  - [ ] Volunteer.
  - [ ] Go on a balloon ride.
  - [x] Learn to swim.
+ - [x] Fall in love.
