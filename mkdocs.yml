@@ -77,6 +77,11 @@ nav:
     - Programming Basis:
       - Manuals & Standards: cs/basis/manuals-standards.md
       - MIT Missing Semester: cs/basis/mit-missing-semester.md
+    # - Logic and Computer Design Fundamental:
+    #   - ZJU Course Note: cs/cldf/zju-course-note.md
+    - Assembly Language:
+      # - ZJU Course Note: cs/asm/zju-course-note.md
+      - Cheatsheet: cs/asm/cheatsheet.md
     - Computer System:
       - CSAPP Notes: cs/sys/csapp.md
     - Data Structures:
