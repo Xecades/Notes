@@ -18,7 +18,7 @@ comments: true
 
 ### Data Structures
 
- - [ ] CS 61B: Data Structures. **[IN-PROGRESS]**
+ - [ ] CS 61B: Data Structures. **[SUSPENDING]**
 
 ### Network
 
